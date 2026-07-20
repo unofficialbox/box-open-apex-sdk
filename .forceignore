@@ -1,0 +1,5 @@
+# Not Salesforce metadata — never deploy or retrieve these.
+docs/**
+README.md
+**/*.dup
+**/.DS_Store
