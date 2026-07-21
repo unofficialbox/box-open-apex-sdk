@@ -1,5 +1,6 @@
 .forceignore
 README.md
+assets/banner.svg
 config/project-scratch-def.json
 docs/README.md
 docs/ai/README.md

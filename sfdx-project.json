@@ -3,14 +3,17 @@
     {
       "path": "force-app",
       "default": true,
-      "package": "Unbox Salesforce SDK",
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT"
+      "package": "box-open-apex-sdk",
+      "versionName": "ver 0.1.2",
+      "versionNumber": "0.1.2.NEXT"
     }
   ],
   "name": "box-gantry-apex",
   "namespace": "unbox",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "62.0",
-  "packageAliases": {}
+  "packageAliases": {
+    "box-open-apex-sdk": "0Hog50000000wQbCAI",
+    "box-open-apex-sdk@0.1.2-1": "04tg5000000B3nNAAS"
+  }
 }
