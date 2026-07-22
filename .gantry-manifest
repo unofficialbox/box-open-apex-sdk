@@ -1,4 +1,5 @@
 .forceignore
+LICENSE
 README.md
 assets/banner.svg
 config/project-scratch-def.json

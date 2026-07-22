@@ -3,7 +3,7 @@
 
 # Box SDK for Salesforce Apex
 
-A **community, unofficial** Box API client for Salesforce Apex, as a deploy-ready
+An **open source, community-built** Box API client for Salesforce Apex, as a deploy-ready
 SFDX project. Every class lives in `force-app/main/default/classes/`; per-endpoint
 reference docs are in [`docs/`](docs/README.md). Provenance (engine version + spec
 fingerprint) is recorded in `BoxBuildInfo` and below.
