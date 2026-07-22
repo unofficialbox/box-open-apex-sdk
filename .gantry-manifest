@@ -276,8 +276,8 @@ docs/retention_policy_assignments/listFileUnderRetention.md
 docs/retention_policy_assignments/listFileVersionUnderRetention.md
 docs/retention_policy_assignments/listRetentionPolicyAssignments.md
 docs/search/README.md
-docs/search/createMetadataQueryExecuteRead.md
 docs/search/get.md
+docs/search/queryByMetadata.md
 docs/session_termination/README.md
 docs/session_termination/createGroupTerminateSessions.md
 docs/session_termination/createUserTerminateSessions.md
@@ -378,7 +378,7 @@ docs/terms_of_services/get.md
 docs/terms_of_services/list_r.md
 docs/terms_of_services/update_r.md
 docs/transfer/README.md
-docs/transfer/updateUserFolder0.md
+docs/transfer/transferFolders.md
 docs/trashed_files/README.md
 docs/trashed_files/createFile.md
 docs/trashed_files/deleteFileTrash.md
@@ -394,9 +394,9 @@ docs/trashed_web_links/createWebLink.md
 docs/trashed_web_links/deleteWebLinkTrash.md
 docs/trashed_web_links/getWebLinkTrash.md
 docs/uploads/README.md
-docs/uploads/createFileContent.md
-docs/uploads/createFileContent2.md
 docs/uploads/optionFileContent.md
+docs/uploads/uploadFile.md
+docs/uploads/uploadFileVersion.md
 docs/user_collaborations/README.md
 docs/user_collaborations/createCollaborations.md
 docs/user_collaborations/deleteCollaboration.md
@@ -665,6 +665,10 @@ force-app/main/default/classes/BoxArchives.cls
 force-app/main/default/classes/BoxArchives.cls-meta.xml
 force-app/main/default/classes/BoxArchivesTest.cls
 force-app/main/default/classes/BoxArchivesTest.cls-meta.xml
+force-app/main/default/classes/BoxAuth.cls
+force-app/main/default/classes/BoxAuth.cls-meta.xml
+force-app/main/default/classes/BoxAuthTest.cls
+force-app/main/default/classes/BoxAuthTest.cls-meta.xml
 force-app/main/default/classes/BoxAuthorization.cls
 force-app/main/default/classes/BoxAuthorization.cls-meta.xml
 force-app/main/default/classes/BoxAuthorizationTest.cls

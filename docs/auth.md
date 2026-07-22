@@ -16,13 +16,13 @@ A short-lived token from the Box developer console — handy for scripts and
 tests.
 
 ```apex
-BoxTokenProvider provider = new BoxDeveloperTokenProvider('DEVELOPER_TOKEN');
+BoxTokenProvider provider = BoxAuth.developerToken('DEVELOPER_TOKEN');
 ```
 
 ## Client Credentials Grant (server auth, no key)
 
 ```apex
-BoxTokenProvider provider = new BoxCcgTokenProvider(
+BoxTokenProvider provider = BoxAuth.clientCredentials(
     'CLIENT_ID', 'CLIENT_SECRET', 'enterprise', 'ENTERPRISE_ID');
 ```
 
@@ -32,7 +32,7 @@ The private key never appears in Apex — it lives in a Salesforce
 certificate and signs via `Crypto.signWithCertificate`.
 
 ```apex
-BoxTokenProvider provider = new BoxJwtTokenProvider(
+BoxTokenProvider provider = BoxAuth.jwt(
     'CLIENT_ID', 'CLIENT_SECRET', 'enterprise', 'ENTERPRISE_ID',
     'PUBLIC_KEY_ID', 'certificate_name');
 ```

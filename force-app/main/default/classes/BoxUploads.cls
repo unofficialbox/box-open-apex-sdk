@@ -21,7 +21,7 @@ public with sharing class BoxUploads {
      * @param body the request body (`FileIdContentCreateRequest`)
      * @return `Files`
      */
-    public Files createFileContent(String fileId, String ifMatch, List<String> fields, String contentMd5, FileIdContentCreateRequest body) {
+    public Files uploadFileVersion(String fileId, String ifMatch, List<String> fields, String contentMd5, FileIdContentCreateRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'upload';
@@ -45,7 +45,7 @@ public with sharing class BoxUploads {
      * @param body the request body (`FileContentCreateRequest`)
      * @return `Files`
      */
-    public Files createFileContent2(List<String> fields, String contentMd5, FileContentCreateRequest body) {
+    public Files uploadFile(List<String> fields, String contentMd5, FileContentCreateRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'upload';

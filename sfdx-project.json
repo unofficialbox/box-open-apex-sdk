@@ -3,7 +3,7 @@
     {
       "path": "force-app",
       "default": true,
-      "package": "box-open-apex-sdk",
+      "package": "Unbox Salesforce SDK",
       "versionName": "ver 0.1.2",
       "versionNumber": "0.1.2.NEXT"
     }
@@ -12,8 +12,5 @@
   "namespace": "unbox",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "62.0",
-  "packageAliases": {
-    "box-open-apex-sdk": "0Hog50000000wQbCAI",
-    "box-open-apex-sdk@0.1.2-1": "04tg5000000B3nNAAS"
-  }
+  "packageAliases": {}
 }

@@ -7,7 +7,7 @@ private class BoxSearchTest {
         BoxSearch svc = new BoxSearch(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.createMetadataQueryExecuteRead(new MetadataQuery());
+        svc.queryByMetadata(new MetadataQuery());
         mock.body = '{}';
         svc.get('x', 'x', new List<String>(), new List<String>(), new List<String>(), new List<Long>(), new List<String>(), new List<String>(), new List<String>(), new List<String>(), 'x', 'x', new List<MetadataFilter>(), 'x', 'x', 1, true, new List<String>(), 1, new List<String>(), new List<String>());
         Test.stopTest();

@@ -5,4 +5,4 @@
 
 | Endpoint | Method | Path | Paged |
 |---|---|---|---|
-| [`updateUserFolder0`](updateUserFolder0.md) | `PUT` | `/users/{user_id}/folders/0` |  |
+| [`transferFolders`](transferFolders.md) | `PUT` | `/users/{user_id}/folders/0` |  |

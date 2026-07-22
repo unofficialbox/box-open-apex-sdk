@@ -5,6 +5,6 @@
 
 | Endpoint | Method | Path | Paged |
 |---|---|---|---|
-| [`createFileContent`](createFileContent.md) | `POST` | `/files/{file_id}/content` |  |
-| [`createFileContent2`](createFileContent2.md) | `POST` | `/files/content` |  |
+| [`uploadFileVersion`](uploadFileVersion.md) | `POST` | `/files/{file_id}/content` |  |
+| [`uploadFile`](uploadFile.md) | `POST` | `/files/content` |  |
 | [`optionFileContent`](optionFileContent.md) | `OPTIONS` | `/files/content` |  |

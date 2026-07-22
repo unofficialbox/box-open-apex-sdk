@@ -17,7 +17,7 @@ public with sharing class BoxSearch {
      * @param body the request body (`MetadataQuery`)
      * @return `MetadataQueryResults`
      */
-    public MetadataQueryResults createMetadataQueryExecuteRead(MetadataQuery body) {
+    public MetadataQueryResults queryByMetadata(MetadataQuery body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

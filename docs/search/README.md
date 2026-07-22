@@ -5,5 +5,5 @@
 
 | Endpoint | Method | Path | Paged |
 |---|---|---|---|
-| [`createMetadataQueryExecuteRead`](createMetadataQueryExecuteRead.md) | `POST` | `/metadata_queries/execute_read` |  |
+| [`queryByMetadata`](queryByMetadata.md) | `POST` | `/metadata_queries/execute_read` |  |
 | [`get`](get.md) | `GET` | `/search` |  |
