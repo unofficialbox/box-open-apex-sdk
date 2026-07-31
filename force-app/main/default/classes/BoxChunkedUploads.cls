@@ -14,10 +14,10 @@ public with sharing class BoxChunkedUploads {
     /**
      * `POST /files/upload_sessions`
      *
-     * @param body the request body (`FileUploadSessionsCreateRequest`)
+     * @param body the request body (`FileUploadSessionCreateRequest`)
      * @return `UploadSession`
      */
-    public UploadSession createFileUploadSessions(FileUploadSessionsCreateRequest body) {
+    public UploadSession createFileUploadSession(FileUploadSessionCreateRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'upload';
@@ -33,10 +33,10 @@ public with sharing class BoxChunkedUploads {
      * `POST /files/{file_id}/upload_sessions`
      *
      * @param fileId path parameter
-     * @param body the request body (`FileIdUploadSessionsCreateRequest`)
+     * @param body the request body (`FileVersionUploadSessionCreateRequest`)
      * @return `UploadSession`
      */
-    public UploadSession createFileByIdUploadSessions(String fileId, FileIdUploadSessionsCreateRequest body) {
+    public UploadSession createFileVersionUploadSession(String fileId, FileVersionUploadSessionCreateRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'upload';

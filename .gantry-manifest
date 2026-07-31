@@ -39,8 +39,8 @@ docs/avatars/deleteUserAvatar.md
 docs/avatars/getUserAvatar.md
 docs/chunked_uploads/README.md
 docs/chunked_uploads/commitFileUploadSession.md
-docs/chunked_uploads/createFileByIdUploadSessions.md
-docs/chunked_uploads/createFileUploadSessions.md
+docs/chunked_uploads/createFileUploadSession.md
+docs/chunked_uploads/createFileVersionUploadSession.md
 docs/chunked_uploads/deleteFileUploadSession.md
 docs/chunked_uploads/getFileUploadSession.md
 docs/chunked_uploads/listFileUploadSessionParts.md
@@ -1372,8 +1372,6 @@ force-app/main/default/classes/FileFullWatermarkInfo.cls
 force-app/main/default/classes/FileFullWatermarkInfo.cls-meta.xml
 force-app/main/default/classes/FileIdContentCreateRequest.cls
 force-app/main/default/classes/FileIdContentCreateRequest.cls-meta.xml
-force-app/main/default/classes/FileIdUploadSessionsCreateRequest.cls
-force-app/main/default/classes/FileIdUploadSessionsCreateRequest.cls-meta.xml
 force-app/main/default/classes/FileItemStatus.cls
 force-app/main/default/classes/FileItemStatus.cls-meta.xml
 force-app/main/default/classes/FileMetadataUpdateRequest.cls
@@ -1408,8 +1406,8 @@ force-app/main/default/classes/FileUpdateRequest3.cls
 force-app/main/default/classes/FileUpdateRequest3.cls-meta.xml
 force-app/main/default/classes/FileUploadSessionCommitRequest.cls
 force-app/main/default/classes/FileUploadSessionCommitRequest.cls-meta.xml
-force-app/main/default/classes/FileUploadSessionsCreateRequest.cls
-force-app/main/default/classes/FileUploadSessionsCreateRequest.cls-meta.xml
+force-app/main/default/classes/FileUploadSessionCreateRequest.cls
+force-app/main/default/classes/FileUploadSessionCreateRequest.cls-meta.xml
 force-app/main/default/classes/FileVersion.cls
 force-app/main/default/classes/FileVersion.cls-meta.xml
 force-app/main/default/classes/FileVersionBase.cls
@@ -1438,6 +1436,8 @@ force-app/main/default/classes/FileVersionType.cls
 force-app/main/default/classes/FileVersionType.cls-meta.xml
 force-app/main/default/classes/FileVersionUpdateRequest.cls
 force-app/main/default/classes/FileVersionUpdateRequest.cls-meta.xml
+force-app/main/default/classes/FileVersionUploadSessionCreateRequest.cls
+force-app/main/default/classes/FileVersionUploadSessionCreateRequest.cls-meta.xml
 force-app/main/default/classes/FileVersions.cls
 force-app/main/default/classes/FileVersions.cls-meta.xml
 force-app/main/default/classes/FileVersionsOnHold.cls

@@ -7,9 +7,9 @@ private class BoxChunkedUploadsTest {
         BoxChunkedUploads svc = new BoxChunkedUploads(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.createFileUploadSessions(new FileUploadSessionsCreateRequest());
+        svc.createFileUploadSession(new FileUploadSessionCreateRequest());
         mock.body = '{}';
-        svc.createFileByIdUploadSessions('x', new FileIdUploadSessionsCreateRequest());
+        svc.createFileVersionUploadSession('x', new FileVersionUploadSessionCreateRequest());
         mock.body = '{}';
         svc.getFileUploadSession('x');
         mock.body = '{}';

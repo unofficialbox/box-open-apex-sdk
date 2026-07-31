@@ -5,8 +5,8 @@
 
 | Endpoint | Method | Path | Paged |
 |---|---|---|---|
-| [`createFileUploadSessions`](createFileUploadSessions.md) | `POST` | `/files/upload_sessions` |  |
-| [`createFileByIdUploadSessions`](createFileByIdUploadSessions.md) | `POST` | `/files/{file_id}/upload_sessions` |  |
+| [`createFileUploadSession`](createFileUploadSession.md) | `POST` | `/files/upload_sessions` |  |
+| [`createFileVersionUploadSession`](createFileVersionUploadSession.md) | `POST` | `/files/{file_id}/upload_sessions` |  |
 | [`getFileUploadSession`](getFileUploadSession.md) | `GET` | `/files/upload_sessions/{upload_session_id}` |  |
 | [`updateFileUploadSession`](updateFileUploadSession.md) | `PUT` | `/files/upload_sessions/{upload_session_id}` |  |
 | [`deleteFileUploadSession`](deleteFileUploadSession.md) | `DELETE` | `/files/upload_sessions/{upload_session_id}` |  |
