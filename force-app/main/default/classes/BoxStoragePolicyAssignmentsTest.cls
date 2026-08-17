@@ -9,11 +9,11 @@ private class BoxStoragePolicyAssignmentsTest {
         mock.body = '{}';
         svc.list_r('x', 'x', 'x');
         mock.body = '{}';
-        svc.create(new StoragePolicyAssignmentCreateRequest());
+        svc.create(new CreateStoragePolicyAssignmentRequest());
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';
-        svc.update_r('x', new StoragePolicyAssignmentUpdateRequest());
+        svc.update_r('x', new UpdateStoragePolicyAssignmentRequest());
         mock.body = '{}';
         svc.delete_r('x');
         Test.stopTest();

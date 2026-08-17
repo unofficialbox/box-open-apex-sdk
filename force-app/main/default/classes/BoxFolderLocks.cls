@@ -32,16 +32,16 @@ public with sharing class BoxFolderLocks {
     /**
      * `POST /folder_locks`
      *
-     * @param body the request body (`FolderLockCreateRequest`)
+     * @param body the request body (`CreateFolderLockRequest`)
      * @return `FolderLock`
      */
-    public FolderLock create(FolderLockCreateRequest body) {
+    public FolderLock create(CreateFolderLockRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
         request.path = '/' + 'folder_locks';
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = FolderLockCreateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = CreateFolderLockRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);

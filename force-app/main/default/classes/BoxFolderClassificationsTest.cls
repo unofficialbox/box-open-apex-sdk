@@ -9,9 +9,9 @@ private class BoxFolderClassificationsTest {
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';
-        svc.update_r('x', new List<FileClassificationUpdateRequest>());
+        svc.update_r('x', new List<UpdateFileClassificationRequest>());
         mock.body = '{}';
-        svc.create('x', new FileClassificationCreateRequest());
+        svc.create('x', new CreateFileClassificationRequest());
         mock.body = '{}';
         svc.delete_r('x');
         Test.stopTest();

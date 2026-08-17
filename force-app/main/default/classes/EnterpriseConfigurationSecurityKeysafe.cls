@@ -3,13 +3,10 @@
  * carry their wire (JSON) name in a trailing comment.
  * Some fields rename between the wire and Apex, so this class carries
  * `normalizeKeys`/`denormalizeKeys` (used by the managers) to remap
- * JSON keys around native (de)serialization.
- * Some fields are `Object` (a union or free-form JSON), which native
- * `JSON.deserialize` can't populate, so this class carries a static
- * `deserialize(Object)` the managers call to read a response (D-140). */
+ * JSON keys around native (de)serialization. */
 public class EnterpriseConfigurationSecurityKeysafe {
     public Boolean is_used; // wire: is_used
-    public Object value_r; // wire: value
+    public KeysafeSettings value_r; // wire: value
     /** Wire → Apex: JSON keys for the `EnterpriseConfigurationSecurityKeysafe` wire shape (see class doc). */
     public static Map<String, Object> normalizeKeys(Map<String, Object> raw) {
         if (raw == null) return null;
@@ -27,17 +24,5 @@ public class EnterpriseConfigurationSecurityKeysafe {
             raw.put('value', v);
         }
         return raw;
-    }
-    /** Build `EnterpriseConfigurationSecurityKeysafe` from the untyped JSON tree. Apex's typed
-     * `JSON.deserialize` can't populate an `Object` field (a union or
-     * free-form JSON), so those are detached, the typed shell is
-     * deserialized, then they are reattached from the raw tree (D-140). */
-    public static EnterpriseConfigurationSecurityKeysafe deserialize(Object rawInput) {
-        if (rawInput == null) return null;
-        Map<String, Object> raw = ((Map<String, Object>) rawInput).clone();
-        Object d_value_r = raw.remove('value');
-        EnterpriseConfigurationSecurityKeysafe result = (EnterpriseConfigurationSecurityKeysafe) JSON.deserialize(JSON.serialize(EnterpriseConfigurationSecurityKeysafe.normalizeKeys(raw)), EnterpriseConfigurationSecurityKeysafe.class);
-        result.value_r = d_value_r;
-        return result;
     }
 }

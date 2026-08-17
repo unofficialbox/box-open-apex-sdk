@@ -9,7 +9,7 @@ private class BoxWorkflowsTest {
         mock.body = '{}';
         svc.list_r('x', 'x', 1, 'x');
         mock.body = '{}';
-        svc.start('x', new WorkflowStartRequest());
+        svc.start('x', new StartWorkflowRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

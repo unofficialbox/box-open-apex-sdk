@@ -12,7 +12,7 @@ in the org namespace. Construct the entry-point client once:
 Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 ```
 
-**SDK types used:** `Box`, `BoxShieldInformationBarrierSegme_ccd386c`, `ShieldInformationBarrierSegmentR_3771cb5`, `ShieldInformationBarrierSegmentR_d1e4988`
+**SDK types used:** `Box`, `BoxShieldInformationBarrierSegme_ccd386c`, `CreateShieldInformationBarrierSe_db3c751`, `ShieldInformationBarrierSegmentR_d1e4988`
 
 ## Parameters
 
@@ -20,7 +20,7 @@ _None._
 
 ## Request body
 
-`ShieldInformationBarrierSegmentR_3771cb5`
+`CreateShieldInformationBarrierSe_db3c751`
 
 ## Returns
 

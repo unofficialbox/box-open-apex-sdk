@@ -38,10 +38,12 @@ private class BoxModelWireTest1 {
         AiAsk.deserialize(new Map<String, Object>{ 'ai_agent' => 'x' });
         AiExtract.deserialize(null);
         AiExtract.deserialize(new Map<String, Object>{ 'ai_agent' => 'x' });
+        AiExtractResponse.deserialize(null);
+        AiExtractResponse.deserialize(new Map<String, Object>{ '__extra_probe__' => 'x' });
         AiExtractStructured.deserialize(null);
         AiExtractStructured.deserialize(new Map<String, Object>{ 'ai_agent' => 'x', 'taxonomy_sources' => new List<Object>() });
         AiExtractStructuredResponse.deserialize(null);
-        AiExtractStructuredResponse.deserialize(new Map<String, Object>{ 'confidence_score' => new Map<String, Object>(), 'reference' => new Map<String, Object>() });
+        AiExtractStructuredResponse.deserialize(new Map<String, Object>{ 'answer' => new Map<String, Object>(), 'confidence_score' => new Map<String, Object>(), 'reference' => new Map<String, Object>() });
         AiMultipleAgentResponse.normalizeKeys(null);
         AiMultipleAgentResponse.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
         AiMultipleAgentResponse.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
@@ -156,11 +158,6 @@ private class BoxModelWireTest1 {
         FileVersionLegalHolds.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
         FileVersionRetention.deserialize(null);
         FileVersionRetention.deserialize(new Map<String, Object>{ 'winning_retention_policy' => new Map<String, Object>() });
-        FileVersionRetentions.normalizeKeys(null);
-        FileVersionRetentions.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
-        FileVersionRetentions.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
-        FileVersionRetentions.deserialize(null);
-        FileVersionRetentions.deserialize(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() } });
         Test.stopTest();
         System.assert(true, 'every wire static executed without error');
     }

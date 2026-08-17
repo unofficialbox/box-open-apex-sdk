@@ -7,7 +7,7 @@ private class BoxTrashedFilesTest {
         BoxTrashedFiles svc = new BoxTrashedFiles(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.createFile('x', new List<String>(), new FileCreateRequest());
+        svc.createFile('x', new List<String>(), new CreateFileRequest());
         mock.body = '{}';
         svc.getFileTrash('x', new List<String>());
         mock.body = '{}';

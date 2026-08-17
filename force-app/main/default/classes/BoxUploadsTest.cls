@@ -7,9 +7,9 @@ private class BoxUploadsTest {
         BoxUploads svc = new BoxUploads(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.uploadFileVersion('x', 'x', new List<String>(), 'x', new FileIdContentCreateRequest());
+        svc.uploadFileVersion('x', 'x', new List<String>(), 'x', new CreateFileIdContentRequest());
         mock.body = '{}';
-        svc.uploadFile(new List<String>(), 'x', new FileContentCreateRequest());
+        svc.uploadFile(new List<String>(), 'x', new CreateFileContentRequest());
         mock.body = '{}';
         svc.optionFileContent(new OptionFileContentRequest());
         Test.stopTest();

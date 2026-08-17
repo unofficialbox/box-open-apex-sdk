@@ -9,15 +9,15 @@ private class BoxFoldersTest {
         mock.body = '{}';
         svc.get('x', new List<String>(), 'x', 'x', 'x', 'x', 1, 1);
         mock.body = '{}';
-        svc.update_r('x', new List<String>(), 'x', new FolderUpdateRequest());
+        svc.update_r('x', new List<String>(), 'x', new UpdateFolderRequest());
         mock.body = '{}';
         svc.delete_r('x', 'x', true);
         mock.body = '{}';
         svc.listItems('x', new List<String>(), true, 'x', 1, 1, 'x', 'x', 'x');
         mock.body = '{}';
-        svc.create(new List<String>(), new FolderCreateRequest());
+        svc.create(new List<String>(), new CreateFolderRequest());
         mock.body = '{}';
-        svc.copy('x', new List<String>(), new FolderCopyRequest());
+        svc.copy('x', new List<String>(), new CopyFolderRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

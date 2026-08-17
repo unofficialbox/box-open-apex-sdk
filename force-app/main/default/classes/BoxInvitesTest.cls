@@ -7,7 +7,7 @@ private class BoxInvitesTest {
         BoxInvites svc = new BoxInvites(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.create(new List<String>(), new InviteCreateRequest());
+        svc.create(new List<String>(), new CreateInviteRequest());
         mock.body = '{}';
         svc.get('x', new List<String>());
         Test.stopTest();

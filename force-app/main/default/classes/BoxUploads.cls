@@ -18,10 +18,10 @@ public with sharing class BoxUploads {
      * @param ifMatch header parameter, optional
      * @param fields query parameter, optional
      * @param contentMd5 header parameter, optional
-     * @param body the request body (`FileIdContentCreateRequest`)
+     * @param body the request body (`CreateFileIdContentRequest`)
      * @return `Files`
      */
-    public Files uploadFileVersion(String fileId, String ifMatch, List<String> fields, String contentMd5, FileIdContentCreateRequest body) {
+    public Files uploadFileVersion(String fileId, String ifMatch, List<String> fields, String contentMd5, CreateFileIdContentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'upload';
@@ -42,10 +42,10 @@ public with sharing class BoxUploads {
      *
      * @param fields query parameter, optional
      * @param contentMd5 header parameter, optional
-     * @param body the request body (`FileContentCreateRequest`)
+     * @param body the request body (`CreateFileContentRequest`)
      * @return `Files`
      */
-    public Files uploadFile(List<String> fields, String contentMd5, FileContentCreateRequest body) {
+    public Files uploadFile(List<String> fields, String contentMd5, CreateFileContentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'upload';

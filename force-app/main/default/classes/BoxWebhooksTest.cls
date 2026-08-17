@@ -9,11 +9,11 @@ private class BoxWebhooksTest {
         mock.body = '{}';
         svc.list_r('x', 1);
         mock.body = '{}';
-        svc.create(new WebhookCreateRequest());
+        svc.create(new CreateWebhookRequest());
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';
-        svc.update_r('x', new WebhookUpdateRequest());
+        svc.update_r('x', new UpdateWebhookRequest());
         mock.body = '{}';
         svc.delete_r('x');
         Test.stopTest();

@@ -43,10 +43,10 @@ public with sharing class BoxRetentionPolicies {
     /**
      * `POST /retention_policies`
      *
-     * @param body the request body (`RetentionPolicyCreateRequest`)
+     * @param body the request body (`CreateRetentionPolicyRequest`)
      * @return `RetentionPolicy`
      */
-    public RetentionPolicy create(RetentionPolicyCreateRequest body) {
+    public RetentionPolicy create(CreateRetentionPolicyRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -83,16 +83,16 @@ public with sharing class BoxRetentionPolicies {
      * `PUT /retention_policies/{retention_policy_id}`
      *
      * @param retentionPolicyId path parameter
-     * @param body the request body (`RetentionPolicyUpdateRequest`)
+     * @param body the request body (`UpdateRetentionPolicyRequest`)
      * @return `RetentionPolicy`
      */
-    public RetentionPolicy update_r(String retentionPolicyId, RetentionPolicyUpdateRequest body) {
+    public RetentionPolicy update_r(String retentionPolicyId, UpdateRetentionPolicyRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'retention_policies' + '/' + retentionPolicyId;
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = RetentionPolicyUpdateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateRetentionPolicyRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);

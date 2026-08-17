@@ -43,10 +43,10 @@ public with sharing class BoxFiles {
      * @param fileId path parameter
      * @param fields query parameter, optional
      * @param ifMatch header parameter, optional
-     * @param body the request body (`FileUpdateRequest`)
+     * @param body the request body (`UpdateFileRequest`)
      * @return `FileFull`
      */
-    public FileFull update_r(String fileId, List<String> fields, String ifMatch, FileUpdateRequest body) {
+    public FileFull update_r(String fileId, List<String> fields, String ifMatch, UpdateFileRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -54,7 +54,7 @@ public with sharing class BoxFiles {
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         if (ifMatch != null) request.headers.put('if-match', String.valueOf(ifMatch));
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = FileUpdateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateFileRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
@@ -84,10 +84,10 @@ public with sharing class BoxFiles {
      *
      * @param fileId path parameter
      * @param fields query parameter, optional
-     * @param body the request body (`FileCopyRequest`)
+     * @param body the request body (`CopyFileRequest`)
      * @return `FileFull`
      */
-    public FileFull copy(String fileId, List<String> fields, FileCopyRequest body) {
+    public FileFull copy(String fileId, List<String> fields, CopyFileRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

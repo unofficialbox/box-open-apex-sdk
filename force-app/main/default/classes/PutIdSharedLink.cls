@@ -11,7 +11,7 @@ public class PutIdSharedLink {
     public String password; // wire: password
     public String vanity_name; // wire: vanity_name
     public Datetime unshared_at; // wire: unshared_at
-    public SharedLinkPermissions2 permissions; // wire: permissions
+    public UpdateFileRequestSharedLinkPermissions permissions; // wire: permissions
     // Explicit-null control (D-138): Apex field names to send as JSON `null`.
     public Set<String> fieldsToNull = new Set<String>();
     /** Apex → wire: JSON keys for the `PutIdSharedLink` wire shape (see class doc). */

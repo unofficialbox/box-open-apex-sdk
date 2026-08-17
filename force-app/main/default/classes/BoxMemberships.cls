@@ -57,17 +57,17 @@ public with sharing class BoxMemberships {
      * `POST /group_memberships`
      *
      * @param fields query parameter, optional
-     * @param body the request body (`GroupCreateRequest2`)
+     * @param body the request body (`CreateGroupMembershipRequest`)
      * @return `GroupMembership`
      */
-    public GroupMembership createGroup(List<String> fields, GroupCreateRequest2 body) {
+    public GroupMembership createGroupMembership(List<String> fields, CreateGroupMembershipRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
         request.path = '/' + 'group_memberships';
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = GroupCreateRequest2.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = CreateGroupMembershipRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
@@ -83,7 +83,7 @@ public with sharing class BoxMemberships {
      * @param fields query parameter, optional
      * @return `GroupMembership`
      */
-    public GroupMembership getGroup(String groupMembershipId, List<String> fields) {
+    public GroupMembership getGroupMembership(String groupMembershipId, List<String> fields) {
         BoxRequest request = new BoxRequest();
         request.method = 'GET';
         request.baseUrl = 'api';
@@ -100,17 +100,17 @@ public with sharing class BoxMemberships {
      *
      * @param groupMembershipId path parameter
      * @param fields query parameter, optional
-     * @param body the request body (`GroupUpdateRequest2`)
+     * @param body the request body (`UpdateGroupMembershipRequest`)
      * @return `GroupMembership`
      */
-    public GroupMembership updateGroup(String groupMembershipId, List<String> fields, GroupUpdateRequest2 body) {
+    public GroupMembership updateGroupMembership(String groupMembershipId, List<String> fields, UpdateGroupMembershipRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'group_memberships' + '/' + groupMembershipId;
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = GroupUpdateRequest2.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateGroupMembershipRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
@@ -124,7 +124,7 @@ public with sharing class BoxMemberships {
      *
      * @param groupMembershipId path parameter
      */
-    public void deleteGroup(String groupMembershipId) {
+    public void deleteGroupMembership(String groupMembershipId) {
         BoxRequest request = new BoxRequest();
         request.method = 'DELETE';
         request.baseUrl = 'api';

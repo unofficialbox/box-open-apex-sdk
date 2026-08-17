@@ -30,10 +30,10 @@ public with sharing class BoxFolderWatermarks {
      * `PUT /folders/{folder_id}/watermark`
      *
      * @param folderId path parameter
-     * @param body the request body (`FileWatermarkUpdateRequest`)
+     * @param body the request body (`UpdateFileWatermarkRequest`)
      * @return `Watermark`
      */
-    public Watermark updateFolderWatermark(String folderId, FileWatermarkUpdateRequest body) {
+    public Watermark updateFolderWatermark(String folderId, UpdateFileWatermarkRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

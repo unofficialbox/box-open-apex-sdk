@@ -55,10 +55,10 @@ public with sharing class BoxFolderMetadata {
      * @param folderId path parameter
      * @param scope path parameter
      * @param templateKey path parameter
-     * @param body the request body (`List<FileMetadataUpdateRequest>`)
+     * @param body the request body (`List<UpdateFileMetadataRequest>`)
      * @return `MetadataFull`
      */
-    public MetadataFull updateFolderMetadata(String folderId, String scope, String templateKey, List<FileMetadataUpdateRequest> body) {
+    public MetadataFull updateFolderMetadata(String folderId, String scope, String templateKey, List<UpdateFileMetadataRequest> body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -68,7 +68,7 @@ public with sharing class BoxFolderMetadata {
                 List<Object> wLst0 = (List<Object>) wireBody;
                 for (Integer wIdx0 = 0; wIdx0 < wLst0.size(); wIdx0++) {
                     Object wElem0 = wLst0[wIdx0];
-            if (wElem0 instanceof Map<String, Object>) wElem0 = FileMetadataUpdateRequest.denormalizeKeys((Map<String, Object>) wElem0);
+            if (wElem0 instanceof Map<String, Object>) wElem0 = UpdateFileMetadataRequest.denormalizeKeys((Map<String, Object>) wElem0);
                     wLst0[wIdx0] = wElem0;
                 }
             }

@@ -6,5 +6,5 @@ public class PutFolderIdUpdateSharedLinkSharedLink {
     public String password; // wire: password
     public String vanity_name; // wire: vanity_name
     public Datetime unshared_at; // wire: unshared_at
-    public SharedLinkPermissions3 permissions; // wire: permissions
+    public UpdateFileAddSharedLinkRequestSh_a737644 permissions; // wire: permissions
 }

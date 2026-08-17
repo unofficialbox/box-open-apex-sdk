@@ -49,10 +49,10 @@ public with sharing class BoxFolders {
      * @param folderId path parameter
      * @param fields query parameter, optional
      * @param ifMatch header parameter, optional
-     * @param body the request body (`FolderUpdateRequest`)
+     * @param body the request body (`UpdateFolderRequest`)
      * @return `FolderFull`
      */
-    public FolderFull update_r(String folderId, List<String> fields, String ifMatch, FolderUpdateRequest body) {
+    public FolderFull update_r(String folderId, List<String> fields, String ifMatch, UpdateFolderRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -60,7 +60,7 @@ public with sharing class BoxFolders {
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         if (ifMatch != null) request.headers.put('if-match', String.valueOf(ifMatch));
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = FolderUpdateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateFolderRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
@@ -125,10 +125,10 @@ public with sharing class BoxFolders {
      * `POST /folders`
      *
      * @param fields query parameter, optional
-     * @param body the request body (`FolderCreateRequest`)
+     * @param body the request body (`CreateFolderRequest`)
      * @return `FolderFull`
      */
-    public FolderFull create(List<String> fields, FolderCreateRequest body) {
+    public FolderFull create(List<String> fields, CreateFolderRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -147,10 +147,10 @@ public with sharing class BoxFolders {
      *
      * @param folderId path parameter
      * @param fields query parameter, optional
-     * @param body the request body (`FolderCopyRequest`)
+     * @param body the request body (`CopyFolderRequest`)
      * @return `FolderFull`
      */
-    public FolderFull copy(String folderId, List<String> fields, FolderCopyRequest body) {
+    public FolderFull copy(String folderId, List<String> fields, CopyFolderRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

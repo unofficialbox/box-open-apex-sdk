@@ -42,10 +42,10 @@ public with sharing class BoxLegalHoldPolicyAssignments {
     /**
      * `POST /legal_hold_policy_assignments`
      *
-     * @param body the request body (`LegalHoldPolicyAssignmentCreateRequest`)
+     * @param body the request body (`CreateLegalHoldPolicyAssignmentRequest`)
      * @return `LegalHoldPolicyAssignment`
      */
-    public LegalHoldPolicyAssignment create(LegalHoldPolicyAssignmentCreateRequest body) {
+    public LegalHoldPolicyAssignment create(CreateLegalHoldPolicyAssignmentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

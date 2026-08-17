@@ -39,10 +39,10 @@ public with sharing class BoxGroups {
      * `POST /groups`
      *
      * @param fields query parameter, optional
-     * @param body the request body (`GroupCreateRequest`)
+     * @param body the request body (`CreateGroupRequest`)
      * @return `GroupFull`
      */
-    public GroupFull create(List<String> fields, GroupCreateRequest body) {
+    public GroupFull create(List<String> fields, CreateGroupRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -75,10 +75,10 @@ public with sharing class BoxGroups {
      *
      * @param groupId path parameter
      * @param fields query parameter, optional
-     * @param body the request body (`GroupUpdateRequest`)
+     * @param body the request body (`UpdateGroupRequest`)
      * @return `GroupFull`
      */
-    public GroupFull update_r(String groupId, List<String> fields, GroupUpdateRequest body) {
+    public GroupFull update_r(String groupId, List<String> fields, UpdateGroupRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

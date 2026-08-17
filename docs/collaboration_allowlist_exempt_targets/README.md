@@ -5,7 +5,7 @@
 
 | Endpoint | Method | Path | Paged |
 |---|---|---|---|
-| [`listCollaborationWhitelistExemptTargets`](listCollaborationWhitelistExemptTargets.md) | `GET` | `/collaboration_whitelist_exempt_targets` | yes |
-| [`createCollaborationWhitelistExemptTargets`](createCollaborationWhitelistExemptTargets.md) | `POST` | `/collaboration_whitelist_exempt_targets` |  |
-| [`getCollaborationWhitelistExemptTarget`](getCollaborationWhitelistExemptTarget.md) | `GET` | `/collaboration_whitelist_exempt_targets/{collaboration_whitelist_exempt_target_id}` |  |
-| [`deleteCollaborationWhitelistExemptTarget`](deleteCollaborationWhitelistExemptTarget.md) | `DELETE` | `/collaboration_whitelist_exempt_targets/{collaboration_whitelist_exempt_target_id}` |  |
+| [`list_r`](list_r.md) | `GET` | `/collaboration_whitelist_exempt_targets` | yes |
+| [`create`](create.md) | `POST` | `/collaboration_whitelist_exempt_targets` |  |
+| [`get`](get.md) | `GET` | `/collaboration_whitelist_exempt_targets/{collaboration_whitelist_exempt_target_id}` |  |
+| [`delete_r`](delete_r.md) | `DELETE` | `/collaboration_whitelist_exempt_targets/{collaboration_whitelist_exempt_target_id}` |  |

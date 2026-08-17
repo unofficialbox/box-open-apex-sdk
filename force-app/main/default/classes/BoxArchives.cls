@@ -35,10 +35,10 @@ public with sharing class BoxArchives {
     /**
      * `POST /archives`
      *
-     * @param body the request body (`ArchiveCreateRequest`)
+     * @param body the request body (`CreateArchiveRequest`)
      * @return `Archive`
      */
-    public Archive create(ArchiveCreateRequest body) {
+    public Archive create(CreateArchiveRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -53,10 +53,10 @@ public with sharing class BoxArchives {
      * `PUT /archives/{archive_id}`
      *
      * @param archiveId path parameter
-     * @param body the request body (`ArchiveUpdateRequest`)
+     * @param body the request body (`UpdateArchiveRequest`)
      * @return `Archive`
      */
-    public Archive update_r(String archiveId, ArchiveUpdateRequest body) {
+    public Archive update_r(String archiveId, UpdateArchiveRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

@@ -9,13 +9,13 @@ private class BoxMetadataCascadePoliciesTest {
         mock.body = '{}';
         svc.list_r('x', 'x', 'x', 1);
         mock.body = '{}';
-        svc.create(new MetadataCascadePolicyCreateRequest());
+        svc.create(new CreateMetadataCascadePolicyRequest());
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';
         svc.delete_r('x');
         mock.body = '{}';
-        svc.apply('x', new MetadataCascadePolicyApplyRequest());
+        svc.apply('x', new ApplyMetadataCascadePolicyRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

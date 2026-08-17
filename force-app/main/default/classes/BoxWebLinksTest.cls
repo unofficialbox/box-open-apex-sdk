@@ -7,11 +7,11 @@ private class BoxWebLinksTest {
         BoxWebLinks svc = new BoxWebLinks(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.create(new WebLinkCreateRequest());
+        svc.create(new CreateWebLinkRequest());
         mock.body = '{}';
         svc.get('x', 'x');
         mock.body = '{}';
-        svc.update_r('x', new WebLinkUpdateRequest());
+        svc.update_r('x', new UpdateWebLinkRequest());
         mock.body = '{}';
         svc.delete_r('x');
         Test.stopTest();

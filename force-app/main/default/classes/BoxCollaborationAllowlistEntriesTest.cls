@@ -7,13 +7,13 @@ private class BoxCollaborationAllowlistEntriesTest {
         BoxCollaborationAllowlistEntries svc = new BoxCollaborationAllowlistEntries(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.listCollaborationWhitelistEntries('x', 1);
+        svc.list_r('x', 1);
         mock.body = '{}';
-        svc.createCollaborationWhitelistEntries(new CollaborationWhitelistEntriesCre_349462e());
+        svc.create(new CreateCollaborationAllowlistEntryRequest());
         mock.body = '{}';
-        svc.getCollaborationWhitelistEntry('x');
+        svc.get('x');
         mock.body = '{}';
-        svc.deleteCollaborationWhitelistEntry('x');
+        svc.delete_r('x');
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

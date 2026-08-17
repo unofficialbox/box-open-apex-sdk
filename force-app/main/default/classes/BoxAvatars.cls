@@ -30,10 +30,10 @@ public with sharing class BoxAvatars {
      * `POST /users/{user_id}/avatar`
      *
      * @param userId path parameter
-     * @param body the request body (`UserAvatarCreateRequest`)
+     * @param body the request body (`CreateUserAvatarRequest`)
      * @return `UserAvatar`
      */
-    public UserAvatar createUserAvatar(String userId, UserAvatarCreateRequest body) {
+    public UserAvatar createUserAvatar(String userId, CreateUserAvatarRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

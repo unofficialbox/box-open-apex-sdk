@@ -9,11 +9,11 @@ private class BoxTasksTest {
         mock.body = '{}';
         svc.listFile('x');
         mock.body = '{}';
-        svc.create(new TaskCreateRequest());
+        svc.create(new CreateTaskRequest());
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';
-        svc.update_r('x', new TaskUpdateRequest());
+        svc.update_r('x', new UpdateTaskRequest());
         mock.body = '{}';
         svc.delete_r('x');
         Test.stopTest();

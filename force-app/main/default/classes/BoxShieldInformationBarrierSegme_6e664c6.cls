@@ -64,10 +64,10 @@ public with sharing class BoxShieldInformationBarrierSegme_6e664c6 {
     /**
      * `POST /shield_information_barrier_segment_members`
      *
-     * @param body the request body (`ShieldInformationBarrierSegmentM_630d78d`)
+     * @param body the request body (`CreateShieldInformationBarrierSe_1c247f9`)
      * @return `ShieldInformationBarrierSegmentMember`
      */
-    public ShieldInformationBarrierSegmentMember create(ShieldInformationBarrierSegmentM_630d78d body) {
+    public ShieldInformationBarrierSegmentMember create(CreateShieldInformationBarrierSe_1c247f9 body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

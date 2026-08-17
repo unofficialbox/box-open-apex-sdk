@@ -38,10 +38,10 @@ public with sharing class BoxLegalHoldPolicies {
     /**
      * `POST /legal_hold_policies`
      *
-     * @param body the request body (`LegalHoldPolicyCreateRequest`)
+     * @param body the request body (`CreateLegalHoldPolicyRequest`)
      * @return `LegalHoldPolicy`
      */
-    public LegalHoldPolicy create(LegalHoldPolicyCreateRequest body) {
+    public LegalHoldPolicy create(CreateLegalHoldPolicyRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -70,10 +70,10 @@ public with sharing class BoxLegalHoldPolicies {
      * `PUT /legal_hold_policies/{legal_hold_policy_id}`
      *
      * @param legalHoldPolicyId path parameter
-     * @param body the request body (`LegalHoldPolicyUpdateRequest`)
+     * @param body the request body (`UpdateLegalHoldPolicyRequest`)
      * @return `LegalHoldPolicy`
      */
-    public LegalHoldPolicy update_r(String legalHoldPolicyId, LegalHoldPolicyUpdateRequest body) {
+    public LegalHoldPolicy update_r(String legalHoldPolicyId, UpdateLegalHoldPolicyRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

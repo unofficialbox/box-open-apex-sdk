@@ -7,7 +7,7 @@ public class MetadataTemplateFields {
     public String displayName; // wire: displayName
     public String description; // wire: description
     public Boolean hidden; // wire: hidden
-    public List<FieldsOptions3> options; // wire: options
+    public List<MetadataTemplateFieldsOptions> options; // wire: options
     public String taxonomyKey; // wire: taxonomyKey
     public String taxonomyId; // wire: taxonomyId
     public String namespace; // wire: namespace

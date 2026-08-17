@@ -3,5 +3,5 @@
  * carry their wire (JSON) name in a trailing comment. */
 public class TranscriptSkillCardEntries {
     public String text; // wire: text
-    public List<EntriesAppears2> appears; // wire: appears
+    public List<TranscriptSkillCardEntriesAppears> appears; // wire: appears
 }

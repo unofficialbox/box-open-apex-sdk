@@ -14,10 +14,10 @@ public with sharing class BoxSessionTermination {
     /**
      * `POST /users/terminate_sessions`
      *
-     * @param body the request body (`UserTerminateSessionsCreateRequest`)
+     * @param body the request body (`CreateUserTerminateSessionsRequest`)
      * @return `SessionTerminationMessage`
      */
-    public SessionTerminationMessage createUserTerminateSessions(UserTerminateSessionsCreateRequest body) {
+    public SessionTerminationMessage createUserTerminateSessions(CreateUserTerminateSessionsRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -30,10 +30,10 @@ public with sharing class BoxSessionTermination {
     /**
      * `POST /groups/terminate_sessions`
      *
-     * @param body the request body (`GroupTerminateSessionsCreateRequest`)
+     * @param body the request body (`CreateGroupTerminateSessionsRequest`)
      * @return `SessionTerminationMessage`
      */
-    public SessionTerminationMessage createGroupTerminateSessions(GroupTerminateSessionsCreateRequest body) {
+    public SessionTerminationMessage createGroupTerminateSessions(CreateGroupTerminateSessionsRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

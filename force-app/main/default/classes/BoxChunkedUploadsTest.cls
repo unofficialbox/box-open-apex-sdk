@@ -7,9 +7,9 @@ private class BoxChunkedUploadsTest {
         BoxChunkedUploads svc = new BoxChunkedUploads(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.createFileUploadSession(new FileUploadSessionCreateRequest());
+        svc.createFileUploadSession(new CreateFileUploadSessionRequest());
         mock.body = '{}';
-        svc.createFileVersionUploadSession('x', new FileVersionUploadSessionCreateRequest());
+        svc.createFileVersionUploadSession('x', new CreateFileVersionUploadSessionRequest());
         mock.body = '{}';
         svc.getFileUploadSession('x');
         mock.body = '{}';
@@ -19,7 +19,7 @@ private class BoxChunkedUploadsTest {
         mock.body = '{}';
         svc.listFileUploadSessionParts('x', 1, 1);
         mock.body = '{}';
-        svc.commitFileUploadSession('x', 'x', 'x', 'x', new FileUploadSessionCommitRequest());
+        svc.commitFileUploadSession('x', 'x', 'x', 'x', new CommitFileUploadSessionRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

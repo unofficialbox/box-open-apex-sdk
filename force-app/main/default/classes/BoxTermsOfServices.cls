@@ -30,10 +30,10 @@ public with sharing class BoxTermsOfServices {
     /**
      * `POST /terms_of_services`
      *
-     * @param body the request body (`TermsOfServiceCreateRequest`)
+     * @param body the request body (`CreateTermsOfServiceRequest`)
      * @return `TermsOfService`
      */
-    public TermsOfService create(TermsOfServiceCreateRequest body) {
+    public TermsOfService create(CreateTermsOfServiceRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -62,10 +62,10 @@ public with sharing class BoxTermsOfServices {
      * `PUT /terms_of_services/{terms_of_service_id}`
      *
      * @param termsOfServiceId path parameter
-     * @param body the request body (`TermsOfServiceUpdateRequest`)
+     * @param body the request body (`UpdateTermsOfServiceRequest`)
      * @return `TermsOfService`
      */
-    public TermsOfService update_r(String termsOfServiceId, TermsOfServiceUpdateRequest body) {
+    public TermsOfService update_r(String termsOfServiceId, UpdateTermsOfServiceRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

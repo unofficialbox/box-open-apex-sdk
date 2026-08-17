@@ -17,10 +17,10 @@ public with sharing class BoxTransfer {
      * @param userId path parameter
      * @param fields query parameter, optional
      * @param notify query parameter, optional
-     * @param body the request body (`UserFolder0UpdateRequest`)
+     * @param body the request body (`TransferFoldersRequest`)
      * @return `FolderFull`
      */
-    public FolderFull transferFolders(String userId, List<String> fields, Boolean notify, UserFolder0UpdateRequest body) {
+    public FolderFull transferFolders(String userId, List<String> fields, Boolean notify, TransferFoldersRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

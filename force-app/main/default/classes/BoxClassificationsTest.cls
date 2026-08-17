@@ -9,11 +9,11 @@ private class BoxClassificationsTest {
         mock.body = '{}';
         svc.get();
         mock.body = '{}';
-        svc.updateAdd(new List<ClassificationUpdateRequest>());
+        svc.updateAdd(new List<UpdateClassificationAddRequest>());
         mock.body = '{}';
-        svc.updateUpdate(new List<ClassificationUpdateRequest2>());
+        svc.updateUpdate(new List<UpdateClassificationUpdateRequest>());
         mock.body = '{}';
-        svc.createMetadataTemplateSchemaClassifications(new MetadataTemplateSchemaCreateRequest());
+        svc.createMetadataTemplateSchemaClassifications(new CreateMetadataTemplateSchemaClas_b112153());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

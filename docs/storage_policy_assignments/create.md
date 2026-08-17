@@ -12,7 +12,7 @@ in the org namespace. Construct the entry-point client once:
 Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 ```
 
-**SDK types used:** `Box`, `BoxStoragePolicyAssignments`, `StoragePolicyAssignmentCreateRequest`, `StoragePolicyAssignment`
+**SDK types used:** `Box`, `BoxStoragePolicyAssignments`, `CreateStoragePolicyAssignmentRequest`, `StoragePolicyAssignment`
 
 ## Parameters
 
@@ -20,7 +20,7 @@ _None._
 
 ## Request body
 
-`StoragePolicyAssignmentCreateRequest`
+`CreateStoragePolicyAssignmentRequest`
 
 ## Returns
 

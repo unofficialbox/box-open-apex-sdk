@@ -39,9 +39,9 @@ public with sharing class BoxWorkflows {
      * `POST /workflows/{workflow_id}/start`
      *
      * @param workflowId path parameter
-     * @param body the request body (`WorkflowStartRequest`)
+     * @param body the request body (`StartWorkflowRequest`)
      */
-    public void start(String workflowId, WorkflowStartRequest body) {
+    public void start(String workflowId, StartWorkflowRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

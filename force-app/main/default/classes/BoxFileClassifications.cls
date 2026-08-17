@@ -32,10 +32,10 @@ public with sharing class BoxFileClassifications {
      * `PUT /files/{file_id}/metadata/enterprise/securityClassification-6VMVochwUWo`
      *
      * @param fileId path parameter
-     * @param body the request body (`List<FileClassificationUpdateRequest>`)
+     * @param body the request body (`List<UpdateFileClassificationRequest>`)
      * @return `Classification`
      */
-    public Classification update_r(String fileId, List<FileClassificationUpdateRequest> body) {
+    public Classification update_r(String fileId, List<UpdateFileClassificationRequest> body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -45,7 +45,7 @@ public with sharing class BoxFileClassifications {
                 List<Object> wLst0 = (List<Object>) wireBody;
                 for (Integer wIdx0 = 0; wIdx0 < wLst0.size(); wIdx0++) {
                     Object wElem0 = wLst0[wIdx0];
-            if (wElem0 instanceof Map<String, Object>) wElem0 = FileClassificationUpdateRequest.denormalizeKeys((Map<String, Object>) wElem0);
+            if (wElem0 instanceof Map<String, Object>) wElem0 = UpdateFileClassificationRequest.denormalizeKeys((Map<String, Object>) wElem0);
                     wLst0[wIdx0] = wElem0;
                 }
             }
@@ -61,16 +61,16 @@ public with sharing class BoxFileClassifications {
      * `POST /files/{file_id}/metadata/enterprise/securityClassification-6VMVochwUWo`
      *
      * @param fileId path parameter
-     * @param body the request body (`FileClassificationCreateRequest`)
+     * @param body the request body (`CreateFileClassificationRequest`)
      * @return `Classification`
      */
-    public Classification create(String fileId, FileClassificationCreateRequest body) {
+    public Classification create(String fileId, CreateFileClassificationRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
         request.path = '/' + 'files' + '/' + fileId + '/' + 'metadata' + '/' + 'enterprise' + '/' + 'securityClassification-6VMVochwUWo';
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = FileClassificationCreateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = CreateFileClassificationRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);

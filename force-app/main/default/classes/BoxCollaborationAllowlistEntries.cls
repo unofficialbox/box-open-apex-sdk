@@ -18,7 +18,7 @@ public with sharing class BoxCollaborationAllowlistEntries {
      * @param limit_r query parameter, optional
      * @return `CollaborationAllowlistEntries`
      */
-    public CollaborationAllowlistEntries listCollaborationWhitelistEntries(String marker, Long limit_r) {
+    public CollaborationAllowlistEntries list_r(String marker, Long limit_r) {
         BoxRequest request = new BoxRequest();
         request.method = 'GET';
         request.baseUrl = 'api';
@@ -34,10 +34,10 @@ public with sharing class BoxCollaborationAllowlistEntries {
     /**
      * `POST /collaboration_whitelist_entries`
      *
-     * @param body the request body (`CollaborationWhitelistEntriesCre_349462e`)
+     * @param body the request body (`CreateCollaborationAllowlistEntryRequest`)
      * @return `CollaborationAllowlistEntry`
      */
-    public CollaborationAllowlistEntry createCollaborationWhitelistEntries(CollaborationWhitelistEntriesCre_349462e body) {
+    public CollaborationAllowlistEntry create(CreateCollaborationAllowlistEntryRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -53,7 +53,7 @@ public with sharing class BoxCollaborationAllowlistEntries {
      * @param collaborationWhitelistEntryId path parameter
      * @return `CollaborationAllowlistEntry`
      */
-    public CollaborationAllowlistEntry getCollaborationWhitelistEntry(String collaborationWhitelistEntryId) {
+    public CollaborationAllowlistEntry get(String collaborationWhitelistEntryId) {
         BoxRequest request = new BoxRequest();
         request.method = 'GET';
         request.baseUrl = 'api';
@@ -67,7 +67,7 @@ public with sharing class BoxCollaborationAllowlistEntries {
      *
      * @param collaborationWhitelistEntryId path parameter
      */
-    public void deleteCollaborationWhitelistEntry(String collaborationWhitelistEntryId) {
+    public void delete_r(String collaborationWhitelistEntryId) {
         BoxRequest request = new BoxRequest();
         request.method = 'DELETE';
         request.baseUrl = 'api';

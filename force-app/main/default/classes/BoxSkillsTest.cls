@@ -9,13 +9,13 @@ private class BoxSkillsTest {
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';
-        svc.update_r('x', new List<SkillUpdateRequest>());
+        svc.update_r('x', new List<UpdateSkillRequest>());
         mock.body = '{}';
-        svc.create('x', new SkillCreateRequest());
+        svc.create('x', new CreateSkillRequest());
         mock.body = '{}';
         svc.delete_r('x');
         mock.body = '{}';
-        svc.updateSkillInvocation('x', new SkillInvocationUpdateRequest());
+        svc.updateSkillInvocation('x', new UpdateSkillInvocationRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

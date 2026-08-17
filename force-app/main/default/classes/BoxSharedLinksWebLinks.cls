@@ -53,17 +53,17 @@ public with sharing class BoxSharedLinksWebLinks {
      *
      * @param webLinkId path parameter
      * @param fields query parameter
-     * @param body the request body (`FileUpdateRequest2`)
+     * @param body the request body (`UpdateFileAddSharedLinkRequest`)
      * @return `WebLink`
      */
-    public WebLink updateWebLinkAddSharedLink(String webLinkId, String fields, FileUpdateRequest2 body) {
+    public WebLink updateWebLinkAddSharedLink(String webLinkId, String fields, UpdateFileAddSharedLinkRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'web_links' + '/' + webLinkId;
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = FileUpdateRequest2.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateFileAddSharedLinkRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
@@ -75,17 +75,17 @@ public with sharing class BoxSharedLinksWebLinks {
      *
      * @param webLinkId path parameter
      * @param fields query parameter
-     * @param body the request body (`FileUpdateRequest2`)
+     * @param body the request body (`UpdateFileAddSharedLinkRequest`)
      * @return `WebLink`
      */
-    public WebLink updateWebLinkUpdateSharedLink(String webLinkId, String fields, FileUpdateRequest2 body) {
+    public WebLink updateWebLinkUpdateSharedLink(String webLinkId, String fields, UpdateFileAddSharedLinkRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'web_links' + '/' + webLinkId;
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = FileUpdateRequest2.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateFileAddSharedLinkRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
@@ -97,17 +97,17 @@ public with sharing class BoxSharedLinksWebLinks {
      *
      * @param webLinkId path parameter
      * @param fields query parameter
-     * @param body the request body (`FileUpdateRequest3`)
+     * @param body the request body (`UpdateFileRemoveSharedLinkRequest`)
      * @return `WebLink`
      */
-    public WebLink updateWebLinkRemoveSharedLink(String webLinkId, String fields, FileUpdateRequest3 body) {
+    public WebLink updateWebLinkRemoveSharedLink(String webLinkId, String fields, UpdateFileRemoveSharedLinkRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'web_links' + '/' + webLinkId;
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = FileUpdateRequest3.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateFileRemoveSharedLinkRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);

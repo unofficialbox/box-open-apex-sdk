@@ -40,16 +40,16 @@ public with sharing class BoxRetentionPolicyAssignments {
     /**
      * `POST /retention_policy_assignments`
      *
-     * @param body the request body (`RetentionPolicyAssignmentCreateRequest`)
+     * @param body the request body (`CreateRetentionPolicyAssignmentRequest`)
      * @return `RetentionPolicyAssignment`
      */
-    public RetentionPolicyAssignment create(RetentionPolicyAssignmentCreateRequest body) {
+    public RetentionPolicyAssignment create(CreateRetentionPolicyAssignmentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
         request.path = '/' + 'retention_policy_assignments';
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = RetentionPolicyAssignmentCreateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = CreateRetentionPolicyAssignmentRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);

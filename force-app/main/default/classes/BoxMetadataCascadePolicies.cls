@@ -38,10 +38,10 @@ public with sharing class BoxMetadataCascadePolicies {
     /**
      * `POST /metadata_cascade_policies`
      *
-     * @param body the request body (`MetadataCascadePolicyCreateRequest`)
+     * @param body the request body (`CreateMetadataCascadePolicyRequest`)
      * @return `MetadataCascadePolicy`
      */
-    public MetadataCascadePolicy create(MetadataCascadePolicyCreateRequest body) {
+    public MetadataCascadePolicy create(CreateMetadataCascadePolicyRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -83,9 +83,9 @@ public with sharing class BoxMetadataCascadePolicies {
      * `POST /metadata_cascade_policies/{metadata_cascade_policy_id}/apply`
      *
      * @param metadataCascadePolicyId path parameter
-     * @param body the request body (`MetadataCascadePolicyApplyRequest`)
+     * @param body the request body (`ApplyMetadataCascadePolicyRequest`)
      */
-    public void apply(String metadataCascadePolicyId, MetadataCascadePolicyApplyRequest body) {
+    public void apply(String metadataCascadePolicyId, ApplyMetadataCascadePolicyRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

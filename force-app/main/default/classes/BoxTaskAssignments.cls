@@ -29,10 +29,10 @@ public with sharing class BoxTaskAssignments {
     /**
      * `POST /task_assignments`
      *
-     * @param body the request body (`TaskAssignmentCreateRequest`)
+     * @param body the request body (`CreateTaskAssignmentRequest`)
      * @return `TaskAssignment`
      */
-    public TaskAssignment create(TaskAssignmentCreateRequest body) {
+    public TaskAssignment create(CreateTaskAssignmentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -61,10 +61,10 @@ public with sharing class BoxTaskAssignments {
      * `PUT /task_assignments/{task_assignment_id}`
      *
      * @param taskAssignmentId path parameter
-     * @param body the request body (`TaskAssignmentUpdateRequest`)
+     * @param body the request body (`UpdateTaskAssignmentRequest`)
      * @return `TaskAssignment`
      */
-    public TaskAssignment update_r(String taskAssignmentId, TaskAssignmentUpdateRequest body) {
+    public TaskAssignment update_r(String taskAssignmentId, UpdateTaskAssignmentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

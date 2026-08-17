@@ -7,7 +7,7 @@ private class BoxTransferTest {
         BoxTransfer svc = new BoxTransfer(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.transferFolders('x', new List<String>(), true, new UserFolder0UpdateRequest());
+        svc.transferFolders('x', new List<String>(), true, new TransferFoldersRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

@@ -9,13 +9,13 @@ private class BoxShieldInformationBarrierSegmentsTest {
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';
-        svc.update_r('x', new ShieldInformationBarrierSegmentU_68a0870());
+        svc.update_r('x', new UpdateShieldInformationBarrierSe_5c69c96());
         mock.body = '{}';
         svc.delete_r('x');
         mock.body = '{}';
         svc.list_r('x', 'x', 1);
         mock.body = '{}';
-        svc.create(new ShieldInformationBarrierSegmentC_102282f());
+        svc.create(new CreateShieldInformationBarrierSe_6d34813());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

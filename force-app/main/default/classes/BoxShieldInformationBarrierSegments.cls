@@ -30,16 +30,16 @@ public with sharing class BoxShieldInformationBarrierSegments {
      * `PUT /shield_information_barrier_segments/{shield_information_barrier_segment_id}`
      *
      * @param shieldInformationBarrierSegmentId path parameter
-     * @param body the request body (`ShieldInformationBarrierSegmentU_68a0870`)
+     * @param body the request body (`UpdateShieldInformationBarrierSe_5c69c96`)
      * @return `ShieldInformationBarrierSegment`
      */
-    public ShieldInformationBarrierSegment update_r(String shieldInformationBarrierSegmentId, ShieldInformationBarrierSegmentU_68a0870 body) {
+    public ShieldInformationBarrierSegment update_r(String shieldInformationBarrierSegmentId, UpdateShieldInformationBarrierSe_5c69c96 body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'shield_information_barrier_segments' + '/' + shieldInformationBarrierSegmentId;
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = ShieldInformationBarrierSegmentU_68a0870.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateShieldInformationBarrierSe_5c69c96.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
@@ -84,10 +84,10 @@ public with sharing class BoxShieldInformationBarrierSegments {
     /**
      * `POST /shield_information_barrier_segments`
      *
-     * @param body the request body (`ShieldInformationBarrierSegmentC_102282f`)
+     * @param body the request body (`CreateShieldInformationBarrierSe_6d34813`)
      * @return `ShieldInformationBarrierSegment`
      */
-    public ShieldInformationBarrierSegment create(ShieldInformationBarrierSegmentC_102282f body) {
+    public ShieldInformationBarrierSegment create(CreateShieldInformationBarrierSe_6d34813 body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

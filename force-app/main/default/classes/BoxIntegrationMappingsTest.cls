@@ -11,7 +11,7 @@ private class BoxIntegrationMappingsTest {
         mock.body = '{}';
         svc.createSlack(new IntegrationMappingSlackCreateRequest());
         mock.body = '{}';
-        svc.updateSlack('x', new SlackUpdateRequest());
+        svc.updateSlack('x', new UpdateSlackRequest());
         mock.body = '{}';
         svc.deleteSlack('x');
         mock.body = '{}';
@@ -19,7 +19,7 @@ private class BoxIntegrationMappingsTest {
         mock.body = '{}';
         svc.createTeams(new IntegrationMappingTeamsCreateRequest());
         mock.body = '{}';
-        svc.updateTeam('x', new TeamUpdateRequest());
+        svc.updateTeam('x', new UpdateTeamRequest());
         mock.body = '{}';
         svc.deleteTeam('x');
         Test.stopTest();

@@ -12,7 +12,7 @@ in the org namespace. Construct the entry-point client once:
 Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 ```
 
-**SDK types used:** `Box`, `BoxMetadataTaxonomies`, `MetadataTaxonomyCreateRequest`, `MetadataTaxonomy`
+**SDK types used:** `Box`, `BoxMetadataTaxonomies`, `CreateMetadataTaxonomyRequest`, `MetadataTaxonomy`
 
 ## Parameters
 
@@ -20,7 +20,7 @@ _None._
 
 ## Request body
 
-`MetadataTaxonomyCreateRequest`
+`CreateMetadataTaxonomyRequest`
 
 ## Returns
 

@@ -11,11 +11,11 @@ private class BoxSharedLinksFilesTest {
         mock.body = '{}';
         svc.getFileGetSharedLink('x', 'x');
         mock.body = '{}';
-        svc.updateFileAddSharedLink('x', 'x', new FileUpdateRequest2());
+        svc.updateFileAddSharedLink('x', 'x', new UpdateFileAddSharedLinkRequest());
         mock.body = '{}';
-        svc.updateFileUpdateSharedLink('x', 'x', new FileUpdateRequest2());
+        svc.updateFileUpdateSharedLink('x', 'x', new UpdateFileAddSharedLinkRequest());
         mock.body = '{}';
-        svc.updateFileRemoveSharedLink('x', 'x', new FileUpdateRequest3());
+        svc.updateFileRemoveSharedLink('x', 'x', new UpdateFileRemoveSharedLinkRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

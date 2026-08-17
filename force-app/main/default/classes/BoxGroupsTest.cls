@@ -9,11 +9,11 @@ private class BoxGroupsTest {
         mock.body = '{}';
         svc.list_r('x', new List<String>(), 1, 1);
         mock.body = '{}';
-        svc.create(new List<String>(), new GroupCreateRequest());
+        svc.create(new List<String>(), new CreateGroupRequest());
         mock.body = '{}';
         svc.get('x', new List<String>());
         mock.body = '{}';
-        svc.update_r('x', new List<String>(), new GroupUpdateRequest());
+        svc.update_r('x', new List<String>(), new UpdateGroupRequest());
         mock.body = '{}';
         svc.delete_r('x');
         Test.stopTest();

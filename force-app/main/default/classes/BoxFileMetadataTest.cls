@@ -11,7 +11,7 @@ private class BoxFileMetadataTest {
         mock.body = '{}';
         svc.getFileMetadata('x', 'x', 'x', 'x');
         mock.body = '{}';
-        svc.updateFileMetadata('x', 'x', 'x', new List<FileMetadataUpdateRequest>());
+        svc.updateFileMetadata('x', 'x', 'x', new List<UpdateFileMetadataRequest>());
         mock.body = '{}';
         svc.createFileMetadata('x', 'x', 'x', new Map<String, Object>());
         mock.body = '{}';

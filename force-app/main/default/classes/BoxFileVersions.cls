@@ -57,16 +57,16 @@ public with sharing class BoxFileVersions {
      *
      * @param fileId path parameter
      * @param fileVersionId path parameter
-     * @param body the request body (`FileVersionUpdateRequest`)
+     * @param body the request body (`UpdateFileVersionRequest`)
      * @return `FileVersionFull`
      */
-    public FileVersionFull updateFileVersion(String fileId, String fileVersionId, FileVersionUpdateRequest body) {
+    public FileVersionFull updateFileVersion(String fileId, String fileVersionId, UpdateFileVersionRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'files' + '/' + fileId + '/' + 'versions' + '/' + fileVersionId;
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = FileVersionUpdateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateFileVersionRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
@@ -94,10 +94,10 @@ public with sharing class BoxFileVersions {
      *
      * @param fileId path parameter
      * @param fields query parameter, optional
-     * @param body the request body (`FileVersionCurrentCreateRequest`)
+     * @param body the request body (`CreateFileVersionCurrentRequest`)
      * @return `FileVersionFull`
      */
-    public FileVersionFull createFileVersionCurrent(String fileId, List<String> fields, FileVersionCurrentCreateRequest body) {
+    public FileVersionFull createFileVersionCurrent(String fileId, List<String> fields, CreateFileVersionCurrentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

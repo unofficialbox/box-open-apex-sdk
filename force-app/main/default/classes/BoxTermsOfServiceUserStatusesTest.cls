@@ -9,9 +9,9 @@ private class BoxTermsOfServiceUserStatusesTest {
         mock.body = '{}';
         svc.list_r('x', 'x');
         mock.body = '{}';
-        svc.create(new TermsOfServiceUserStatuseCreateRequest());
+        svc.create(new CreateTermsOfServiceUserStatusRequest());
         mock.body = '{}';
-        svc.update_r('x', new TermsOfServiceUserStatuseUpdateRequest());
+        svc.update_r('x', new UpdateTermsOfServiceUserStatusRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

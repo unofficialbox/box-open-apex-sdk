@@ -44,8 +44,9 @@ public class MetadataQuery {
     }
     /** Build `MetadataQuery` from the untyped JSON tree. Apex's typed
      * `JSON.deserialize` can't populate an `Object` field (a union or
-     * free-form JSON), so those are detached, the typed shell is
-     * deserialized, then they are reattached from the raw tree (D-140). */
+     * free-form JSON) or an open extra bag, so those are detached, the
+     * typed shell is deserialized, then they are reattached from the
+     * raw tree (D-140). */
     public static MetadataQuery deserialize(Object rawInput) {
         if (rawInput == null) return null;
         Map<String, Object> raw = ((Map<String, Object>) rawInput).clone();

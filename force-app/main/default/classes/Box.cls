@@ -104,6 +104,8 @@ public with sharing class Box {
     public final BoxMetadataTemplates metadataTemplates;
     /** The `notes` resource manager. */
     public final BoxNotes notes;
+    /** The `query` resource manager. */
+    public final BoxQuery query;
     /** The `recentItems` resource manager. */
     public final BoxRecentItems recentItems;
     /** The `retentionPolicies` resource manager. */
@@ -227,6 +229,7 @@ public with sharing class Box {
         this.metadataTaxonomies = new BoxMetadataTaxonomies(client);
         this.metadataTemplates = new BoxMetadataTemplates(client);
         this.notes = new BoxNotes(client);
+        this.query = new BoxQuery(client);
         this.recentItems = new BoxRecentItems(client);
         this.retentionPolicies = new BoxRetentionPolicies(client);
         this.retentionPolicyAssignments = new BoxRetentionPolicyAssignments(client);

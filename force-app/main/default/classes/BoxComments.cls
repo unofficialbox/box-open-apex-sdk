@@ -56,10 +56,10 @@ public with sharing class BoxComments {
      *
      * @param commentId path parameter
      * @param fields query parameter, optional
-     * @param body the request body (`CommentUpdateRequest`)
+     * @param body the request body (`UpdateCommentRequest`)
      * @return `CommentFull`
      */
-    public CommentFull update_r(String commentId, List<String> fields, CommentUpdateRequest body) {
+    public CommentFull update_r(String commentId, List<String> fields, UpdateCommentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -87,10 +87,10 @@ public with sharing class BoxComments {
      * `POST /comments`
      *
      * @param fields query parameter, optional
-     * @param body the request body (`CommentCreateRequest`)
+     * @param body the request body (`CreateCommentRequest`)
      * @return `CommentFull`
      */
-    public CommentFull create(List<String> fields, CommentCreateRequest body) {
+    public CommentFull create(List<String> fields, CreateCommentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

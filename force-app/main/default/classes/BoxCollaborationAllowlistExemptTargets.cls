@@ -18,7 +18,7 @@ public with sharing class BoxCollaborationAllowlistExemptTargets {
      * @param limit_r query parameter, optional
      * @return `CollaborationAllowlistExemptTargets`
      */
-    public CollaborationAllowlistExemptTargets listCollaborationWhitelistExemptTargets(String marker, Long limit_r) {
+    public CollaborationAllowlistExemptTargets list_r(String marker, Long limit_r) {
         BoxRequest request = new BoxRequest();
         request.method = 'GET';
         request.baseUrl = 'api';
@@ -34,10 +34,10 @@ public with sharing class BoxCollaborationAllowlistExemptTargets {
     /**
      * `POST /collaboration_whitelist_exempt_targets`
      *
-     * @param body the request body (`CollaborationWhitelistExemptTarg_1123717`)
+     * @param body the request body (`CreateCollaborationAllowlistExem_064059e`)
      * @return `CollaborationAllowlistExemptTarget`
      */
-    public CollaborationAllowlistExemptTarget createCollaborationWhitelistExemptTargets(CollaborationWhitelistExemptTarg_1123717 body) {
+    public CollaborationAllowlistExemptTarget create(CreateCollaborationAllowlistExem_064059e body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -53,7 +53,7 @@ public with sharing class BoxCollaborationAllowlistExemptTargets {
      * @param collaborationWhitelistExemptTargetId path parameter
      * @return `CollaborationAllowlistExemptTarget`
      */
-    public CollaborationAllowlistExemptTarget getCollaborationWhitelistExemptTarget(String collaborationWhitelistExemptTargetId) {
+    public CollaborationAllowlistExemptTarget get(String collaborationWhitelistExemptTargetId) {
         BoxRequest request = new BoxRequest();
         request.method = 'GET';
         request.baseUrl = 'api';
@@ -67,7 +67,7 @@ public with sharing class BoxCollaborationAllowlistExemptTargets {
      *
      * @param collaborationWhitelistExemptTargetId path parameter
      */
-    public void deleteCollaborationWhitelistExemptTarget(String collaborationWhitelistExemptTargetId) {
+    public void delete_r(String collaborationWhitelistExemptTargetId) {
         BoxRequest request = new BoxRequest();
         request.method = 'DELETE';
         request.baseUrl = 'api';

@@ -35,10 +35,10 @@ public with sharing class BoxUserCollaborations {
      * `PUT /collaborations/{collaboration_id}`
      *
      * @param collaborationId path parameter
-     * @param body the request body (`CollaborationUpdateRequest`)
+     * @param body the request body (`UpdateCollaborationRequest`)
      * @return `Collaboration`
      */
-    public Collaboration updateCollaboration(String collaborationId, CollaborationUpdateRequest body) {
+    public Collaboration updateCollaboration(String collaborationId, UpdateCollaborationRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -69,10 +69,10 @@ public with sharing class BoxUserCollaborations {
      *
      * @param fields query parameter, optional
      * @param notify query parameter, optional
-     * @param body the request body (`CollaborationsCreateRequest`)
+     * @param body the request body (`CreateCollaborationsRequest`)
      * @return `Collaboration`
      */
-    public Collaboration createCollaborations(List<String> fields, Boolean notify, CollaborationsCreateRequest body) {
+    public Collaboration createCollaborations(List<String> fields, Boolean notify, CreateCollaborationsRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

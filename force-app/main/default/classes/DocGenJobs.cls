@@ -3,10 +3,7 @@
  * carry their wire (JSON) name in a trailing comment.
  * Some fields rename between the wire and Apex, so this class carries
  * `normalizeKeys`/`denormalizeKeys` (used by the managers) to remap
- * JSON keys around native (de)serialization.
- * Some fields are `Object` (a union or free-form JSON), which native
- * `JSON.deserialize` can't populate, so this class carries a static
- * `deserialize(Object)` the managers call to read a response (D-140). */
+ * JSON keys around native (de)serialization. */
 public class DocGenJobs {
     public Long limit_r; // wire: limit
     public String next_marker; // wire: next_marker
@@ -29,27 +26,5 @@ public class DocGenJobs {
             raw.put('limit', v);
         }
         return raw;
-    }
-    /** Build `DocGenJobs` from the untyped JSON tree. Apex's typed
-     * `JSON.deserialize` can't populate an `Object` field (a union or
-     * free-form JSON), so those are detached, the typed shell is
-     * deserialized, then they are reattached from the raw tree (D-140). */
-    public static DocGenJobs deserialize(Object rawInput) {
-        if (rawInput == null) return null;
-        Map<String, Object> raw = ((Map<String, Object>) rawInput).clone();
-        Object d_entries = raw.remove('entries');
-        DocGenJobs result = (DocGenJobs) JSON.deserialize(JSON.serialize(DocGenJobs.normalizeKeys(raw)), DocGenJobs.class);
-        if (d_entries == null) {
-            result.entries = null;
-        } else {
-            List<DocGenJob> dLst0 = new List<DocGenJob>();
-            for (Object dEl0 : (List<Object>) d_entries) {
-                DocGenJob dEv0;
-        dEv0 = DocGenJob.deserialize(dEl0);
-                dLst0.add(dEv0);
-            }
-            result.entries = dLst0;
-        }
-        return result;
     }
 }

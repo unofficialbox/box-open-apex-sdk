@@ -9,9 +9,9 @@ private class BoxArchivesTest {
         mock.body = '{}';
         svc.list_r(1, 'x');
         mock.body = '{}';
-        svc.create(new ArchiveCreateRequest());
+        svc.create(new CreateArchiveRequest());
         mock.body = '{}';
-        svc.update_r('x', new ArchiveUpdateRequest());
+        svc.update_r('x', new UpdateArchiveRequest());
         mock.body = '{}';
         svc.delete_r('x');
         Test.stopTest();

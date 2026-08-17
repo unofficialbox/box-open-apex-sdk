@@ -47,17 +47,17 @@ public with sharing class BoxUsers {
      * `POST /users`
      *
      * @param fields query parameter, optional
-     * @param body the request body (`UserCreateRequest`)
+     * @param body the request body (`CreateUserRequest`)
      * @return `UserFull`
      */
-    public UserFull create(List<String> fields, UserCreateRequest body) {
+    public UserFull create(List<String> fields, CreateUserRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
         request.path = '/' + 'users';
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = UserCreateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = CreateUserRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
@@ -108,17 +108,17 @@ public with sharing class BoxUsers {
      *
      * @param userId path parameter
      * @param fields query parameter, optional
-     * @param body the request body (`UserUpdateRequest`)
+     * @param body the request body (`UpdateUserRequest`)
      * @return `UserFull`
      */
-    public UserFull update_r(String userId, List<String> fields, UserUpdateRequest body) {
+    public UserFull update_r(String userId, List<String> fields, UpdateUserRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'users' + '/' + userId;
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = UserUpdateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateUserRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);

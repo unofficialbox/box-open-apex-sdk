@@ -11,7 +11,7 @@ private class BoxMetadataTemplatesTest {
         mock.body = '{}';
         svc.getSchema('x', 'x');
         mock.body = '{}';
-        svc.updateSchema('x', 'x', new List<SchemaUpdateRequest>());
+        svc.updateSchema('x', 'x', new List<UpdateSchemaRequest>());
         mock.body = '{}';
         svc.deleteSchema('x', 'x');
         mock.body = '{}';
@@ -21,7 +21,7 @@ private class BoxMetadataTemplatesTest {
         mock.body = '{}';
         svc.listEnterprise('x', 1);
         mock.body = '{}';
-        svc.createSchema(new SchemaCreateRequest());
+        svc.createSchema(new CreateSchemaRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

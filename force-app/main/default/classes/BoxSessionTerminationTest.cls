@@ -7,9 +7,9 @@ private class BoxSessionTerminationTest {
         BoxSessionTermination svc = new BoxSessionTermination(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.createUserTerminateSessions(new UserTerminateSessionsCreateRequest());
+        svc.createUserTerminateSessions(new CreateUserTerminateSessionsRequest());
         mock.body = '{}';
-        svc.createGroupTerminateSessions(new GroupTerminateSessionsCreateRequest());
+        svc.createGroupTerminateSessions(new CreateGroupTerminateSessionsRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

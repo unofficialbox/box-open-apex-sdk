@@ -36,10 +36,10 @@ public with sharing class BoxStoragePolicyAssignments {
     /**
      * `POST /storage_policy_assignments`
      *
-     * @param body the request body (`StoragePolicyAssignmentCreateRequest`)
+     * @param body the request body (`CreateStoragePolicyAssignmentRequest`)
      * @return `StoragePolicyAssignment`
      */
-    public StoragePolicyAssignment create(StoragePolicyAssignmentCreateRequest body) {
+    public StoragePolicyAssignment create(CreateStoragePolicyAssignmentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -68,10 +68,10 @@ public with sharing class BoxStoragePolicyAssignments {
      * `PUT /storage_policy_assignments/{storage_policy_assignment_id}`
      *
      * @param storagePolicyAssignmentId path parameter
-     * @param body the request body (`StoragePolicyAssignmentUpdateRequest`)
+     * @param body the request body (`UpdateStoragePolicyAssignmentRequest`)
      * @return `StoragePolicyAssignment`
      */
-    public StoragePolicyAssignment update_r(String storagePolicyAssignmentId, StoragePolicyAssignmentUpdateRequest body) {
+    public StoragePolicyAssignment update_r(String storagePolicyAssignmentId, UpdateStoragePolicyAssignmentRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

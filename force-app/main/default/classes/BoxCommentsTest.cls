@@ -11,11 +11,11 @@ private class BoxCommentsTest {
         mock.body = '{}';
         svc.get('x', new List<String>());
         mock.body = '{}';
-        svc.update_r('x', new List<String>(), new CommentUpdateRequest());
+        svc.update_r('x', new List<String>(), new UpdateCommentRequest());
         mock.body = '{}';
         svc.delete_r('x');
         mock.body = '{}';
-        svc.create(new List<String>(), new CommentCreateRequest());
+        svc.create(new List<String>(), new CreateCommentRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

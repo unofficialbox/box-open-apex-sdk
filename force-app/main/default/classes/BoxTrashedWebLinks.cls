@@ -16,10 +16,10 @@ public with sharing class BoxTrashedWebLinks {
      *
      * @param webLinkId path parameter
      * @param fields query parameter, optional
-     * @param body the request body (`FileCreateRequest`)
+     * @param body the request body (`CreateFileRequest`)
      * @return `TrashWebLinkRestored`
      */
-    public TrashWebLinkRestored createWebLink(String webLinkId, List<String> fields, FileCreateRequest body) {
+    public TrashWebLinkRestored createWebLink(String webLinkId, List<String> fields, CreateFileRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

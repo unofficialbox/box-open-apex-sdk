@@ -7,7 +7,7 @@
 |---|---|---|---|
 | [`listUser`](listUser.md) | `GET` | `/users/{user_id}/memberships` | yes |
 | [`listGroup`](listGroup.md) | `GET` | `/groups/{group_id}/memberships` | yes |
-| [`createGroup`](createGroup.md) | `POST` | `/group_memberships` |  |
-| [`getGroup`](getGroup.md) | `GET` | `/group_memberships/{group_membership_id}` |  |
-| [`updateGroup`](updateGroup.md) | `PUT` | `/group_memberships/{group_membership_id}` |  |
-| [`deleteGroup`](deleteGroup.md) | `DELETE` | `/group_memberships/{group_membership_id}` |  |
+| [`createGroupMembership`](createGroupMembership.md) | `POST` | `/group_memberships` |  |
+| [`getGroupMembership`](getGroupMembership.md) | `GET` | `/group_memberships/{group_membership_id}` |  |
+| [`updateGroupMembership`](updateGroupMembership.md) | `PUT` | `/group_memberships/{group_membership_id}` |  |
+| [`deleteGroupMembership`](deleteGroupMembership.md) | `DELETE` | `/group_memberships/{group_membership_id}` |  |

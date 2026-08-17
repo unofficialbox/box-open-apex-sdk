@@ -15,10 +15,10 @@ public with sharing class BoxInvites {
      * `POST /invites`
      *
      * @param fields query parameter, optional
-     * @param body the request body (`InviteCreateRequest`)
+     * @param body the request body (`CreateInviteRequest`)
      * @return `Invite`
      */
-    public Invite create(List<String> fields, InviteCreateRequest body) {
+    public Invite create(List<String> fields, CreateInviteRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

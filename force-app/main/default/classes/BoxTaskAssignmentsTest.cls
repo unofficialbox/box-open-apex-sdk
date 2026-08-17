@@ -9,11 +9,11 @@ private class BoxTaskAssignmentsTest {
         mock.body = '{}';
         svc.listTaskAssignments('x');
         mock.body = '{}';
-        svc.create(new TaskAssignmentCreateRequest());
+        svc.create(new CreateTaskAssignmentRequest());
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';
-        svc.update_r('x', new TaskAssignmentUpdateRequest());
+        svc.update_r('x', new UpdateTaskAssignmentRequest());
         mock.body = '{}';
         svc.delete_r('x');
         Test.stopTest();

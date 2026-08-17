@@ -7,7 +7,7 @@ private class BoxTrashedWebLinksTest {
         BoxTrashedWebLinks svc = new BoxTrashedWebLinks(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.createWebLink('x', new List<String>(), new FileCreateRequest());
+        svc.createWebLink('x', new List<String>(), new CreateFileRequest());
         mock.body = '{}';
         svc.getWebLinkTrash('x', new List<String>());
         mock.body = '{}';

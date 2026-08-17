@@ -12,7 +12,7 @@ in the org namespace. Construct the entry-point client once:
 Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 ```
 
-**SDK types used:** `Box`, `BoxAvatars`, `UserAvatarCreateRequest`, `UserAvatar`
+**SDK types used:** `Box`, `BoxAvatars`, `CreateUserAvatarRequest`, `UserAvatar`
 
 ## Parameters
 
@@ -22,7 +22,7 @@ Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 
 ## Request body
 
-`UserAvatarCreateRequest`
+`CreateUserAvatarRequest`
 
 ## Returns
 

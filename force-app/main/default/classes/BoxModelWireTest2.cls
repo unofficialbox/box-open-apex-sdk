@@ -7,6 +7,11 @@ private class BoxModelWireTest2 {
     @isTest
     static void exercisesModelWireHooks() {
         Test.startTest();
+        FileVersionRetentions.normalizeKeys(null);
+        FileVersionRetentions.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
+        FileVersionRetentions.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
+        FileVersionRetentions.deserialize(null);
+        FileVersionRetentions.deserialize(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() } });
         FileVersions.normalizeKeys(null);
         FileVersions.normalizeKeys(new Map<String, Object>{ 'limit' => 'x', 'order' => new List<Object>{ new Map<String, Object>() } });
         FileVersions.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x', 'order' => new List<Object>{ new Map<String, Object>() } });
@@ -30,6 +35,8 @@ private class BoxModelWireTest2 {
         FolderLocks.normalizeKeys(null);
         FolderLocks.normalizeKeys(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() }, 'limit' => 'x' });
         FolderLocks.denormalizeKeys(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() }, 'limit_r' => 'x' });
+        GenericSource.deserialize(null);
+        GenericSource.deserialize(new Map<String, Object>{ '__extra_probe__' => 'x' });
         GroupMembership.normalizeKeys(null);
         GroupMembership.normalizeKeys(new Map<String, Object>{ 'group' => 'x' });
         GroupMembership.denormalizeKeys(new Map<String, Object>{ 'group_r' => 'x' });
@@ -189,11 +196,6 @@ private class BoxModelWireTest2 {
         StoragePolicyAssignments.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
         TemplateSigner.deserialize(null);
         TemplateSigner.deserialize(new Map<String, Object>{ 'inputs' => new List<Object>{ new Map<String, Object>() } });
-        TemplateSignerInput.deserialize(null);
-        TemplateSignerInput.deserialize(new Map<String, Object>{ 'validation' => 'x' });
-        TimelineSkillCard.normalizeKeys(null);
-        TimelineSkillCard.normalizeKeys(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() } });
-        TimelineSkillCard.denormalizeKeys(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() } });
         Test.stopTest();
         System.assert(true, 'every wire static executed without error');
     }

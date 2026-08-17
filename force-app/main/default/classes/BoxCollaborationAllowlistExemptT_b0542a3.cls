@@ -7,13 +7,13 @@ private class BoxCollaborationAllowlistExemptT_b0542a3 {
         BoxCollaborationAllowlistExemptTargets svc = new BoxCollaborationAllowlistExemptTargets(mock);
         Test.startTest();
         mock.body = '{}';
-        svc.listCollaborationWhitelistExemptTargets('x', 1);
+        svc.list_r('x', 1);
         mock.body = '{}';
-        svc.createCollaborationWhitelistExemptTargets(new CollaborationWhitelistExemptTarg_1123717());
+        svc.create(new CreateCollaborationAllowlistExem_064059e());
         mock.body = '{}';
-        svc.getCollaborationWhitelistExemptTarget('x');
+        svc.get('x');
         mock.body = '{}';
-        svc.deleteCollaborationWhitelistExemptTarget('x');
+        svc.delete_r('x');
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

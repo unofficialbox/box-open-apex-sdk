@@ -9,11 +9,11 @@ private class BoxRetentionPoliciesTest {
         mock.body = '{}';
         svc.list_r('x', 'x', 'x', new List<String>(), 1, 'x');
         mock.body = '{}';
-        svc.create(new RetentionPolicyCreateRequest());
+        svc.create(new CreateRetentionPolicyRequest());
         mock.body = '{}';
         svc.get('x', new List<String>());
         mock.body = '{}';
-        svc.update_r('x', new RetentionPolicyUpdateRequest());
+        svc.update_r('x', new UpdateRetentionPolicyRequest());
         mock.body = '{}';
         svc.delete_r('x');
         Test.stopTest();

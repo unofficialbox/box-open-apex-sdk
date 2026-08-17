@@ -3,13 +3,10 @@
  * carry their wire (JSON) name in a trailing comment.
  * Some fields rename between the wire and Apex, so this class carries
  * `normalizeKeys`/`denormalizeKeys` (used by the managers) to remap
- * JSON keys around native (de)serialization.
- * Some fields are `Object` (a union or free-form JSON), which native
- * `JSON.deserialize` can't populate, so this class carries a static
- * `deserialize(Object)` the managers call to read a response (D-140). */
+ * JSON keys around native (de)serialization. */
 public class EnterpriseConfigurationSecurityE_38f4681 {
     public Boolean is_used; // wire: is_used
-    public Object value_r; // wire: value
+    public ExternalCollabSecuritySettings value_r; // wire: value
     /** Wire → Apex: JSON keys for the `EnterpriseConfigurationSecurityE_38f4681` wire shape (see class doc). */
     public static Map<String, Object> normalizeKeys(Map<String, Object> raw) {
         if (raw == null) return null;
@@ -27,17 +24,5 @@ public class EnterpriseConfigurationSecurityE_38f4681 {
             raw.put('value', v);
         }
         return raw;
-    }
-    /** Build `EnterpriseConfigurationSecurityE_38f4681` from the untyped JSON tree. Apex's typed
-     * `JSON.deserialize` can't populate an `Object` field (a union or
-     * free-form JSON), so those are detached, the typed shell is
-     * deserialized, then they are reattached from the raw tree (D-140). */
-    public static EnterpriseConfigurationSecurityE_38f4681 deserialize(Object rawInput) {
-        if (rawInput == null) return null;
-        Map<String, Object> raw = ((Map<String, Object>) rawInput).clone();
-        Object d_value_r = raw.remove('value');
-        EnterpriseConfigurationSecurityE_38f4681 result = (EnterpriseConfigurationSecurityE_38f4681) JSON.deserialize(JSON.serialize(EnterpriseConfigurationSecurityE_38f4681.normalizeKeys(raw)), EnterpriseConfigurationSecurityE_38f4681.class);
-        result.value_r = d_value_r;
-        return result;
     }
 }

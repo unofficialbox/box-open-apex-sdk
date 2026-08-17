@@ -9,13 +9,13 @@ private class BoxUsersTest {
         mock.body = '{}';
         svc.list_r('x', 'x', 'x', new List<String>(), 1, 1, true, 'x');
         mock.body = '{}';
-        svc.create(new List<String>(), new UserCreateRequest());
+        svc.create(new List<String>(), new CreateUserRequest());
         mock.body = '{}';
         svc.getMe(new List<String>());
         mock.body = '{}';
         svc.get('x', new List<String>());
         mock.body = '{}';
-        svc.update_r('x', new List<String>(), new UserUpdateRequest());
+        svc.update_r('x', new List<String>(), new UpdateUserRequest());
         mock.body = '{}';
         svc.delete_r('x', true, true);
         Test.stopTest();

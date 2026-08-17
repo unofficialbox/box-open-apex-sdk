@@ -9,11 +9,11 @@ private class BoxFilesTest {
         mock.body = '{}';
         svc.get('x', new List<String>(), 'x', 'x', 'x');
         mock.body = '{}';
-        svc.update_r('x', new List<String>(), 'x', new FileUpdateRequest());
+        svc.update_r('x', new List<String>(), 'x', new UpdateFileRequest());
         mock.body = '{}';
         svc.delete_r('x', 'x');
         mock.body = '{}';
-        svc.copy('x', new List<String>(), new FileCopyRequest());
+        svc.copy('x', new List<String>(), new CopyFileRequest());
         mock.bodyBlob = Blob.valueOf('x');
         svc.getThumbnail('x', 'x', 1, 1, 1, 1);
         Test.stopTest();

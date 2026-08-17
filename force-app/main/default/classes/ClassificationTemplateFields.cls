@@ -7,5 +7,5 @@ public class ClassificationTemplateFields {
     public String key; // wire: key
     public String displayName; // wire: displayName
     public Boolean hidden; // wire: hidden
-    public List<FieldsOptions2> options; // wire: options
+    public List<ClassificationTemplateFieldsOptions> options; // wire: options
 }

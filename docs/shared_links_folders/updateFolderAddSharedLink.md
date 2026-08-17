@@ -12,7 +12,7 @@ in the org namespace. Construct the entry-point client once:
 Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 ```
 
-**SDK types used:** `Box`, `BoxSharedLinksFolders`, `FileUpdateRequest2`, `FolderFull`
+**SDK types used:** `Box`, `BoxSharedLinksFolders`, `UpdateFileAddSharedLinkRequest`, `FolderFull`
 
 ## Parameters
 
@@ -23,7 +23,7 @@ Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 
 ## Request body
 
-`FileUpdateRequest2`
+`UpdateFileAddSharedLinkRequest`
 
 ## Returns
 

@@ -29,10 +29,10 @@ public with sharing class BoxTasks {
     /**
      * `POST /tasks`
      *
-     * @param body the request body (`TaskCreateRequest`)
+     * @param body the request body (`CreateTaskRequest`)
      * @return `Task`
      */
-    public Task create(TaskCreateRequest body) {
+    public Task create(CreateTaskRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -61,10 +61,10 @@ public with sharing class BoxTasks {
      * `PUT /tasks/{task_id}`
      *
      * @param taskId path parameter
-     * @param body the request body (`TaskUpdateRequest`)
+     * @param body the request body (`UpdateTaskRequest`)
      * @return `Task`
      */
-    public Task update_r(String taskId, TaskUpdateRequest body) {
+    public Task update_r(String taskId, UpdateTaskRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

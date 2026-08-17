@@ -27,10 +27,10 @@ public with sharing class BoxClassifications {
     /**
      * `PUT /metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema`
      *
-     * @param body the request body (`List<ClassificationUpdateRequest>`)
+     * @param body the request body (`List<UpdateClassificationAddRequest>`)
      * @return `ClassificationTemplate`
      */
-    public ClassificationTemplate updateAdd(List<ClassificationUpdateRequest> body) {
+    public ClassificationTemplate updateAdd(List<UpdateClassificationAddRequest> body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -43,10 +43,10 @@ public with sharing class BoxClassifications {
     /**
      * `PUT /metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema`
      *
-     * @param body the request body (`List<ClassificationUpdateRequest2>`)
+     * @param body the request body (`List<UpdateClassificationUpdateRequest>`)
      * @return `ClassificationTemplate`
      */
-    public ClassificationTemplate updateUpdate(List<ClassificationUpdateRequest2> body) {
+    public ClassificationTemplate updateUpdate(List<UpdateClassificationUpdateRequest> body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -59,10 +59,10 @@ public with sharing class BoxClassifications {
     /**
      * `POST /metadata_templates/schema`
      *
-     * @param body the request body (`MetadataTemplateSchemaCreateRequest`)
+     * @param body the request body (`CreateMetadataTemplateSchemaClas_b112153`)
      * @return `ClassificationTemplate`
      */
-    public ClassificationTemplate createMetadataTemplateSchemaClassifications(MetadataTemplateSchemaCreateRequest body) {
+    public ClassificationTemplate createMetadataTemplateSchemaClassifications(CreateMetadataTemplateSchemaClas_b112153 body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

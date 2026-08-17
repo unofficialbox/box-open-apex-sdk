@@ -30,10 +30,10 @@ public with sharing class BoxEmailAliases {
      * `POST /users/{user_id}/email_aliases`
      *
      * @param userId path parameter
-     * @param body the request body (`UserIdCreateRequest`)
+     * @param body the request body (`CreateUserIdRequest`)
      * @return `EmailAlias`
      */
-    public EmailAlias createUser(String userId, UserIdCreateRequest body) {
+    public EmailAlias createUser(String userId, CreateUserIdRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

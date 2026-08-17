@@ -62,6 +62,7 @@ Box client = new Box(myBoxClient);
 | [`metadata_taxonomies`](metadata_taxonomies/README.md) | 15 |
 | [`metadata_templates`](metadata_templates/README.md) | 8 |
 | [`notes`](notes/README.md) | 1 |
+| [`query`](query/README.md) | 2 |
 | [`recent_items`](recent_items/README.md) | 1 |
 | [`retention_policies`](retention_policies/README.md) | 5 |
 | [`retention_policy_assignments`](retention_policy_assignments/README.md) | 6 |

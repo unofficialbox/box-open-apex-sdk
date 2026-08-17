@@ -14,10 +14,10 @@ public with sharing class BoxWebLinks {
     /**
      * `POST /web_links`
      *
-     * @param body the request body (`WebLinkCreateRequest`)
+     * @param body the request body (`CreateWebLinkRequest`)
      * @return `WebLink`
      */
-    public WebLink create(WebLinkCreateRequest body) {
+    public WebLink create(CreateWebLinkRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -48,16 +48,16 @@ public with sharing class BoxWebLinks {
      * `PUT /web_links/{web_link_id}`
      *
      * @param webLinkId path parameter
-     * @param body the request body (`WebLinkUpdateRequest`)
+     * @param body the request body (`UpdateWebLinkRequest`)
      * @return `WebLink`
      */
-    public WebLink update_r(String webLinkId, WebLinkUpdateRequest body) {
+    public WebLink update_r(String webLinkId, UpdateWebLinkRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'web_links' + '/' + webLinkId;
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = WebLinkUpdateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateWebLinkRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);

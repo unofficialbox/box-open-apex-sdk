@@ -9,7 +9,7 @@ private class BoxEmailAliasesTest {
         mock.body = '{}';
         svc.listUser('x');
         mock.body = '{}';
-        svc.createUser('x', new UserIdCreateRequest());
+        svc.createUser('x', new CreateUserIdRequest());
         mock.body = '{}';
         svc.deleteUser('x', 'x');
         Test.stopTest();

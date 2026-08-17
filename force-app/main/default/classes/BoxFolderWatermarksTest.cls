@@ -9,7 +9,7 @@ private class BoxFolderWatermarksTest {
         mock.body = '{}';
         svc.getFolderWatermark('x');
         mock.body = '{}';
-        svc.updateFolderWatermark('x', new FileWatermarkUpdateRequest());
+        svc.updateFolderWatermark('x', new UpdateFileWatermarkRequest());
         mock.body = '{}';
         svc.deleteFolderWatermark('x');
         Test.stopTest();

@@ -12,7 +12,7 @@ in the org namespace. Construct the entry-point client once:
 Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 ```
 
-**SDK types used:** `Box`, `BoxClassifications`, `List<ClassificationUpdateRequest>`, `ClassificationTemplate`
+**SDK types used:** `Box`, `BoxClassifications`, `List<UpdateClassificationAddRequest>`, `ClassificationTemplate`
 
 ## Parameters
 
@@ -20,7 +20,7 @@ _None._
 
 ## Request body
 
-`List<ClassificationUpdateRequest>`
+`List<UpdateClassificationAddRequest>`
 
 ## Returns
 

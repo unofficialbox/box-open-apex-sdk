@@ -16,10 +16,10 @@ public with sharing class BoxTrashedFiles {
      *
      * @param fileId path parameter
      * @param fields query parameter, optional
-     * @param body the request body (`FileCreateRequest`)
+     * @param body the request body (`CreateFileRequest`)
      * @return `TrashFileRestored`
      */
-    public TrashFileRestored createFile(String fileId, List<String> fields, FileCreateRequest body) {
+    public TrashFileRestored createFile(String fileId, List<String> fields, CreateFileRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

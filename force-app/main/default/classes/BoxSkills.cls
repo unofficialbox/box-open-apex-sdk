@@ -33,10 +33,10 @@ public with sharing class BoxSkills {
      * `PUT /files/{file_id}/metadata/global/boxSkillsCards`
      *
      * @param fileId path parameter
-     * @param body the request body (`List<SkillUpdateRequest>`)
+     * @param body the request body (`List<UpdateSkillRequest>`)
      * @return `SkillCardsMetadata`
      */
-    public SkillCardsMetadata update_r(String fileId, List<SkillUpdateRequest> body) {
+    public SkillCardsMetadata update_r(String fileId, List<UpdateSkillRequest> body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -46,7 +46,7 @@ public with sharing class BoxSkills {
                 List<Object> wLst0 = (List<Object>) wireBody;
                 for (Integer wIdx0 = 0; wIdx0 < wLst0.size(); wIdx0++) {
                     Object wElem0 = wLst0[wIdx0];
-            if (wElem0 instanceof Map<String, Object>) wElem0 = SkillUpdateRequest.denormalizeKeys((Map<String, Object>) wElem0);
+            if (wElem0 instanceof Map<String, Object>) wElem0 = UpdateSkillRequest.denormalizeKeys((Map<String, Object>) wElem0);
                     wLst0[wIdx0] = wElem0;
                 }
             }
@@ -63,10 +63,10 @@ public with sharing class BoxSkills {
      * `POST /files/{file_id}/metadata/global/boxSkillsCards`
      *
      * @param fileId path parameter
-     * @param body the request body (`SkillCreateRequest`)
+     * @param body the request body (`CreateSkillRequest`)
      * @return `SkillCardsMetadata`
      */
-    public SkillCardsMetadata create(String fileId, SkillCreateRequest body) {
+    public SkillCardsMetadata create(String fileId, CreateSkillRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -96,15 +96,15 @@ public with sharing class BoxSkills {
      * `PUT /skill_invocations/{skill_id}`
      *
      * @param skillId path parameter
-     * @param body the request body (`SkillInvocationUpdateRequest`)
+     * @param body the request body (`UpdateSkillInvocationRequest`)
      */
-    public void updateSkillInvocation(String skillId, SkillInvocationUpdateRequest body) {
+    public void updateSkillInvocation(String skillId, UpdateSkillInvocationRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'skill_invocations' + '/' + skillId;
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
-            if (wireBody instanceof Map<String, Object>) wireBody = SkillInvocationUpdateRequest.denormalizeKeys((Map<String, Object>) wireBody);
+            if (wireBody instanceof Map<String, Object>) wireBody = UpdateSkillInvocationRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);

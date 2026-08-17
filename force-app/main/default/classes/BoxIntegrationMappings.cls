@@ -64,10 +64,10 @@ public with sharing class BoxIntegrationMappings {
      * `PUT /integration_mappings/slack/{integration_mapping_id}`
      *
      * @param integrationMappingId path parameter
-     * @param body the request body (`SlackUpdateRequest`)
+     * @param body the request body (`UpdateSlackRequest`)
      * @return `IntegrationMapping`
      */
-    public IntegrationMapping updateSlack(String integrationMappingId, SlackUpdateRequest body) {
+    public IntegrationMapping updateSlack(String integrationMappingId, UpdateSlackRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -132,10 +132,10 @@ public with sharing class BoxIntegrationMappings {
      * `PUT /integration_mappings/teams/{integration_mapping_id}`
      *
      * @param integrationMappingId path parameter
-     * @param body the request body (`TeamUpdateRequest`)
+     * @param body the request body (`UpdateTeamRequest`)
      * @return `IntegrationMappingTeams`
      */
-    public IntegrationMappingTeams updateTeam(String integrationMappingId, TeamUpdateRequest body) {
+    public IntegrationMappingTeams updateTeam(String integrationMappingId, UpdateTeamRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

@@ -9,11 +9,11 @@ private class BoxShieldInformationBarriersTest {
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';
-        svc.createChangeStatus(new ChangeStatusCreateRequest());
+        svc.createChangeStatus(new CreateChangeStatusRequest());
         mock.body = '{}';
         svc.list_r('x', 1);
         mock.body = '{}';
-        svc.create(new ShieldInformationBarrierCreateRequest());
+        svc.create(new CreateShieldInformationBarrierRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

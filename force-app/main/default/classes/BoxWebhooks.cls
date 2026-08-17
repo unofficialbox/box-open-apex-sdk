@@ -34,10 +34,10 @@ public with sharing class BoxWebhooks {
     /**
      * `POST /webhooks`
      *
-     * @param body the request body (`WebhookCreateRequest`)
+     * @param body the request body (`CreateWebhookRequest`)
      * @return `Webhook`
      */
-    public Webhook create(WebhookCreateRequest body) {
+    public Webhook create(CreateWebhookRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -66,10 +66,10 @@ public with sharing class BoxWebhooks {
      * `PUT /webhooks/{webhook_id}`
      *
      * @param webhookId path parameter
-     * @param body the request body (`WebhookUpdateRequest`)
+     * @param body the request body (`UpdateWebhookRequest`)
      * @return `Webhook`
      */
-    public Webhook update_r(String webhookId, WebhookUpdateRequest body) {
+    public Webhook update_r(String webhookId, UpdateWebhookRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';

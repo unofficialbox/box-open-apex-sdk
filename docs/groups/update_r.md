@@ -12,7 +12,7 @@ in the org namespace. Construct the entry-point client once:
 Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 ```
 
-**SDK types used:** `Box`, `BoxGroups`, `GroupUpdateRequest`, `GroupFull`
+**SDK types used:** `Box`, `BoxGroups`, `UpdateGroupRequest`, `GroupFull`
 
 ## Parameters
 
@@ -23,7 +23,7 @@ Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 
 ## Request body
 
-`GroupUpdateRequest`
+`UpdateGroupRequest`
 
 ## Returns
 

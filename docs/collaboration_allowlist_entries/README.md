@@ -5,7 +5,7 @@
 
 | Endpoint | Method | Path | Paged |
 |---|---|---|---|
-| [`listCollaborationWhitelistEntries`](listCollaborationWhitelistEntries.md) | `GET` | `/collaboration_whitelist_entries` | yes |
-| [`createCollaborationWhitelistEntries`](createCollaborationWhitelistEntries.md) | `POST` | `/collaboration_whitelist_entries` |  |
-| [`getCollaborationWhitelistEntry`](getCollaborationWhitelistEntry.md) | `GET` | `/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}` |  |
-| [`deleteCollaborationWhitelistEntry`](deleteCollaborationWhitelistEntry.md) | `DELETE` | `/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}` |  |
+| [`list_r`](list_r.md) | `GET` | `/collaboration_whitelist_entries` | yes |
+| [`create`](create.md) | `POST` | `/collaboration_whitelist_entries` |  |
+| [`get`](get.md) | `GET` | `/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}` |  |
+| [`delete_r`](delete_r.md) | `DELETE` | `/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}` |  |

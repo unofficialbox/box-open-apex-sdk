@@ -9,7 +9,7 @@ private class BoxFolderLocksTest {
         mock.body = '{}';
         svc.list_r('x');
         mock.body = '{}';
-        svc.create(new FolderLockCreateRequest());
+        svc.create(new CreateFolderLockRequest());
         mock.body = '{}';
         svc.delete_r('x');
         Test.stopTest();

@@ -27,8 +27,7 @@ public with sharing class BoxEnterpriseConfigurations {
         request.headers.put('box-version', '2025.0');
         BoxResponse response = client.send(request);
         Object parsed = JSON.deserializeUntyped(response.body);
-        EnterpriseConfiguration deserialized;
-        deserialized = EnterpriseConfiguration.deserialize(parsed);
-        return deserialized;
+            if (parsed instanceof Map<String, Object>) parsed = EnterpriseConfiguration.normalizeKeys((Map<String, Object>) parsed);
+        return (EnterpriseConfiguration) JSON.deserialize(JSON.serialize(parsed), EnterpriseConfiguration.class);
     }
 }

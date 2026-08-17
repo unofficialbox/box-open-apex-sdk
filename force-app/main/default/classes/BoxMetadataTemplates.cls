@@ -54,10 +54,10 @@ public with sharing class BoxMetadataTemplates {
      *
      * @param scope path parameter
      * @param templateKey path parameter
-     * @param body the request body (`List<SchemaUpdateRequest>`)
+     * @param body the request body (`List<UpdateSchemaRequest>`)
      * @return `MetadataTemplate`
      */
-    public MetadataTemplate updateSchema(String scope, String templateKey, List<SchemaUpdateRequest> body) {
+    public MetadataTemplate updateSchema(String scope, String templateKey, List<UpdateSchemaRequest> body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
@@ -139,10 +139,10 @@ public with sharing class BoxMetadataTemplates {
     /**
      * `POST /metadata_templates/schema`
      *
-     * @param body the request body (`SchemaCreateRequest`)
+     * @param body the request body (`CreateSchemaRequest`)
      * @return `MetadataTemplate`
      */
-    public MetadataTemplate createSchema(SchemaCreateRequest body) {
+    public MetadataTemplate createSchema(CreateSchemaRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

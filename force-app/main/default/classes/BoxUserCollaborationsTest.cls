@@ -9,11 +9,11 @@ private class BoxUserCollaborationsTest {
         mock.body = '{}';
         svc.getCollaboration('x', new List<String>());
         mock.body = '{}';
-        svc.updateCollaboration('x', new CollaborationUpdateRequest());
+        svc.updateCollaboration('x', new UpdateCollaborationRequest());
         mock.body = '{}';
         svc.deleteCollaboration('x');
         mock.body = '{}';
-        svc.createCollaborations(new List<String>(), true, new CollaborationsCreateRequest());
+        svc.createCollaborations(new List<String>(), true, new CreateCollaborationsRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

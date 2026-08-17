@@ -9,11 +9,11 @@ private class BoxTermsOfServicesTest {
         mock.body = '{}';
         svc.list_r('x');
         mock.body = '{}';
-        svc.create(new TermsOfServiceCreateRequest());
+        svc.create(new CreateTermsOfServiceRequest());
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';
-        svc.update_r('x', new TermsOfServiceUpdateRequest());
+        svc.update_r('x', new UpdateTermsOfServiceRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

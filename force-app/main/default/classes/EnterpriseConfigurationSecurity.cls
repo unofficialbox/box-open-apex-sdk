@@ -3,10 +3,7 @@
  * carry their wire (JSON) name in a trailing comment.
  * Some fields rename between the wire and Apex, so this class carries
  * `normalizeKeys`/`denormalizeKeys` (used by the managers) to remap
- * JSON keys around native (de)serialization.
- * Some fields are `Object` (a union or free-form JSON), which native
- * `JSON.deserialize` can't populate, so this class carries a static
- * `deserialize(Object)` the managers call to read a response (D-140). */
+ * JSON keys around native (de)serialization. */
 public class EnterpriseConfigurationSecurity {
     public EnterpriseConfigurationItemBoolean is_managed_user_signup_enabled; // wire: is_managed_user_signup_enabled
     public EnterpriseConfigurationItemBoolean is_managed_user_signup_notification_enabled; // wire: is_managed_user_signup_notification_enabled
@@ -347,19 +344,5 @@ public class EnterpriseConfigurationSecurity {
             raw.put('enforced_mfa_frequency', v);
         }
         return raw;
-    }
-    /** Build `EnterpriseConfigurationSecurity` from the untyped JSON tree. Apex's typed
-     * `JSON.deserialize` can't populate an `Object` field (a union or
-     * free-form JSON), so those are detached, the typed shell is
-     * deserialized, then they are reattached from the raw tree (D-140). */
-    public static EnterpriseConfigurationSecurity deserialize(Object rawInput) {
-        if (rawInput == null) return null;
-        Map<String, Object> raw = ((Map<String, Object>) rawInput).clone();
-        Object d_external_collab_multi_factor_auth_settings = raw.remove('external_collab_multi_factor_auth_settings');
-        Object d_keysafe = raw.remove('keysafe');
-        EnterpriseConfigurationSecurity result = (EnterpriseConfigurationSecurity) JSON.deserialize(JSON.serialize(EnterpriseConfigurationSecurity.normalizeKeys(raw)), EnterpriseConfigurationSecurity.class);
-        result.external_collab_multi_factor_auth_settings = EnterpriseConfigurationSecurityE_38f4681.deserialize(d_external_collab_multi_factor_auth_settings);
-        result.keysafe = EnterpriseConfigurationSecurityKeysafe.deserialize(d_keysafe);
-        return result;
     }
 }

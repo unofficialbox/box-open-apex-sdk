@@ -9,7 +9,7 @@ private class BoxAvatarsTest {
         mock.bodyBlob = Blob.valueOf('x');
         svc.getUserAvatar('x');
         mock.body = '{}';
-        svc.createUserAvatar('x', new UserAvatarCreateRequest());
+        svc.createUserAvatar('x', new CreateUserAvatarRequest());
         mock.body = '{}';
         svc.deleteUserAvatar('x');
         Test.stopTest();

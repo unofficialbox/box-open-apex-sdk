@@ -9,7 +9,7 @@ private class BoxLegalHoldPolicyAssignmentsTest {
         mock.body = '{}';
         svc.list_r('x', 'x', 'x', 'x', 1, new List<String>());
         mock.body = '{}';
-        svc.create(new LegalHoldPolicyAssignmentCreateRequest());
+        svc.create(new CreateLegalHoldPolicyAssignmentRequest());
         mock.body = '{}';
         svc.get('x');
         mock.body = '{}';

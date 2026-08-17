@@ -11,11 +11,11 @@ private class BoxFileVersionsTest {
         mock.body = '{}';
         svc.getFileVersion('x', 'x', new List<String>());
         mock.body = '{}';
-        svc.updateFileVersion('x', 'x', new FileVersionUpdateRequest());
+        svc.updateFileVersion('x', 'x', new UpdateFileVersionRequest());
         mock.body = '{}';
         svc.deleteFileVersion('x', 'x', 'x');
         mock.body = '{}';
-        svc.createFileVersionCurrent('x', new List<String>(), new FileVersionCurrentCreateRequest());
+        svc.createFileVersionCurrent('x', new List<String>(), new CreateFileVersionCurrentRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

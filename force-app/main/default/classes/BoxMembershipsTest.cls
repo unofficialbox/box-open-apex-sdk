@@ -11,13 +11,13 @@ private class BoxMembershipsTest {
         mock.body = '{}';
         svc.listGroup('x', 1, 1);
         mock.body = '{}';
-        svc.createGroup(new List<String>(), new GroupCreateRequest2());
+        svc.createGroupMembership(new List<String>(), new CreateGroupMembershipRequest());
         mock.body = '{}';
-        svc.getGroup('x', new List<String>());
+        svc.getGroupMembership('x', new List<String>());
         mock.body = '{}';
-        svc.updateGroup('x', new List<String>(), new GroupUpdateRequest2());
+        svc.updateGroupMembership('x', new List<String>(), new UpdateGroupMembershipRequest());
         mock.body = '{}';
-        svc.deleteGroup('x');
+        svc.deleteGroupMembership('x');
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

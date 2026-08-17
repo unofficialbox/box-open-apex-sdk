@@ -24,10 +24,7 @@ public with sharing class BoxDocgen {
         request.path = '/' + 'docgen_jobs' + '/' + jobId;
         request.headers.put('box-version', '2025.0');
         BoxResponse response = client.send(request);
-        Object parsed = JSON.deserializeUntyped(response.body);
-        DocGenJob deserialized;
-        deserialized = DocGenJob.deserialize(parsed);
-        return deserialized;
+        return (DocGenJob) JSON.deserialize(response.body, DocGenJob.class);
     }
 
     /**
@@ -47,9 +44,8 @@ public with sharing class BoxDocgen {
         request.headers.put('box-version', '2025.0');
         BoxResponse response = client.send(request);
         Object parsed = JSON.deserializeUntyped(response.body);
-        DocGenJobsFull deserialized;
-        deserialized = DocGenJobsFull.deserialize(parsed);
-        return deserialized;
+            if (parsed instanceof Map<String, Object>) parsed = DocGenJobsFull.normalizeKeys((Map<String, Object>) parsed);
+        return (DocGenJobsFull) JSON.deserialize(JSON.serialize(parsed), DocGenJobsFull.class);
     }
 
     /**
@@ -70,9 +66,8 @@ public with sharing class BoxDocgen {
         request.headers.put('box-version', '2025.0');
         BoxResponse response = client.send(request);
         Object parsed = JSON.deserializeUntyped(response.body);
-        DocGenJobs deserialized;
-        deserialized = DocGenJobs.deserialize(parsed);
-        return deserialized;
+            if (parsed instanceof Map<String, Object>) parsed = DocGenJobs.normalizeKeys((Map<String, Object>) parsed);
+        return (DocGenJobs) JSON.deserialize(JSON.serialize(parsed), DocGenJobs.class);
     }
 
     /**

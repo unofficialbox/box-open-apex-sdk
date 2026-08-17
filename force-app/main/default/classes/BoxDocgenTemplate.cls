@@ -121,8 +121,7 @@ public with sharing class BoxDocgenTemplate {
         request.headers.put('box-version', '2025.0');
         BoxResponse response = client.send(request);
         Object parsed = JSON.deserializeUntyped(response.body);
-        DocGenJobs deserialized;
-        deserialized = DocGenJobs.deserialize(parsed);
-        return deserialized;
+            if (parsed instanceof Map<String, Object>) parsed = DocGenJobs.normalizeKeys((Map<String, Object>) parsed);
+        return (DocGenJobs) JSON.deserialize(JSON.serialize(parsed), DocGenJobs.class);
     }
 }

@@ -14,10 +14,10 @@ public with sharing class BoxMetadataTaxonomies {
     /**
      * `POST /metadata_taxonomies`
      *
-     * @param body the request body (`MetadataTaxonomyCreateRequest`)
+     * @param body the request body (`CreateMetadataTaxonomyRequest`)
      * @return `MetadataTaxonomy`
      */
-    public MetadataTaxonomy create(MetadataTaxonomyCreateRequest body) {
+    public MetadataTaxonomy create(CreateMetadataTaxonomyRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -83,10 +83,10 @@ public with sharing class BoxMetadataTaxonomies {
      *
      * @param namespace path parameter
      * @param taxonomyKey path parameter
-     * @param body the request body (`MetadataTaxonomyUpdateRequest`)
+     * @param body the request body (`UpdateMetadataTaxonomyRequest`)
      * @return `MetadataTaxonomy`
      */
-    public MetadataTaxonomy update_r(String namespace, String taxonomyKey, MetadataTaxonomyUpdateRequest body) {
+    public MetadataTaxonomy update_r(String namespace, String taxonomyKey, UpdateMetadataTaxonomyRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PATCH';
         request.baseUrl = 'api';
@@ -120,10 +120,10 @@ public with sharing class BoxMetadataTaxonomies {
      * @param namespace path parameter
      * @param taxonomyKey path parameter
      * @param levelIndex path parameter
-     * @param body the request body (`LevelUpdateRequest`)
+     * @param body the request body (`UpdateLevelRequest`)
      * @return `MetadataTaxonomyLevel`
      */
-    public MetadataTaxonomyLevel updateLevel(String namespace, String taxonomyKey, String levelIndex, LevelUpdateRequest body) {
+    public MetadataTaxonomyLevel updateLevel(String namespace, String taxonomyKey, String levelIndex, UpdateLevelRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PATCH';
         request.baseUrl = 'api';
@@ -138,10 +138,10 @@ public with sharing class BoxMetadataTaxonomies {
      *
      * @param namespace path parameter
      * @param taxonomyKey path parameter
-     * @param body the request body (`LevelUpdateRequest`)
+     * @param body the request body (`UpdateLevelRequest`)
      * @return `MetadataTaxonomyLevels`
      */
-    public MetadataTaxonomyLevels appendLevels(String namespace, String taxonomyKey, LevelUpdateRequest body) {
+    public MetadataTaxonomyLevels appendLevels(String namespace, String taxonomyKey, UpdateLevelRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -204,10 +204,10 @@ public with sharing class BoxMetadataTaxonomies {
      *
      * @param namespace path parameter
      * @param taxonomyKey path parameter
-     * @param body the request body (`NodesCreateRequest`)
+     * @param body the request body (`CreateNodesRequest`)
      * @return `MetadataTaxonomyNode`
      */
-    public MetadataTaxonomyNode createNodes(String namespace, String taxonomyKey, NodesCreateRequest body) {
+    public MetadataTaxonomyNode createNodes(String namespace, String taxonomyKey, CreateNodesRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -255,10 +255,10 @@ public with sharing class BoxMetadataTaxonomies {
      * @param namespace path parameter
      * @param taxonomyKey path parameter
      * @param nodeId path parameter
-     * @param body the request body (`NodeUpdateRequest`)
+     * @param body the request body (`UpdateNodeRequest`)
      * @return `MetadataTaxonomyNode`
      */
-    public MetadataTaxonomyNode updateNode(String namespace, String taxonomyKey, String nodeId, NodeUpdateRequest body) {
+    public MetadataTaxonomyNode updateNode(String namespace, String taxonomyKey, String nodeId, UpdateNodeRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PATCH';
         request.baseUrl = 'api';

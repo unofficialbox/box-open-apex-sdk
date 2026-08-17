@@ -29,10 +29,10 @@ public with sharing class BoxShieldInformationBarriers {
     /**
      * `POST /shield_information_barriers/change_status`
      *
-     * @param body the request body (`ChangeStatusCreateRequest`)
+     * @param body the request body (`CreateChangeStatusRequest`)
      * @return `ShieldInformationBarrier`
      */
-    public ShieldInformationBarrier createChangeStatus(ChangeStatusCreateRequest body) {
+    public ShieldInformationBarrier createChangeStatus(CreateChangeStatusRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';
@@ -65,10 +65,10 @@ public with sharing class BoxShieldInformationBarriers {
     /**
      * `POST /shield_information_barriers`
      *
-     * @param body the request body (`ShieldInformationBarrierCreateRequest`)
+     * @param body the request body (`CreateShieldInformationBarrierRequest`)
      * @return `ShieldInformationBarrier`
      */
-    public ShieldInformationBarrier create(ShieldInformationBarrierCreateRequest body) {
+    public ShieldInformationBarrier create(CreateShieldInformationBarrierRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'api';

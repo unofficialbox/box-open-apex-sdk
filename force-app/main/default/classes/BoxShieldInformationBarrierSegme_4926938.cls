@@ -13,7 +13,7 @@ private class BoxShieldInformationBarrierSegme_4926938 {
         mock.body = '{}';
         svc.list_r('x', 'x', 1);
         mock.body = '{}';
-        svc.create(new ShieldInformationBarrierSegmentM_630d78d());
+        svc.create(new CreateShieldInformationBarrierSe_1c247f9());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

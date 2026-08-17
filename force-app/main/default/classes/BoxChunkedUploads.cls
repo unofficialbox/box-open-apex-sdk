@@ -14,10 +14,10 @@ public with sharing class BoxChunkedUploads {
     /**
      * `POST /files/upload_sessions`
      *
-     * @param body the request body (`FileUploadSessionCreateRequest`)
+     * @param body the request body (`CreateFileUploadSessionRequest`)
      * @return `UploadSession`
      */
-    public UploadSession createFileUploadSession(FileUploadSessionCreateRequest body) {
+    public UploadSession createFileUploadSession(CreateFileUploadSessionRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'upload';
@@ -33,10 +33,10 @@ public with sharing class BoxChunkedUploads {
      * `POST /files/{file_id}/upload_sessions`
      *
      * @param fileId path parameter
-     * @param body the request body (`FileVersionUploadSessionCreateRequest`)
+     * @param body the request body (`CreateFileVersionUploadSessionRequest`)
      * @return `UploadSession`
      */
-    public UploadSession createFileVersionUploadSession(String fileId, FileVersionUploadSessionCreateRequest body) {
+    public UploadSession createFileVersionUploadSession(String fileId, CreateFileVersionUploadSessionRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'upload';
@@ -127,10 +127,10 @@ public with sharing class BoxChunkedUploads {
      * @param digest header parameter
      * @param ifMatch header parameter, optional
      * @param ifNoneMatch header parameter, optional
-     * @param body the request body (`FileUploadSessionCommitRequest`)
+     * @param body the request body (`CommitFileUploadSessionRequest`)
      * @return `Files`
      */
-    public Files commitFileUploadSession(String uploadSessionId, String digest, String ifMatch, String ifNoneMatch, FileUploadSessionCommitRequest body) {
+    public Files commitFileUploadSession(String uploadSessionId, String digest, String ifMatch, String ifNoneMatch, CommitFileUploadSessionRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'POST';
         request.baseUrl = 'upload_session';
