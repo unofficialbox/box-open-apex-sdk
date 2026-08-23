@@ -2,5 +2,5 @@
 /** Model for the `UpdateFileWatermarkRequest` schema (1 field(s)). Fields
  * carry their wire (JSON) name in a trailing comment. */
 public class UpdateFileWatermarkRequest {
-    public PutFileIdWatermarkWatermark watermark; // wire: watermark
+    public PutFileIdWatermark watermark; // wire: watermark
 }

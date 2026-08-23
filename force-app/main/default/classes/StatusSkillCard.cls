@@ -5,7 +5,7 @@ public class StatusSkillCard {
     public Datetime created_at; // wire: created_at
     public String type; // wire: type
     public String skill_card_type; // wire: skill_card_type
-    public KeywordSkillCardSkillCardTitle skill_card_title; // wire: skill_card_title
+    public KeywordSkillCardTitle skill_card_title; // wire: skill_card_title
     public StatusSkillCardStatus status; // wire: status
     public KeywordSkillCardSkill skill; // wire: skill
     public KeywordSkillCardInvocation invocation; // wire: invocation

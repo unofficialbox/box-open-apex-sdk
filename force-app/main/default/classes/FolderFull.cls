@@ -26,7 +26,7 @@ public class FolderFull {
     public Datetime content_modified_at; // wire: content_modified_at
     public UserMini owned_by; // wire: owned_by
     public FileSharedLink shared_link; // wire: shared_link
-    public FolderFolderUploadEmail folder_upload_email; // wire: folder_upload_email
+    public FolderUploadEmail folder_upload_email; // wire: folder_upload_email
     public FolderMini parent; // wire: parent
     public String item_status; // wire: item_status
     public Items item_collection; // wire: item_collection

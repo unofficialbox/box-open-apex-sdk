@@ -4,5 +4,5 @@
 public class CollaboratorVariable {
     public String type; // wire: type
     public String variable_type; // wire: variable_type
-    public List<CollaboratorVariableVariableValue> variable_value; // wire: variable_value
+    public List<CollaboratorVariableValue> variable_value; // wire: variable_value
 }

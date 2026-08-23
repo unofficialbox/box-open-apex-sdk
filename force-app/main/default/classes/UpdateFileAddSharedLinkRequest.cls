@@ -4,13 +4,13 @@
  * This class carries a `denormalizeKeys` write hook (used by the managers)
  * to shape request bodies for the wire. */
 public class UpdateFileAddSharedLinkRequest {
-    public PutFileIdAddSharedLinkSharedLink shared_link; // wire: shared_link
+    public PutFileIdAddSharedLink shared_link; // wire: shared_link
     /** Apex → wire: JSON keys for the `UpdateFileAddSharedLinkRequest` wire shape (see class doc). */
     public static Map<String, Object> denormalizeKeys(Map<String, Object> raw) {
         if (raw == null) return null;
         if (raw.containsKey('shared_link')) {
             Object v = raw.remove('shared_link');
-            if (v instanceof Map<String, Object>) v = PutFileIdAddSharedLinkSharedLink.denormalizeKeys((Map<String, Object>) v);
+            if (v instanceof Map<String, Object>) v = PutFileIdAddSharedLink.denormalizeKeys((Map<String, Object>) v);
             raw.put('shared_link', v);
         }
         return raw;

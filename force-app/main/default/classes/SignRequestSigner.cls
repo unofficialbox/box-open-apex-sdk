@@ -19,7 +19,7 @@ public class SignRequestSigner {
     public Boolean suppress_notifications; // wire: suppress_notifications
     public String language; // wire: language
     public Boolean has_viewed_document; // wire: has_viewed_document
-    public SignRequestSignerSignerDecision signer_decision; // wire: signer_decision
+    public SignRequestSignerDecision signer_decision; // wire: signer_decision
     public List<SignRequestSignerInput> inputs; // wire: inputs
     public String embed_url; // wire: embed_url
     public String iframeable_embed_url; // wire: iframeable_embed_url

@@ -2,5 +2,5 @@
 /** Model for the `Watermark` schema (1 field(s)). Fields
  * carry their wire (JSON) name in a trailing comment. */
 public class Watermark {
-    public WatermarkWatermark watermark; // wire: watermark
+    public Watermark2 watermark; // wire: watermark
 }

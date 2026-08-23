@@ -67,9 +67,9 @@ private class BoxModelWireTest3 {
         TimelineSkillCardEntries.normalizeKeys(null);
         TimelineSkillCardEntries.normalizeKeys(new Map<String, Object>{ 'appears' => new List<Object>{ new Map<String, Object>() } });
         TimelineSkillCardEntries.denormalizeKeys(new Map<String, Object>{ 'appears' => new List<Object>{ new Map<String, Object>() } });
-        UploadSessionSessionEndpoints.normalizeKeys(null);
-        UploadSessionSessionEndpoints.normalizeKeys(new Map<String, Object>{ 'commit' => 'x' });
-        UploadSessionSessionEndpoints.denormalizeKeys(new Map<String, Object>{ 'commit_r' => 'x' });
+        UploadSessionEndpoints.normalizeKeys(null);
+        UploadSessionEndpoints.normalizeKeys(new Map<String, Object>{ 'commit' => 'x' });
+        UploadSessionEndpoints.denormalizeKeys(new Map<String, Object>{ 'commit_r' => 'x' });
         TriggerScope.normalizeKeys(null);
         TriggerScope.normalizeKeys(new Map<String, Object>{ 'object' => 'x' });
         TriggerScope.denormalizeKeys(new Map<String, Object>{ 'object_r' => 'x' });
@@ -106,7 +106,7 @@ private class BoxModelWireTest3 {
         CreateFolderLockRequest.denormalizeKeys(new Map<String, Object>{ 'locked_operations' => new Map<String, Object>() });
         UpdateSchemaRequest.deserialize(null);
         UpdateSchemaRequest.deserialize(new Map<String, Object>{ 'data' => new Map<String, Object>() });
-        PutFileIdAddSharedLinkSharedLink.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'password' } });
+        PutFileIdAddSharedLink.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'password' } });
         UpdateFileAddSharedLinkRequest.denormalizeKeys(new Map<String, Object>{ 'shared_link' => new Map<String, Object>() });
         UpdateFileRemoveSharedLinkRequest.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'shared_link' } });
         UpdateFileRemoveSharedLinkRequest.deserialize(null);

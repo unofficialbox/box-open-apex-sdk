@@ -11,13 +11,13 @@ public class UploadSession {
     public Long part_size; // wire: part_size
     public Long total_parts; // wire: total_parts
     public Long num_parts_processed; // wire: num_parts_processed
-    public UploadSessionSessionEndpoints session_endpoints; // wire: session_endpoints
+    public UploadSessionEndpoints session_endpoints; // wire: session_endpoints
     /** Wire → Apex: JSON keys for the `UploadSession` wire shape (see class doc). */
     public static Map<String, Object> normalizeKeys(Map<String, Object> raw) {
         if (raw == null) return null;
         if (raw.containsKey('session_endpoints')) {
             Object v = raw.remove('session_endpoints');
-            if (v instanceof Map<String, Object>) v = UploadSessionSessionEndpoints.normalizeKeys((Map<String, Object>) v);
+            if (v instanceof Map<String, Object>) v = UploadSessionEndpoints.normalizeKeys((Map<String, Object>) v);
             raw.put('session_endpoints', v);
         }
         return raw;
@@ -27,7 +27,7 @@ public class UploadSession {
         if (raw == null) return null;
         if (raw.containsKey('session_endpoints')) {
             Object v = raw.remove('session_endpoints');
-            if (v instanceof Map<String, Object>) v = UploadSessionSessionEndpoints.denormalizeKeys((Map<String, Object>) v);
+            if (v instanceof Map<String, Object>) v = UploadSessionEndpoints.denormalizeKeys((Map<String, Object>) v);
             raw.put('session_endpoints', v);
         }
         return raw;

@@ -3,6 +3,6 @@
  * carry their wire (JSON) name in a trailing comment. */
 public class CreateTermsOfServiceUserStatusRequest {
     public PostTos tos; // wire: tos
-    public CollaboratorVariableVariableValue user; // wire: user
+    public CollaboratorVariableValue user; // wire: user
     public Boolean is_accepted; // wire: is_accepted
 }

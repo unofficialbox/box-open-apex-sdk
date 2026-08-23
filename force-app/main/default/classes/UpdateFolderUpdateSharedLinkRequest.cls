@@ -2,5 +2,5 @@
 /** Model for the `UpdateFolderUpdateSharedLinkRequest` schema (1 field(s)). Fields
  * carry their wire (JSON) name in a trailing comment. */
 public class UpdateFolderUpdateSharedLinkRequest {
-    public PutFolderIdUpdateSharedLinkSharedLink shared_link; // wire: shared_link
+    public PutFolderIdUpdateSharedLink shared_link; // wire: shared_link
 }

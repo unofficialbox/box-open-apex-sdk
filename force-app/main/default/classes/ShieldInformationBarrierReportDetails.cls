@@ -2,5 +2,5 @@
 /** Model for the `ShieldInformationBarrierReportDetails` schema (1 field(s)). Fields
  * carry their wire (JSON) name in a trailing comment. */
 public class ShieldInformationBarrierReportDetails {
-    public ShieldInformationBarrierReportDe_4274d2b details; // wire: details
+    public ShieldInformationBarrierReportDetails2 details; // wire: details
 }
