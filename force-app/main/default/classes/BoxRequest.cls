@@ -11,4 +11,11 @@ public class BoxRequest {
     // body routed through denormalizeKeys sets this false so injected
     // explicit nulls (D-138) survive; the map already omits unset keys.
     public Boolean suppressNulls = true;
+    // A Box-style multipart body (G-7): a JSON part and/or a binary
+    // part, each present iff its name is non-null. Never both `body`/
+    // `binaryBody` and these on the same request.
+    public String multipartJsonName;
+    public Object multipartJsonValue;
+    public String multipartFilePartName;
+    public Blob multipartFile;
 }

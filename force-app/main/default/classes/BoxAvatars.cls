@@ -38,7 +38,8 @@ public with sharing class BoxAvatars {
         request.method = 'POST';
         request.baseUrl = 'api';
         request.path = '/' + 'users' + '/' + userId + '/' + 'avatar';
-        request.body = body;
+        request.multipartFilePartName = 'pic';
+        request.multipartFile = body.pic;
         BoxResponse response = client.send(request);
         return (UserAvatar) JSON.deserialize(response.body, UserAvatar.class);
     }

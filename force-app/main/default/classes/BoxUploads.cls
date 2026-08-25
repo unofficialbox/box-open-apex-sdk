@@ -29,7 +29,10 @@ public with sharing class BoxUploads {
         if (ifMatch != null) request.headers.put('if-match', String.valueOf(ifMatch));
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         if (contentMd5 != null) request.headers.put('content-md5', String.valueOf(contentMd5));
-        request.body = body;
+        request.multipartJsonName = 'attributes';
+        request.multipartJsonValue = body.attributes;
+        request.multipartFilePartName = 'file';
+        request.multipartFile = body.file;
         BoxResponse response = client.send(request);
         Object parsed = JSON.deserializeUntyped(response.body);
         Files deserialized;
@@ -52,7 +55,10 @@ public with sharing class BoxUploads {
         request.path = '/' + 'files' + '/' + 'content';
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         if (contentMd5 != null) request.headers.put('content-md5', String.valueOf(contentMd5));
-        request.body = body;
+        request.multipartJsonName = 'attributes';
+        request.multipartJsonValue = body.attributes;
+        request.multipartFilePartName = 'file';
+        request.multipartFile = body.file;
         BoxResponse response = client.send(request);
         Object parsed = JSON.deserializeUntyped(response.body);
         Files deserialized;
