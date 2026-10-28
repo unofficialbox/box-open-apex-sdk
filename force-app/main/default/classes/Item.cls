@@ -7,7 +7,7 @@ public class Item {
         String tag = (String) untyped.get('type');
         if (tag == 'file') return FileFull.deserialize(untyped);
         if (tag == 'folder') return (FolderMini) JSON.deserialize(JSON.serialize(untyped), FolderMini.class);
-        if (tag == 'web_link') return (WebLink) JSON.deserialize(JSON.serialize(untyped), WebLink.class);
+        if (tag == 'web_link') return (WebLink) JSON.deserialize(JSON.serialize(WebLink.normalizeKeys(untyped)), WebLink.class);
         return untyped;
     }
 }

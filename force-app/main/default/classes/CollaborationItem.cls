@@ -5,9 +5,9 @@
 public class CollaborationItem {
     public static Object parse(Map<String, Object> untyped) {
         String tag = (String) untyped.get('type');
-        if (tag == 'file') return (File) JSON.deserialize(JSON.serialize(untyped), File.class);
-        if (tag == 'folder') return Folder.deserialize(untyped);
-        if (tag == 'web_link') return (WebLink) JSON.deserialize(JSON.serialize(untyped), WebLink.class);
+        if (tag == 'file') return (FileMini) JSON.deserialize(JSON.serialize(untyped), FileMini.class);
+        if (tag == 'folder') return (FolderMini) JSON.deserialize(JSON.serialize(untyped), FolderMini.class);
+        if (tag == 'web_link') return (WebLinkMini) JSON.deserialize(JSON.serialize(untyped), WebLinkMini.class);
         return untyped;
     }
 }

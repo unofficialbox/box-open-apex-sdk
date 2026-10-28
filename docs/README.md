@@ -20,7 +20,7 @@ Box client = new Box(myBoxClient);
 | [`authorization`](authorization/README.md) | 4 |
 | [`automate_workflows`](automate_workflows/README.md) | 2 |
 | [`avatars`](avatars/README.md) | 3 |
-| [`chunked_uploads`](chunked_uploads/README.md) | 7 |
+| [`chunked_uploads`](chunked_uploads/README.md) | 8 |
 | [`classifications`](classifications/README.md) | 4 |
 | [`collaboration_allowlist_entries`](collaboration_allowlist_entries/README.md) | 4 |
 | [`collaboration_allowlist_exempt_targets`](collaboration_allowlist_exempt_targets/README.md) | 4 |
@@ -29,6 +29,7 @@ Box client = new Box(myBoxClient);
 | [`device_pinners`](device_pinners/README.md) | 3 |
 | [`docgen`](docgen/README.md) | 4 |
 | [`docgen_template`](docgen_template/README.md) | 6 |
+| [`document_split`](document_split/README.md) | 3 |
 | [`downloads`](downloads/README.md) | 1 |
 | [`email_aliases`](email_aliases/README.md) | 3 |
 | [`enterprise_configurations`](enterprise_configurations/README.md) | 1 |
@@ -78,6 +79,7 @@ Box client = new Box(myBoxClient);
 | [`shield_information_barrier_segments`](shield_information_barrier_segments/README.md) | 5 |
 | [`shield_information_barriers`](shield_information_barriers/README.md) | 4 |
 | [`shield_lists`](shield_lists/README.md) | 5 |
+| [`shuttle`](shuttle/README.md) | 39 |
 | [`sign_requests`](sign_requests/README.md) | 5 |
 | [`sign_templates`](sign_templates/README.md) | 2 |
 | [`skills`](skills/README.md) | 5 |

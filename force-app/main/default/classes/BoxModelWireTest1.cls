@@ -134,11 +134,13 @@ private class BoxModelWireTest1 {
         Events.deserialize(null);
         Events.deserialize(new Map<String, Object>{ 'next_stream_position' => 'x', 'entries' => new List<Object>{ new Map<String, Object>() } });
         EventSource.denormalizeKeys(new Map<String, Object>{ 'parent' => new Map<String, Object>() });
-        File.denormalizeKeys(new Map<String, Object>{ 'path_collection' => new Map<String, Object>(), 'parent' => new Map<String, Object>() });
+        File.normalizeKeys(null);
+        File.normalizeKeys(new Map<String, Object>{ 'shared_link' => new Map<String, Object>() });
+        File.denormalizeKeys(new Map<String, Object>{ 'path_collection' => new Map<String, Object>(), 'shared_link' => new Map<String, Object>(), 'parent' => new Map<String, Object>() });
         FileBase.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'etag' } });
         FileFull.normalizeKeys(null);
-        FileFull.normalizeKeys(new Map<String, Object>{ 'expiring_embed_link' => new Map<String, Object>(), 'metadata' => new Map<String, Object>{ 'k' => new Map<String, Object>{ 'k' => new Map<String, Object>() } } });
-        FileFull.denormalizeKeys(new Map<String, Object>{ 'path_collection' => new Map<String, Object>(), 'parent' => new Map<String, Object>(), 'expiring_embed_link' => new Map<String, Object>(), 'metadata' => new Map<String, Object>{ 'k' => new Map<String, Object>{ 'k' => new Map<String, Object>() } } });
+        FileFull.normalizeKeys(new Map<String, Object>{ 'shared_link' => new Map<String, Object>(), 'expiring_embed_link' => new Map<String, Object>(), 'metadata' => new Map<String, Object>{ 'k' => new Map<String, Object>{ 'k' => new Map<String, Object>() } } });
+        FileFull.denormalizeKeys(new Map<String, Object>{ 'path_collection' => new Map<String, Object>(), 'shared_link' => new Map<String, Object>(), 'parent' => new Map<String, Object>(), 'expiring_embed_link' => new Map<String, Object>(), 'metadata' => new Map<String, Object>{ 'k' => new Map<String, Object>{ 'k' => new Map<String, Object>() } } });
         FileFull.deserialize(null);
         FileFull.deserialize(new Map<String, Object>{ 'expiring_embed_link' => new Map<String, Object>() });
         FileRequest.denormalizeKeys(new Map<String, Object>{ 'folder' => new Map<String, Object>() });

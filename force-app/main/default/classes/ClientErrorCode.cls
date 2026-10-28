@@ -15,6 +15,7 @@ public class ClientErrorCode {
     public static final String MethodNotAllowed = 'method_not_allowed';
     public static final String Conflict = 'conflict';
     public static final String PreconditionFailed = 'precondition_failed';
+    public static final String UnprocessableEntity = 'unprocessable_entity';
     public static final String TooManyRequests = 'too_many_requests';
     public static final String InternalServerError = 'internal_server_error';
     public static final String Unavailable = 'unavailable';

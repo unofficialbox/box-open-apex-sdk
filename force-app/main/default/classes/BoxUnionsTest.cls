@@ -49,5 +49,17 @@ private class BoxUnionsTest {
         System.assertNotEquals(null, ShieldListContent.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
         System.assertNotEquals(null, ShieldListContentRequest.parse(new Map<String, Object>{ 'type' => 'country' }));
         System.assertNotEquals(null, ShieldListContentRequest.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
+        System.assertNotEquals(null, DocumentSplitPageSelectionSegment.parse(new Map<String, Object>{ 'type' => 'single_page' }));
+        System.assertNotEquals(null, DocumentSplitPageSelectionSegment.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
+        System.assertNotEquals(null, ShuttleJobScheduleTrigger.parse(new Map<String, Object>{ 'type' => 'by_time' }));
+        System.assertNotEquals(null, ShuttleJobScheduleTrigger.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
+        System.assertNotEquals(null, ShuttlePathEntryScope.parse(new Map<String, Object>{ 'type' => 'account' }));
+        System.assertNotEquals(null, ShuttlePathEntryScope.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
+        System.assertNotEquals(null, ShuttlePathMappingLocation.parse(new Map<String, Object>{ 'type' => 'account' }));
+        System.assertNotEquals(null, ShuttlePathMappingLocation.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
+        System.assertNotEquals(null, ShuttlePathMappingLocationInput.parse(new Map<String, Object>{ 'type' => 'account' }));
+        System.assertNotEquals(null, ShuttlePathMappingLocationInput.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
+        System.assertNotEquals(null, ShuttlePathMappingTargetLocationInput.parse(new Map<String, Object>{ 'type' => 'account' }));
+        System.assertNotEquals(null, ShuttlePathMappingTargetLocationInput.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
     }
 }

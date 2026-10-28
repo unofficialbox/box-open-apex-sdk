@@ -59,6 +59,11 @@ public class FileFull {
     /** Wire → Apex: JSON keys for the `FileFull` wire shape (see class doc). */
     public static Map<String, Object> normalizeKeys(Map<String, Object> raw) {
         if (raw == null) return null;
+        if (raw.containsKey('shared_link')) {
+            Object v = raw.remove('shared_link');
+            if (v instanceof Map<String, Object>) v = FileSharedLink.normalizeKeys((Map<String, Object>) v);
+            raw.put('shared_link', v);
+        }
         if (raw.containsKey('expiring_embed_link')) {
             Object v = raw.remove('expiring_embed_link');
             if (v instanceof Map<String, Object>) v = FileFullExpiringEmbedLink.normalizeKeys((Map<String, Object>) v);
@@ -92,6 +97,11 @@ public class FileFull {
             Object v = raw.remove('path_collection');
             if (v instanceof Map<String, Object>) v = FilePathCollection.denormalizeKeys((Map<String, Object>) v);
             raw.put('path_collection', v);
+        }
+        if (raw.containsKey('shared_link')) {
+            Object v = raw.remove('shared_link');
+            if (v instanceof Map<String, Object>) v = FileSharedLink.denormalizeKeys((Map<String, Object>) v);
+            raw.put('shared_link', v);
         }
         if (raw.containsKey('parent')) {
             Object v = raw.remove('parent');

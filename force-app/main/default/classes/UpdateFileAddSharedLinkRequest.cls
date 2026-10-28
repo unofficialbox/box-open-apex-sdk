@@ -2,7 +2,10 @@
 /** Model for the `UpdateFileAddSharedLinkRequest` schema (1 field(s)). Fields
  * carry their wire (JSON) name in a trailing comment.
  * This class carries a `denormalizeKeys` write hook (used by the managers)
- * to shape request bodies for the wire. */
+ * to shape request bodies for the wire.
+ * Some fields are `Object` (a union or free-form JSON), which native
+ * `JSON.deserialize` can't populate, so this class carries a static
+ * `deserialize(Object)` the managers call to read a response (D-140). */
 public class UpdateFileAddSharedLinkRequest {
     public PutFileIdAddSharedLink shared_link; // wire: shared_link
     /** Apex → wire: JSON keys for the `UpdateFileAddSharedLinkRequest` wire shape (see class doc). */
@@ -14,5 +17,18 @@ public class UpdateFileAddSharedLinkRequest {
             raw.put('shared_link', v);
         }
         return raw;
+    }
+    /** Build `UpdateFileAddSharedLinkRequest` from the untyped JSON tree. Apex's typed
+     * `JSON.deserialize` can't populate an `Object` field (a union or
+     * free-form JSON) or an open extra bag, so those are detached, the
+     * typed shell is deserialized, then they are reattached from the
+     * raw tree (D-140). */
+    public static UpdateFileAddSharedLinkRequest deserialize(Object rawInput) {
+        if (rawInput == null) return null;
+        Map<String, Object> raw = ((Map<String, Object>) rawInput).clone();
+        Object d_shared_link = raw.remove('shared_link');
+        UpdateFileAddSharedLinkRequest result = (UpdateFileAddSharedLinkRequest) JSON.deserialize(JSON.serialize(raw), UpdateFileAddSharedLinkRequest.class);
+        result.shared_link = PutFileIdAddSharedLink.deserialize(d_shared_link);
+        return result;
     }
 }

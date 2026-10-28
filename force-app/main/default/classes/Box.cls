@@ -38,6 +38,8 @@ public with sharing class Box {
     public final BoxDocgen docgen;
     /** The `docgenTemplate` resource manager. */
     public final BoxDocgenTemplate docgenTemplate;
+    /** The `documentSplit` resource manager. */
+    public final BoxDocumentSplit documentSplit;
     /** The `downloads` resource manager. */
     public final BoxDownloads downloads;
     /** The `emailAliases` resource manager. */
@@ -136,6 +138,8 @@ public with sharing class Box {
     public final BoxShieldInformationBarriers shieldInformationBarriers;
     /** The `shieldLists` resource manager. */
     public final BoxShieldLists shieldLists;
+    /** The `shuttle` resource manager. */
+    public final BoxShuttle shuttle;
     /** The `signRequests` resource manager. */
     public final BoxSignRequests signRequests;
     /** The `signTemplates` resource manager. */
@@ -196,6 +200,7 @@ public with sharing class Box {
         this.devicePinners = new BoxDevicePinners(client);
         this.docgen = new BoxDocgen(client);
         this.docgenTemplate = new BoxDocgenTemplate(client);
+        this.documentSplit = new BoxDocumentSplit(client);
         this.downloads = new BoxDownloads(client);
         this.emailAliases = new BoxEmailAliases(client);
         this.enterpriseConfigurations = new BoxEnterpriseConfigurations(client);
@@ -245,6 +250,7 @@ public with sharing class Box {
         this.shieldInformationBarrierSegments = new BoxShieldInformationBarrierSegments(client);
         this.shieldInformationBarriers = new BoxShieldInformationBarriers(client);
         this.shieldLists = new BoxShieldLists(client);
+        this.shuttle = new BoxShuttle(client);
         this.signRequests = new BoxSignRequests(client);
         this.signTemplates = new BoxSignTemplates(client);
         this.skills = new BoxSkills(client);

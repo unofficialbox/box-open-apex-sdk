@@ -19,6 +19,8 @@ private class BoxChunkedUploadsTest {
         mock.body = '{}';
         svc.listFileUploadSessionParts('x', 1, 1);
         mock.body = '{}';
+        svc.createFileUploadSessionPlan('x', new UploadSessionPlanRequest());
+        mock.body = '{}';
         svc.commitFileUploadSession('x', 'x', 'x', 'x', new CommitFileUploadSessionRequest());
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);

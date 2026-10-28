@@ -5,7 +5,10 @@
  * to shape request bodies for the wire.
  * Explicit null (D-138): to clear a field on update, add its Apex
  * field name to `fieldsToNull` — the request sends JSON `null` for it;
- * fields you leave unset stay absent. */
+ * fields you leave unset stay absent.
+ * Some fields are `Object` (a union or free-form JSON), which native
+ * `JSON.deserialize` can't populate, so this class carries a static
+ * `deserialize(Object)` the managers call to read a response (D-140). */
 public class UpdateFileRequest {
     public String name; // wire: name
     public String description; // wire: description
@@ -37,5 +40,18 @@ public class UpdateFileRequest {
             }
         }
         return raw;
+    }
+    /** Build `UpdateFileRequest` from the untyped JSON tree. Apex's typed
+     * `JSON.deserialize` can't populate an `Object` field (a union or
+     * free-form JSON) or an open extra bag, so those are detached, the
+     * typed shell is deserialized, then they are reattached from the
+     * raw tree (D-140). */
+    public static UpdateFileRequest deserialize(Object rawInput) {
+        if (rawInput == null) return null;
+        Map<String, Object> raw = ((Map<String, Object>) rawInput).clone();
+        Object d_shared_link = raw.remove('shared_link');
+        UpdateFileRequest result = (UpdateFileRequest) JSON.deserialize(JSON.serialize(raw), UpdateFileRequest.class);
+        result.shared_link = PutIdSharedLink.deserialize(d_shared_link);
+        return result;
     }
 }

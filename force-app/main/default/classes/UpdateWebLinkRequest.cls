@@ -2,7 +2,10 @@
 /** Model for the `UpdateWebLinkRequest` schema (5 field(s)). Fields
  * carry their wire (JSON) name in a trailing comment.
  * This class carries a `denormalizeKeys` write hook (used by the managers)
- * to shape request bodies for the wire. */
+ * to shape request bodies for the wire.
+ * Some fields are `Object` (a union or free-form JSON), which native
+ * `JSON.deserialize` can't populate, so this class carries a static
+ * `deserialize(Object)` the managers call to read a response (D-140). */
 public class UpdateWebLinkRequest {
     public String url; // wire: url
     public PutIdParent parent; // wire: parent
@@ -18,5 +21,18 @@ public class UpdateWebLinkRequest {
             raw.put('shared_link', v);
         }
         return raw;
+    }
+    /** Build `UpdateWebLinkRequest` from the untyped JSON tree. Apex's typed
+     * `JSON.deserialize` can't populate an `Object` field (a union or
+     * free-form JSON) or an open extra bag, so those are detached, the
+     * typed shell is deserialized, then they are reattached from the
+     * raw tree (D-140). */
+    public static UpdateWebLinkRequest deserialize(Object rawInput) {
+        if (rawInput == null) return null;
+        Map<String, Object> raw = ((Map<String, Object>) rawInput).clone();
+        Object d_shared_link = raw.remove('shared_link');
+        UpdateWebLinkRequest result = (UpdateWebLinkRequest) JSON.deserialize(JSON.serialize(raw), UpdateWebLinkRequest.class);
+        result.shared_link = UpdateWebLinkRequestSharedLink.deserialize(d_shared_link);
+        return result;
     }
 }

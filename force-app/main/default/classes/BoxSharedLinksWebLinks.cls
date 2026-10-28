@@ -28,7 +28,9 @@ public with sharing class BoxSharedLinksWebLinks {
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         if (boxapi != null) request.headers.put('boxapi', String.valueOf(boxapi));
         BoxResponse response = client.send(request);
-        return (WebLink) JSON.deserialize(response.body, WebLink.class);
+        Object parsed = JSON.deserializeUntyped(response.body);
+            if (parsed instanceof Map<String, Object>) parsed = WebLink.normalizeKeys((Map<String, Object>) parsed);
+        return (WebLink) JSON.deserialize(JSON.serialize(parsed), WebLink.class);
     }
 
     /**
@@ -45,7 +47,9 @@ public with sharing class BoxSharedLinksWebLinks {
         request.path = '/' + 'web_links' + '/' + webLinkId;
         if (fields != null) request.query.put('fields', String.valueOf(fields));
         BoxResponse response = client.send(request);
-        return (WebLink) JSON.deserialize(response.body, WebLink.class);
+        Object parsed = JSON.deserializeUntyped(response.body);
+            if (parsed instanceof Map<String, Object>) parsed = WebLink.normalizeKeys((Map<String, Object>) parsed);
+        return (WebLink) JSON.deserialize(JSON.serialize(parsed), WebLink.class);
     }
 
     /**
@@ -67,7 +71,9 @@ public with sharing class BoxSharedLinksWebLinks {
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
-        return (WebLink) JSON.deserialize(response.body, WebLink.class);
+        Object parsed = JSON.deserializeUntyped(response.body);
+            if (parsed instanceof Map<String, Object>) parsed = WebLink.normalizeKeys((Map<String, Object>) parsed);
+        return (WebLink) JSON.deserialize(JSON.serialize(parsed), WebLink.class);
     }
 
     /**
@@ -89,7 +95,9 @@ public with sharing class BoxSharedLinksWebLinks {
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
-        return (WebLink) JSON.deserialize(response.body, WebLink.class);
+        Object parsed = JSON.deserializeUntyped(response.body);
+            if (parsed instanceof Map<String, Object>) parsed = WebLink.normalizeKeys((Map<String, Object>) parsed);
+        return (WebLink) JSON.deserialize(JSON.serialize(parsed), WebLink.class);
     }
 
     /**
@@ -111,6 +119,8 @@ public with sharing class BoxSharedLinksWebLinks {
         request.body = wireBody;
         request.suppressNulls = false;
         BoxResponse response = client.send(request);
-        return (WebLink) JSON.deserialize(response.body, WebLink.class);
+        Object parsed = JSON.deserializeUntyped(response.body);
+            if (parsed instanceof Map<String, Object>) parsed = WebLink.normalizeKeys((Map<String, Object>) parsed);
+        return (WebLink) JSON.deserialize(JSON.serialize(parsed), WebLink.class);
     }
 }

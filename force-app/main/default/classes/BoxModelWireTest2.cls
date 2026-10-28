@@ -19,13 +19,13 @@ private class BoxModelWireTest2 {
         FileVersionsOnHold.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
         FileVersionsOnHold.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
         Folder.normalizeKeys(null);
-        Folder.normalizeKeys(new Map<String, Object>{ 'item_collection' => new Map<String, Object>() });
-        Folder.denormalizeKeys(new Map<String, Object>{ 'path_collection' => new Map<String, Object>(), 'parent' => new Map<String, Object>(), 'item_collection' => new Map<String, Object>() });
+        Folder.normalizeKeys(new Map<String, Object>{ 'shared_link' => new Map<String, Object>(), 'item_collection' => new Map<String, Object>() });
+        Folder.denormalizeKeys(new Map<String, Object>{ 'path_collection' => new Map<String, Object>(), 'shared_link' => new Map<String, Object>(), 'parent' => new Map<String, Object>(), 'item_collection' => new Map<String, Object>() });
         Folder.deserialize(null);
         Folder.deserialize(new Map<String, Object>{ 'item_collection' => new Map<String, Object>() });
         FolderFull.normalizeKeys(null);
-        FolderFull.normalizeKeys(new Map<String, Object>{ 'item_collection' => new Map<String, Object>(), 'metadata' => new Map<String, Object>{ 'k' => new Map<String, Object>{ 'k' => new Map<String, Object>() } } });
-        FolderFull.denormalizeKeys(new Map<String, Object>{ 'path_collection' => new Map<String, Object>(), 'parent' => new Map<String, Object>(), 'item_collection' => new Map<String, Object>(), 'metadata' => new Map<String, Object>{ 'k' => new Map<String, Object>{ 'k' => new Map<String, Object>() } } });
+        FolderFull.normalizeKeys(new Map<String, Object>{ 'shared_link' => new Map<String, Object>(), 'item_collection' => new Map<String, Object>(), 'metadata' => new Map<String, Object>{ 'k' => new Map<String, Object>{ 'k' => new Map<String, Object>() } } });
+        FolderFull.denormalizeKeys(new Map<String, Object>{ 'path_collection' => new Map<String, Object>(), 'shared_link' => new Map<String, Object>(), 'parent' => new Map<String, Object>(), 'item_collection' => new Map<String, Object>(), 'metadata' => new Map<String, Object>{ 'k' => new Map<String, Object>{ 'k' => new Map<String, Object>() } } });
         FolderFull.deserialize(null);
         FolderFull.deserialize(new Map<String, Object>{ 'item_collection' => new Map<String, Object>() });
         FolderMini.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'etag' } });
@@ -144,6 +144,15 @@ private class BoxModelWireTest2 {
         SearchResultsWithSharedLinks.deserialize(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() } });
         SearchResultWithSharedLink.deserialize(null);
         SearchResultWithSharedLink.deserialize(new Map<String, Object>{ 'item' => 'x' });
+        SharedLinkOtpAllowlistEntry.normalizeKeys(null);
+        SharedLinkOtpAllowlistEntry.normalizeKeys(new Map<String, Object>{ 'value' => 'x' });
+        SharedLinkOtpAllowlistEntry.denormalizeKeys(new Map<String, Object>{ 'value_r' => 'x' });
+        SharedLinkOtpAllowlistEntryWritable.normalizeKeys(null);
+        SharedLinkOtpAllowlistEntryWritable.normalizeKeys(new Map<String, Object>{ 'value' => 'x' });
+        SharedLinkOtpAllowlistEntryWritable.denormalizeKeys(new Map<String, Object>{ 'value_r' => 'x' });
+        SharedLinkOtpWritableAllowlist.normalizeKeys(null);
+        SharedLinkOtpWritableAllowlist.normalizeKeys(new Map<String, Object>{ 'allowlist' => new List<Object>{ new Map<String, Object>() } });
+        SharedLinkOtpWritableAllowlist.denormalizeKeys(new Map<String, Object>{ 'allowlist' => new List<Object>{ new Map<String, Object>() } });
         ShieldInformationBarrierReports.normalizeKeys(null);
         ShieldInformationBarrierReports.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
         ShieldInformationBarrierReports.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
@@ -188,14 +197,6 @@ private class BoxModelWireTest2 {
         SkillCardsMetadata.denormalizeKeys(new Map<String, Object>{ 'canEdit' => 'x', 'id' => 'x', 'parent' => 'x', 'scope' => 'x', 'template' => 'x', 'type' => 'x', 'typeVersion' => 'x', 'version' => 'x' });
         SkillCardsMetadata.deserialize(null);
         SkillCardsMetadata.deserialize(new Map<String, Object>{ 'cards' => new List<Object>() });
-        StoragePolicies.normalizeKeys(null);
-        StoragePolicies.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
-        StoragePolicies.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
-        StoragePolicyAssignments.normalizeKeys(null);
-        StoragePolicyAssignments.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
-        StoragePolicyAssignments.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
-        TemplateSigner.deserialize(null);
-        TemplateSigner.deserialize(new Map<String, Object>{ 'inputs' => new List<Object>{ new Map<String, Object>() } });
         Test.stopTest();
         System.assert(true, 'every wire static executed without error');
     }
