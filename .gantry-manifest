@@ -768,6 +768,8 @@ force-app/main/default/classes/BoxComments.cls
 force-app/main/default/classes/BoxComments.cls-meta.xml
 force-app/main/default/classes/BoxCommentsTest.cls
 force-app/main/default/classes/BoxCommentsTest.cls-meta.xml
+force-app/main/default/classes/BoxConsistencyTest.cls
+force-app/main/default/classes/BoxConsistencyTest.cls-meta.xml
 force-app/main/default/classes/BoxDeveloperTokenProvider.cls
 force-app/main/default/classes/BoxDeveloperTokenProvider.cls-meta.xml
 force-app/main/default/classes/BoxDevicePinners.cls

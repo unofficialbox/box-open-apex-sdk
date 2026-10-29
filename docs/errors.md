@@ -4,13 +4,42 @@
 The SDK uses Apex's idiomatic error model: a failed request throws. The
 runtime retries transient failures (exponential backoff, `Retry-After`,
 and one `401` refresh); a non-2xx response that survives the retries is
-raised as a `BoxApiException` carrying the HTTP status and the parsed Box
-error body. Wrap calls in `try`/`catch`:
+raised as a `BoxApiException` carrying the HTTP `statusCode`, Box's error
+`code`, `boxMessage`, and `requestId`, and the raw `responseBody`. Wrap
+calls in `try`/`catch`:
 
 ```apex
 try {
-    FileFull f = client.files.getById(fileId, null, null, null, null);
+    FileFull f = client.files.get(fileId, null, null, null, null);
 } catch (BoxApiException e) {
-    System.debug(e.statusCode + ': ' + e.getMessage());
+    System.debug(e.statusCode + ' ' + e.code + ' (request_id ' + e.requestId + ')');
+}
+```
+
+## Etags: `If-None-Match` and `If-Match`
+
+Files and folders carry an `etag`. Send it back to stay in sync with Box
+(Box's [Ensure consistency](https://developer.box.com/guides/api-calls/ensure-consistency/)
+guide):
+
+- **Reads** — pass the stored etag as `ifNoneMatch` on a file or folder
+  `get` (or a shared-item lookup). Box answers `304 Not Modified` when
+  nothing changed, and the SDK raises it as a `BoxApiException` with
+  `statusCode` `304`: keep your cached copy.
+- **Writes** — pass it as `ifMatch` on a file or folder update or delete,
+  or a new file version upload. Box answers `412 Precondition Failed`
+  (code `precondition_failed`) when the item changed since you read it:
+  read it again, reapply your change, retry. `If-Match` can't block a move.
+
+```apex
+try {
+    FileFull f = client.files.get(fileId, null, etag, null, null);
+} catch (BoxApiException e) {
+    if (e.statusCode != 304) throw e; // 304: unchanged since etag
+}
+try {
+    client.files.update_r(fileId, null, etag, body);
+} catch (BoxApiException e) {
+    if (e.statusCode != 412) throw e; // 412: changed since etag, re-read and retry
 }
 ```
