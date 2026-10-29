@@ -29,17 +29,25 @@ guide):
   `BoxApiException` if you pass `ifNoneMatch` to it yourself.)
 - **Writes** — pass it as `ifMatch` on a file or folder update or delete,
   or a new file version upload. Box answers `412 Precondition Failed`
-  (code `precondition_failed`) when the item changed since you read it:
-  read it again, reapply your change, retry. `If-Match` can't block a move.
+  (code `precondition_failed`) when the item changed since you read it,
+  and `e.isPreconditionFailed()` reports it: read it again, reapply your
+  change, retry. `If-Match` can't block a move.
 
 ```apex
 FileFull f = client.files.getIfModified(fileId, etag, null, null, null);
 if (f == null) {
     // unchanged since etag
 }
-try {
-    client.files.update_r(fileId, null, etag, body);
-} catch (BoxApiException e) {
-    if (e.statusCode != 412) throw e; // 412: changed since etag, re-read and retry
+
+// Re-read and retry: the update lands only on the version it was made from.
+FileFull updated;
+for (Integer attempt = 1; updated == null; attempt++) {
+    try {
+        updated = client.files.update_r(fileId, null, etag, body);
+    } catch (BoxApiException e) {
+        if (!e.isPreconditionFailed() || attempt == 3) throw e;
+        FileFull current = client.files.get(fileId, null, null, null, null);
+        etag = current.etag; // reapply your change to current here
+    }
 }
 ```
