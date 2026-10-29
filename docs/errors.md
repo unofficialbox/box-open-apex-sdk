@@ -22,20 +22,20 @@ Files and folders carry an `etag`. Send it back to stay in sync with Box
 (Box's [Ensure consistency](https://developer.box.com/guides/api-calls/ensure-consistency/)
 guide):
 
-- **Reads** — pass the stored etag as `ifNoneMatch` on a file or folder
-  `get` (or a shared-item lookup). Box answers `304 Not Modified` when
-  nothing changed, and the SDK raises it as a `BoxApiException` with
-  `statusCode` `304`: keep your cached copy.
+- **Reads** — a file or folder `get`, and each shared-item lookup, has an
+  `…IfModified` variant that takes the stored etag, sends it as
+  `If-None-Match`, and returns `null` when Box answers `304 Not Modified`:
+  keep your cached copy. (The plain method throws that 304 as a
+  `BoxApiException` if you pass `ifNoneMatch` to it yourself.)
 - **Writes** — pass it as `ifMatch` on a file or folder update or delete,
   or a new file version upload. Box answers `412 Precondition Failed`
   (code `precondition_failed`) when the item changed since you read it:
   read it again, reapply your change, retry. `If-Match` can't block a move.
 
 ```apex
-try {
-    FileFull f = client.files.get(fileId, null, etag, null, null);
-} catch (BoxApiException e) {
-    if (e.statusCode != 304) throw e; // 304: unchanged since etag
+FileFull f = client.files.getIfModified(fileId, etag, null, null, null);
+if (f == null) {
+    // unchanged since etag
 }
 try {
     client.files.update_r(fileId, null, etag, body);

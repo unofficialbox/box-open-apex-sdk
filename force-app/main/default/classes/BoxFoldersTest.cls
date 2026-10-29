@@ -8,6 +8,7 @@ private class BoxFoldersTest {
         Test.startTest();
         mock.body = '{}';
         svc.get('x', new List<String>(), 'x', 'x', 'x', 'x', 1, 1);
+        svc.getIfModified('x', 'x', new List<String>(), 'x', 'x', 'x', 1, 1);
         mock.body = '{}';
         svc.update_r('x', new List<String>(), 'x', new UpdateFolderRequest());
         mock.body = '{}';

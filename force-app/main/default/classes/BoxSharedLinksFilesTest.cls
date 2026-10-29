@@ -8,6 +8,7 @@ private class BoxSharedLinksFilesTest {
         Test.startTest();
         mock.body = '{}';
         svc.getSharedItems('x', new List<String>(), 'x');
+        svc.getSharedItemsIfModified('x', new List<String>(), 'x');
         mock.body = '{}';
         svc.getFileGetSharedLink('x', 'x');
         mock.body = '{}';

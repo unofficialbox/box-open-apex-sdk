@@ -38,6 +38,21 @@ public with sharing class BoxFiles {
     }
 
     /**
+     * `get` with `If-None-Match` set to `etag`: `null` when the item is
+     * unchanged since `etag` (Box answers 304 Not Modified).
+     */
+    public FileFull getIfModified(String fileId, String etag, List<String> fields, String boxapi, String xRepHints) {
+        try {
+            return get(fileId, fields, etag, boxapi, xRepHints);
+        } catch (BoxApiException e) {
+            if (e.statusCode == 304) {
+                return null;
+            }
+            throw e;
+        }
+    }
+
+    /**
      * `PUT /files/{file_id}`
      *
      * @param fileId path parameter

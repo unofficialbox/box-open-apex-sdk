@@ -35,6 +35,21 @@ public with sharing class BoxSharedLinksFiles {
     }
 
     /**
+     * `getSharedItems` with `If-None-Match` set to `etag`: `null` when the item is
+     * unchanged since `etag` (Box answers 304 Not Modified).
+     */
+    public FileFull getSharedItemsIfModified(String etag, List<String> fields, String boxapi) {
+        try {
+            return getSharedItems(etag, fields, boxapi);
+        } catch (BoxApiException e) {
+            if (e.statusCode == 304) {
+                return null;
+            }
+            throw e;
+        }
+    }
+
+    /**
      * `GET /files/{file_id}`
      *
      * @param fileId path parameter

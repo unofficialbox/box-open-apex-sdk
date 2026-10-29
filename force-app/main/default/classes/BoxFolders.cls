@@ -44,6 +44,21 @@ public with sharing class BoxFolders {
     }
 
     /**
+     * `get` with `If-None-Match` set to `etag`: `null` when the item is
+     * unchanged since `etag` (Box answers 304 Not Modified).
+     */
+    public FolderFull getIfModified(String folderId, String etag, List<String> fields, String boxapi, String sort_r, String direction, Long offset, Long limit_r) {
+        try {
+            return get(folderId, fields, etag, boxapi, sort_r, direction, offset, limit_r);
+        } catch (BoxApiException e) {
+            if (e.statusCode == 304) {
+                return null;
+            }
+            throw e;
+        }
+    }
+
+    /**
      * `PUT /folders/{folder_id}`
      *
      * @param folderId path parameter

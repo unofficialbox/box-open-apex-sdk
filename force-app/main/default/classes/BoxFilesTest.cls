@@ -8,6 +8,7 @@ private class BoxFilesTest {
         Test.startTest();
         mock.body = '{}';
         svc.get('x', new List<String>(), 'x', 'x', 'x');
+        svc.getIfModified('x', 'x', new List<String>(), 'x', 'x');
         mock.body = '{}';
         svc.update_r('x', new List<String>(), 'x', new UpdateFileRequest());
         mock.body = '{}';
