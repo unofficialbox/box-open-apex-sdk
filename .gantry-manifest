@@ -463,6 +463,7 @@ docs/web_links/create.md
 docs/web_links/delete_r.md
 docs/web_links/get.md
 docs/web_links/update_r.md
+docs/webhooks.md
 docs/webhooks/README.md
 docs/webhooks/create.md
 docs/webhooks/delete_r.md
@@ -800,6 +801,10 @@ force-app/main/default/classes/BoxEnterpriseConfigurations.cls
 force-app/main/default/classes/BoxEnterpriseConfigurations.cls-meta.xml
 force-app/main/default/classes/BoxEnterpriseConfigurationsTest.cls
 force-app/main/default/classes/BoxEnterpriseConfigurationsTest.cls-meta.xml
+force-app/main/default/classes/BoxEventStream.cls
+force-app/main/default/classes/BoxEventStream.cls-meta.xml
+force-app/main/default/classes/BoxEventStreamTest.cls
+force-app/main/default/classes/BoxEventStreamTest.cls-meta.xml
 force-app/main/default/classes/BoxEvents.cls
 force-app/main/default/classes/BoxEvents.cls-meta.xml
 force-app/main/default/classes/BoxEventsTest.cls
@@ -1086,6 +1091,10 @@ force-app/main/default/classes/BoxWebLinks.cls
 force-app/main/default/classes/BoxWebLinks.cls-meta.xml
 force-app/main/default/classes/BoxWebLinksTest.cls
 force-app/main/default/classes/BoxWebLinksTest.cls-meta.xml
+force-app/main/default/classes/BoxWebhookVerifier.cls
+force-app/main/default/classes/BoxWebhookVerifier.cls-meta.xml
+force-app/main/default/classes/BoxWebhookVerifierTest.cls
+force-app/main/default/classes/BoxWebhookVerifierTest.cls-meta.xml
 force-app/main/default/classes/BoxWebhooks.cls
 force-app/main/default/classes/BoxWebhooks.cls-meta.xml
 force-app/main/default/classes/BoxWebhooksTest.cls

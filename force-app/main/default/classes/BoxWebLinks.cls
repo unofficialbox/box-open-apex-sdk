@@ -34,14 +34,16 @@ public with sharing class BoxWebLinks {
      *
      * @param webLinkId path parameter
      * @param boxapi header parameter, optional
+     * @param ifNoneMatch header parameter, optional
      * @return `WebLink`
      */
-    public WebLink get(String webLinkId, String boxapi) {
+    public WebLink get(String webLinkId, String boxapi, String ifNoneMatch) {
         BoxRequest request = new BoxRequest();
         request.method = 'GET';
         request.baseUrl = 'api';
         request.path = '/' + 'web_links' + '/' + webLinkId;
         if (boxapi != null) request.headers.put('boxapi', String.valueOf(boxapi));
+        if (ifNoneMatch != null) request.headers.put('if-none-match', String.valueOf(ifNoneMatch));
         BoxResponse response = client.send(request);
         Object parsed = JSON.deserializeUntyped(response.body);
             if (parsed instanceof Map<String, Object>) parsed = WebLink.normalizeKeys((Map<String, Object>) parsed);
@@ -49,17 +51,34 @@ public with sharing class BoxWebLinks {
     }
 
     /**
+     * `get` with `If-None-Match` set to `etag`: `null` when the item is
+     * unchanged since `etag` (Box answers 304 Not Modified).
+     */
+    public WebLink getIfModified(String webLinkId, String etag, String boxapi) {
+        try {
+            return get(webLinkId, boxapi, etag);
+        } catch (BoxApiException e) {
+            if (e.statusCode == 304) {
+                return null;
+            }
+            throw e;
+        }
+    }
+
+    /**
      * `PUT /web_links/{web_link_id}`
      *
      * @param webLinkId path parameter
+     * @param ifMatch header parameter, optional
      * @param body the request body (`UpdateWebLinkRequest`)
      * @return `WebLink`
      */
-    public WebLink update_r(String webLinkId, UpdateWebLinkRequest body) {
+    public WebLink update_r(String webLinkId, String ifMatch, UpdateWebLinkRequest body) {
         BoxRequest request = new BoxRequest();
         request.method = 'PUT';
         request.baseUrl = 'api';
         request.path = '/' + 'web_links' + '/' + webLinkId;
+        if (ifMatch != null) request.headers.put('if-match', String.valueOf(ifMatch));
         Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
             if (wireBody instanceof Map<String, Object>) wireBody = UpdateWebLinkRequest.denormalizeKeys((Map<String, Object>) wireBody);
         request.body = wireBody;
@@ -74,12 +93,14 @@ public with sharing class BoxWebLinks {
      * `DELETE /web_links/{web_link_id}`
      *
      * @param webLinkId path parameter
+     * @param ifMatch header parameter, optional
      */
-    public void delete_r(String webLinkId) {
+    public void delete_r(String webLinkId, String ifMatch) {
         BoxRequest request = new BoxRequest();
         request.method = 'DELETE';
         request.baseUrl = 'api';
         request.path = '/' + 'web_links' + '/' + webLinkId;
+        if (ifMatch != null) request.headers.put('if-match', String.valueOf(ifMatch));
         BoxResponse response = client.send(request);
     }
 }

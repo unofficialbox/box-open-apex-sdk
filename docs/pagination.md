@@ -23,3 +23,22 @@ while (String.isNotBlank(page.cursorField)) {
 Each paginated endpoint's reference page (`docs/<manager>/<op>.md`, flagged
 `Paged`) shows its concrete envelope type, cursor and entries field names,
 and the exact loop — marker or offset — for that operation.
+
+## Events
+
+The other SDKs follow Box's long-poll event stream, waiting on a real-time
+server until Box reports a change. Apex can't: a callout times out after at
+most 120 seconds, and Box holds a long poll open for up to ten minutes. So
+`client.events.stream(…)` returns a `BoxEventStream` you poll: each `poll()`
+fetches the events since the last one, once each (Box may deliver an event
+twice), and advances `position`. Call it from a `Schedulable` or
+`Queueable`, and save `position` between transactions to resume:
+
+```apex
+BoxEventStream events = client.events.stream(null, savedPosition, null, null, null, null);
+for (Object e : events.poll()) {
+    Event event = (Event) e;
+    // use event
+}
+savedPosition = events.position;
+```

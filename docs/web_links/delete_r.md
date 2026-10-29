@@ -19,6 +19,7 @@ Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 | Name | In | Type | Required |
 |---|---|---|---|
 | `webLinkId` | path | `String` | yes |
+| `ifMatch` | header | `String` | no |
 
 ## Returns
 
@@ -28,5 +29,5 @@ _No content._
 
 ```apex
 Box client = new Box(myBoxClient);
-client.webLinks.delete_r(webLinkId);
+client.webLinks.delete_r(webLinkId, null);
 ```

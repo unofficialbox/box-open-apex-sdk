@@ -52,4 +52,39 @@ public with sharing class BoxEvents {
         BoxResponse response = client.send(request);
         return (RealtimeServers) JSON.deserialize(response.body, RealtimeServers.class);
     }
+
+    /**
+     * Box's event stream from `streamPosition` (`now` when null), polled: each
+     * `poll()` returns the events since the last one, once each, as `Event`.
+     * Apex can't hold Box's long poll open, so schedule `poll()` and save
+     * `position` between transactions to resume.
+     */
+    public BoxEventStream stream(String streamType, String streamPosition, Long limit_r, List<String> eventType, Datetime createdAfter, Datetime createdBefore) {
+        return new BoxEventStream(new StreamSource(this, streamType, limit_r, eventType, createdAfter, createdBefore), streamPosition);
+    }
+
+    /** The typed page call `stream` polls. */
+    private class StreamSource implements BoxEventStream.Source {
+        private final BoxEvents manager;
+        private final String streamType;
+        private final Long limit_r;
+        private final List<String> eventType;
+        private final Datetime createdAfter;
+        private final Datetime createdBefore;
+        public StreamSource(BoxEvents manager, String streamType, Long limit_r, List<String> eventType, Datetime createdAfter, Datetime createdBefore) {
+            this.manager = manager;
+            this.streamType = streamType;
+            this.limit_r = limit_r;
+            this.eventType = eventType;
+            this.createdAfter = createdAfter;
+            this.createdBefore = createdBefore;
+        }
+        public BoxEventStream.EventPage fetch(String position) {
+            Events batch = manager.list_r(streamType, position, limit_r, eventType, createdAfter, createdBefore);
+            return new BoxEventStream.EventPage(batch.entries, BoxEventStream.position(batch.next_stream_position));
+        }
+        public String id(Object event) {
+            return ((Event) event).event_id;
+        }
+    }
 }

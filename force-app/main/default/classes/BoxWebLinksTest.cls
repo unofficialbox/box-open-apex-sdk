@@ -9,11 +9,12 @@ private class BoxWebLinksTest {
         mock.body = '{}';
         svc.create(new CreateWebLinkRequest());
         mock.body = '{}';
-        svc.get('x', 'x');
+        svc.get('x', 'x', 'x');
+        svc.getIfModified('x', 'x', 'x');
         mock.body = '{}';
-        svc.update_r('x', new UpdateWebLinkRequest());
+        svc.update_r('x', 'x', new UpdateWebLinkRequest());
         mock.body = '{}';
-        svc.delete_r('x');
+        svc.delete_r('x', 'x');
         Test.stopTest();
         System.assertNotEquals(null, mock.lastRequest);
     }

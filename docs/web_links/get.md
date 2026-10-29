@@ -20,6 +20,7 @@ Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 |---|---|---|---|
 | `webLinkId` | path | `String` | yes |
 | `boxapi` | header | `String` | no |
+| `ifNoneMatch` | header | `String` | no |
 
 ## Returns
 
@@ -29,5 +30,5 @@ Box client = new Box(myBoxClient); // myBoxClient implements BoxClient
 
 ```apex
 Box client = new Box(myBoxClient);
-WebLink result = client.webLinks.get(webLinkId, null);
+WebLink result = client.webLinks.get(webLinkId, null, null);
 ```
