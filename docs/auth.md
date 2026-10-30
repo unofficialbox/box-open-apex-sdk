@@ -42,3 +42,29 @@ BoxTokenProvider provider = BoxAuth.jwt(
 Interactive OAuth needs a browser redirect and callback, which server-side
 Apex cannot perform. Use the Client Credentials Grant or JWT above for
 server-to-server access instead.
+
+## Acting as another user
+
+An admin, or a service account whose app may *make API calls using the
+as-user header*, can act as another user. `withAsUserHeader` returns a new
+`Box` whose every call sends Box's `As-User` header; it shares the
+original's auth and configuration, and the original is unchanged:
+
+```apex
+Box userClient = client.withAsUserHeader('USER_ID');
+UserFull me = userClient.users.getMe(null); // the user USER_ID
+```
+
+## Downscoping a token
+
+Exchange an access token for one limited to `scopes` and, optionally, to one
+item (its API URL) or shared link (pass `null` to skip either) — e.g. to hand
+a Lightning component a narrow preview token. Pass the token the client
+sends; the result has no refresh token:
+
+```apex
+AccessToken down = client.authorization.downscopeToken(
+    provider.getAccessToken(), new List<String>{ 'item_preview' },
+    'https://api.box.com/2.0/files/123', null);
+Box preview = new Box(new BoxHttpClient(BoxAuth.developerToken(down.access_token)));
+```

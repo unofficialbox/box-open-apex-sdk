@@ -713,6 +713,10 @@ force-app/main/default/classes/BoxArchives.cls
 force-app/main/default/classes/BoxArchives.cls-meta.xml
 force-app/main/default/classes/BoxArchivesTest.cls
 force-app/main/default/classes/BoxArchivesTest.cls-meta.xml
+force-app/main/default/classes/BoxAsUserClient.cls
+force-app/main/default/classes/BoxAsUserClient.cls-meta.xml
+force-app/main/default/classes/BoxAsUserClientTest.cls
+force-app/main/default/classes/BoxAsUserClientTest.cls-meta.xml
 force-app/main/default/classes/BoxAuth.cls
 force-app/main/default/classes/BoxAuth.cls-meta.xml
 force-app/main/default/classes/BoxAuthTest.cls

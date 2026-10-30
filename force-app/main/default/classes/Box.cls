@@ -6,6 +6,7 @@
  * manager, e.g. `new Box(client).files.getById(...)`.
  */
 public with sharing class Box {
+    private final BoxClient client;
     /** The `ai` resource manager. */
     public final BoxAi ai;
     /** The `aiStudio` resource manager. */
@@ -184,6 +185,7 @@ public with sharing class Box {
     public final BoxZipDownloads zipDownloads;
     /** Wire every manager to one shared runtime client. */
     public Box(BoxClient client) {
+        this.client = client;
         this.ai = new BoxAi(client);
         this.aiStudio = new BoxAiStudio(client);
         this.appItemAssociations = new BoxAppItemAssociations(client);
@@ -272,5 +274,11 @@ public with sharing class Box {
         this.webhooks = new BoxWebhooks(client);
         this.workflows = new BoxWorkflows(client);
         this.zipDownloads = new BoxZipDownloads(client);
+    }
+    /** A new `Box` whose every call acts as the user `userId` (Box's
+     * `As-User` header). It shares this client's auth and configuration;
+     * this `Box` is unchanged. */
+    public Box withAsUserHeader(String userId) {
+        return new Box(new BoxAsUserClient(this.client, userId));
     }
 }

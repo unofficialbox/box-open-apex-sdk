@@ -47,6 +47,7 @@ public with sharing class BoxAuthorization {
         request.baseUrl = 'api_root';
         request.path = '/' + 'oauth2' + '/' + 'token';
         request.body = body;
+        request.formEncoded = true;
         BoxResponse response = client.send(request);
         Object parsed = JSON.deserializeUntyped(response.body);
         AccessToken deserialized;
@@ -66,6 +67,7 @@ public with sharing class BoxAuthorization {
         request.baseUrl = 'api_root';
         request.path = '/' + 'oauth2' + '/' + 'token';
         request.body = body;
+        request.formEncoded = true;
         BoxResponse response = client.send(request);
         Object parsed = JSON.deserializeUntyped(response.body);
         AccessToken deserialized;
@@ -84,6 +86,25 @@ public with sharing class BoxAuthorization {
         request.baseUrl = 'api_root';
         request.path = '/' + 'oauth2' + '/' + 'revoke';
         request.body = body;
+        request.formEncoded = true;
         BoxResponse response = client.send(request);
+    }
+
+    /**
+     * Exchange `subjectToken` (the token the client sends: your provider's
+     * `getAccessToken()`) for one limited to `scopes` and, when non-null, to one
+     * item (`resource`: its API URL, e.g. `https://api.box.com/2.0/files/123`)
+     * or a shared link. The result is a plain access token with no refresh
+     * token: build a client from it with `BoxAuth.developerToken`.
+     */
+    public AccessToken downscopeToken(String subjectToken, List<String> scopes, String resource, String sharedLink) {
+        PostOAuth2Token body = new PostOAuth2Token();
+        body.grant_type = 'urn:ietf:params:oauth:grant-type:token-exchange';
+        body.subject_token = subjectToken;
+        body.subject_token_type = 'urn:ietf:params:oauth:token-type:access_token';
+        body.scope = String.join(scopes, ' ');
+        body.resource = resource;
+        body.box_shared_link = sharedLink;
+        return createOauth2Token(body);
     }
 }

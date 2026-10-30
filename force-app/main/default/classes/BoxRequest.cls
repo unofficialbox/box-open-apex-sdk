@@ -11,6 +11,9 @@ public class BoxRequest {
     // body routed through denormalizeKeys sets this false so injected
     // explicit nulls (D-138) survive; the map already omits unset keys.
     public Boolean suppressNulls = true;
+    // Send `body` as application/x-www-form-urlencoded (its non-null
+    // fields as key=value pairs) instead of JSON.
+    public Boolean formEncoded = false;
     // A Box-style multipart body (G-7): a JSON part and/or a binary
     // part, each present iff its name is non-null. Never both `body`/
     // `binaryBody` and these on the same request.
