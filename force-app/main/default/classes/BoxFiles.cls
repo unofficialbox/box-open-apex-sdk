@@ -139,4 +139,22 @@ public with sharing class BoxFiles {
         BoxResponse response = client.send(request);
         return response.binaryBody;
     }
+
+    /**
+     * Fetch a representation of the item — a PDF, its extracted text, page
+     * images. `repHints` names it as `X-Rep-Hints` does (`'[pdf]'`,
+     * `'[extracted_text]'`); `assetPath` picks one asset of a multi-asset
+     * representation (`'1.png'`) and is `''` for a single-file one. Apex can't
+     * wait while Box generates it: the result's `content` is set once Box has
+     * it, and its `state` is `pending` until then — call again later.
+     */
+    public BoxRepresentations.Result getRepresentationContent(String fileId, String repHints, String assetPath) {
+        BoxRequest request = new BoxRequest();
+        request.method = 'GET';
+        request.baseUrl = 'api';
+        request.path = '/' + 'files' + '/' + fileId;
+        request.query.put('fields', 'representations');
+        request.headers.put('x-rep-hints', repHints);
+        return BoxRepresentations.fetch(client, request, 'representations', assetPath);
+    }
 }

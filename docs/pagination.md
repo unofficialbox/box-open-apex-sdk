@@ -42,3 +42,21 @@ for (Object e : events.poll()) {
 }
 savedPosition = events.position;
 ```
+
+## Representations (PDF, text, thumbnails)
+
+`client.files.getRepresentationContent` fetches a rendering of a file that Box
+generates on demand — a PDF, its extracted text, page images. `repHints`
+names it as Box's `X-Rep-Hints` header does; `assetPath` picks one asset of a
+multi-asset representation (`'1.png'` for a page) and is `''` for a
+single-file one. Apex can't wait while Box generates it: each call checks the
+status once, and the result's `state` stays `pending` until Box is done.
+Call again from a later transaction (a `Queueable`, say) until `content` is
+set:
+
+```apex
+BoxRepresentations.Result text = client.files.getRepresentationContent(fileId, '[extracted_text]', '');
+if (text.content != null) {
+    String body = text.content.toString();
+}
+```

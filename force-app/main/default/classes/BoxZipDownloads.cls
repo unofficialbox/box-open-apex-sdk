@@ -56,4 +56,22 @@ public with sharing class BoxZipDownloads {
         BoxResponse response = client.send(request);
         return (ZipDownloadStatus) JSON.deserialize(response.body, ZipDownloadStatus.class);
     }
+
+    /**
+     * Pack the items in `body` into one zip archive (`create`) and fetch it
+     * from the download URL Box answers with, through this client (auth,
+     * retries, As-User). `getContent` fetches the same archive by id. The whole
+     * archive arrives in one callout, so Apex's heap and callout-size limits
+     * cap it (about 6 MB synchronous, 12 MB asynchronous).
+     */
+    public Blob downloadZip(ZipDownloadRequest body) {
+        ZipDownload zip = create(body);
+        if (zip == null || String.isBlank(zip.download_url)) {
+            throw new BoxApiException('box: the zip download has no download_url');
+        }
+        BoxRequest request = new BoxRequest();
+        request.method = 'GET';
+        request.url = zip.download_url;
+        return client.send(request).binaryBody;
+    }
 }

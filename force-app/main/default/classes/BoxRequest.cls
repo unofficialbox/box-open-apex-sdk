@@ -3,6 +3,9 @@ public class BoxRequest {
     public String method;
     public String baseUrl;
     public String path;
+    // An absolute URL Box handed back (a zip's download_url). When set,
+    // it replaces baseUrl + path.
+    public String url;
     public Map<String, String> query = new Map<String, String>();
     public Map<String, String> headers = new Map<String, String>();
     public Object body;

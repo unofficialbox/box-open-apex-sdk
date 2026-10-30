@@ -8,3 +8,17 @@
 | [`create`](create.md) | `POST` | `/zip_downloads` |  |
 | [`getContent`](getContent.md) | `GET` | `/zip_downloads/{zip_download_id}/content` |  |
 | [`getStatus`](getStatus.md) | `GET` | `/zip_downloads/{zip_download_id}/status` |  |
+
+## downloadZip: downloading several items as a zip
+
+`downloadZip` packs files and folders into one zip archive (`create`) and
+fetches it from the `download_url` Box answers with, through the client, so
+auth, retries, and As-User apply. The archive arrives in one callout as a
+`Blob`, so Apex's heap and callout-size limits cap it (about 6 MB synchronous,
+12 MB asynchronous):
+
+**Example**
+
+```apex
+Blob archive = client.zipDownloads.downloadZip(body); // body: ZipDownloadRequest
+```

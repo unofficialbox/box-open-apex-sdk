@@ -955,6 +955,10 @@ force-app/main/default/classes/BoxRecentItems.cls
 force-app/main/default/classes/BoxRecentItems.cls-meta.xml
 force-app/main/default/classes/BoxRecentItemsTest.cls
 force-app/main/default/classes/BoxRecentItemsTest.cls-meta.xml
+force-app/main/default/classes/BoxRepresentations.cls
+force-app/main/default/classes/BoxRepresentations.cls-meta.xml
+force-app/main/default/classes/BoxRepresentationsTest.cls
+force-app/main/default/classes/BoxRepresentationsTest.cls-meta.xml
 force-app/main/default/classes/BoxRequest.cls
 force-app/main/default/classes/BoxRequest.cls-meta.xml
 force-app/main/default/classes/BoxResponse.cls
