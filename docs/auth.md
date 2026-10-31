@@ -43,6 +43,19 @@ Interactive OAuth needs a browser redirect and callback, which server-side
 Apex cannot perform. Use the Client Credentials Grant or JWT above for
 server-to-server access instead.
 
+## Revoking a token
+
+For logout or uninstall, `BoxAuth.revokeToken` revokes the token a Client
+Credentials or JWT provider holds — with the app's own client credentials,
+at Box's revoke endpoint — and drops it; the next call mints a fresh one:
+
+```apex
+BoxAuth.revokeToken(provider);
+```
+
+A developer token has no client credentials to revoke with, so it throws;
+pass them yourself to `client.authorization.revokeOauth2`.
+
 ## Acting as another user
 
 An admin, or a service account whose app may *make API calls using the
