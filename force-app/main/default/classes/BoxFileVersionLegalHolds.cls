@@ -23,7 +23,9 @@ public with sharing class BoxFileVersionLegalHolds {
         request.baseUrl = 'api';
         request.path = '/' + 'file_version_legal_holds' + '/' + fileVersionLegalHoldId;
         BoxResponse response = client.send(request);
-        return (FileVersionLegalHold) JSON.deserialize(response.body, FileVersionLegalHold.class);
+        Object parsed = JSON.deserializeUntyped(response.body);
+            if (parsed instanceof Map<String, Object>) parsed = FileVersionLegalHold.normalizeKeys((Map<String, Object>) parsed);
+        return (FileVersionLegalHold) JSON.deserialize(JSON.serialize(parsed), FileVersionLegalHold.class);
     }
 
     /**

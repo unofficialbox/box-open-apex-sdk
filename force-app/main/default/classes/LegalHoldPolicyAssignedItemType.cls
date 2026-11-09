@@ -9,4 +9,5 @@ public class LegalHoldPolicyAssignedItemType {
     public static final String User = 'user';
     public static final String Ownership = 'ownership';
     public static final String Interactions = 'interactions';
+    public static final String MetadataTemplate = 'metadata_template';
 }

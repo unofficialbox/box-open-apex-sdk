@@ -7,6 +7,8 @@ private class BoxModelWireTest2 {
     @isTest
     static void exercisesModelWireHooks() {
         Test.startTest();
+        FileVersionRetention.deserialize(null);
+        FileVersionRetention.deserialize(new Map<String, Object>{ 'winning_retention_policy' => new Map<String, Object>() });
         FileVersionRetentions.normalizeKeys(null);
         FileVersionRetentions.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
         FileVersionRetentions.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
@@ -65,9 +67,15 @@ private class BoxModelWireTest2 {
         LegalHoldPolicies.normalizeKeys(null);
         LegalHoldPolicies.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
         LegalHoldPolicies.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
+        LegalHoldPolicyAssignment.normalizeKeys(null);
+        LegalHoldPolicyAssignment.normalizeKeys(new Map<String, Object>{ 'filter_fields' => new List<Object>{ new Map<String, Object>() } });
+        LegalHoldPolicyAssignment.denormalizeKeys(new Map<String, Object>{ 'filter_fields' => new List<Object>{ new Map<String, Object>() } });
+        LegalHoldPolicyAssignmentFilterField.normalizeKeys(null);
+        LegalHoldPolicyAssignmentFilterField.normalizeKeys(new Map<String, Object>{ 'value' => 'x' });
+        LegalHoldPolicyAssignmentFilterField.denormalizeKeys(new Map<String, Object>{ 'value_r' => 'x' });
         LegalHoldPolicyAssignments.normalizeKeys(null);
-        LegalHoldPolicyAssignments.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
-        LegalHoldPolicyAssignments.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
+        LegalHoldPolicyAssignments.normalizeKeys(new Map<String, Object>{ 'limit' => 'x', 'entries' => new List<Object>{ new Map<String, Object>() } });
+        LegalHoldPolicyAssignments.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x', 'entries' => new List<Object>{ new Map<String, Object>() } });
         MetadataBase.normalizeKeys(null);
         MetadataBase.normalizeKeys(new Map<String, Object>{ '$parent' => 'x', '$template' => 'x', '$scope' => 'x', '$version' => 'x' });
         MetadataBase.denormalizeKeys(new Map<String, Object>{ 'parent' => 'x', 'template' => 'x', 'scope' => 'x', 'version' => 'x' });
@@ -184,19 +192,6 @@ private class BoxModelWireTest2 {
         SignRequestSigner.deserialize(new Map<String, Object>{ 'inputs' => new List<Object>{ new Map<String, Object>() } });
         SignRequestSignerInput.deserialize(null);
         SignRequestSignerInput.deserialize(new Map<String, Object>{ 'validation' => 'x' });
-        SignTemplate.denormalizeKeys(new Map<String, Object>{ 'parent_folder' => new Map<String, Object>() });
-        SignTemplate.deserialize(null);
-        SignTemplate.deserialize(new Map<String, Object>{ 'signers' => new List<Object>{ new Map<String, Object>() } });
-        SignTemplates.normalizeKeys(null);
-        SignTemplates.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
-        SignTemplates.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x', 'entries' => new List<Object>{ new Map<String, Object>() } });
-        SignTemplates.deserialize(null);
-        SignTemplates.deserialize(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() } });
-        SkillCardsMetadata.normalizeKeys(null);
-        SkillCardsMetadata.normalizeKeys(new Map<String, Object>{ '$canEdit' => 'x', '$id' => 'x', '$parent' => 'x', '$scope' => 'x', '$template' => 'x', '$type' => 'x', '$typeVersion' => 'x', '$version' => 'x' });
-        SkillCardsMetadata.denormalizeKeys(new Map<String, Object>{ 'canEdit' => 'x', 'id' => 'x', 'parent' => 'x', 'scope' => 'x', 'template' => 'x', 'type' => 'x', 'typeVersion' => 'x', 'version' => 'x' });
-        SkillCardsMetadata.deserialize(null);
-        SkillCardsMetadata.deserialize(new Map<String, Object>{ 'cards' => new List<Object>() });
         Test.stopTest();
         System.assert(true, 'every wire static executed without error');
     }

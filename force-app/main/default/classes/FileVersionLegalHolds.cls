@@ -16,6 +16,18 @@ public class FileVersionLegalHolds {
             Object v = raw.remove('limit');
             raw.put('limit_r', v);
         }
+        if (raw.containsKey('entries')) {
+            Object v = raw.remove('entries');
+            if (v instanceof List<Object>) {
+                List<Object> wLst0 = (List<Object>) v;
+                for (Integer wIdx0 = 0; wIdx0 < wLst0.size(); wIdx0++) {
+                    Object wElem0 = wLst0[wIdx0];
+            if (wElem0 instanceof Map<String, Object>) wElem0 = FileVersionLegalHold.normalizeKeys((Map<String, Object>) wElem0);
+                    wLst0[wIdx0] = wElem0;
+                }
+            }
+            raw.put('entries', v);
+        }
         return raw;
     }
     /** Apex → wire: JSON keys for the `FileVersionLegalHolds` wire shape (see class doc). */
@@ -24,6 +36,18 @@ public class FileVersionLegalHolds {
         if (raw.containsKey('limit_r')) {
             Object v = raw.remove('limit_r');
             raw.put('limit', v);
+        }
+        if (raw.containsKey('entries')) {
+            Object v = raw.remove('entries');
+            if (v instanceof List<Object>) {
+                List<Object> wLst0 = (List<Object>) v;
+                for (Integer wIdx0 = 0; wIdx0 < wLst0.size(); wIdx0++) {
+                    Object wElem0 = wLst0[wIdx0];
+            if (wElem0 instanceof Map<String, Object>) wElem0 = FileVersionLegalHold.denormalizeKeys((Map<String, Object>) wElem0);
+                    wLst0[wIdx0] = wElem0;
+                }
+            }
+            raw.put('entries', v);
         }
         return raw;
     }

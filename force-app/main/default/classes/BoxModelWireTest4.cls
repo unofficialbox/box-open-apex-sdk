@@ -7,6 +7,16 @@ private class BoxModelWireTest4 {
     @isTest
     static void exercisesModelWireHooks() {
         Test.startTest();
+        PutSkillInvocationIdUsage.normalizeKeys(null);
+        PutSkillInvocationIdUsage.normalizeKeys(new Map<String, Object>{ 'value' => 'x' });
+        PutSkillInvocationIdUsage.denormalizeKeys(new Map<String, Object>{ 'value_r' => 'x' });
+        UpdateSkillInvocationRequest.normalizeKeys(null);
+        UpdateSkillInvocationRequest.normalizeKeys(new Map<String, Object>{ 'usage' => new Map<String, Object>() });
+        UpdateSkillInvocationRequest.denormalizeKeys(new Map<String, Object>{ 'usage' => new Map<String, Object>() });
+        UpdateSkillInvocationRequest.deserialize(null);
+        UpdateSkillInvocationRequest.deserialize(new Map<String, Object>{ 'metadata' => new Map<String, Object>() });
+        CreateRetentionPolicyRequest.deserialize(null);
+        CreateRetentionPolicyRequest.deserialize(new Map<String, Object>{ 'retention_length' => 'x', 'max_extension_length' => 'x' });
         UpdateRetentionPolicyRequest.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'policy_name', 'description', 'retention_type', 'status', 'can_owner_extend_retention', 'are_owners_notified', 'custom_notification_recipients' } });
         UpdateRetentionPolicyRequest.deserialize(null);
         UpdateRetentionPolicyRequest.deserialize(new Map<String, Object>{ 'disposition_action' => 'x', 'retention_length' => 'x', 'max_extension_length' => 'x' });
@@ -17,6 +27,9 @@ private class BoxModelWireTest4 {
         CreateRetentionPolicyAssignmentRequest.normalizeKeys(null);
         CreateRetentionPolicyAssignmentRequest.normalizeKeys(new Map<String, Object>{ 'filter_fields' => new List<Object>{ new Map<String, Object>() } });
         CreateRetentionPolicyAssignmentRequest.denormalizeKeys(new Map<String, Object>{ 'assign_to' => new Map<String, Object>(), 'filter_fields' => new List<Object>{ new Map<String, Object>() } });
+        CreateLegalHoldPolicyAssignmentRequest.normalizeKeys(null);
+        CreateLegalHoldPolicyAssignmentRequest.normalizeKeys(new Map<String, Object>{ 'filter_fields' => new List<Object>{ new Map<String, Object>() } });
+        CreateLegalHoldPolicyAssignmentRequest.denormalizeKeys(new Map<String, Object>{ 'filter_fields' => new List<Object>{ new Map<String, Object>() } });
         UpdateShieldInformationBarrierSe_5c69c96.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'description' } });
         Archives.normalizeKeys(null);
         Archives.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
@@ -167,17 +180,6 @@ private class BoxModelWireTest4 {
         QueryRequestBody.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
         QueryRequestBody.deserialize(null);
         QueryRequestBody.deserialize(new Map<String, Object>{ 'query' => new Map<String, Object>() });
-        QueryResultEntry.deserialize(null);
-        QueryResultEntry.deserialize(new Map<String, Object>{ '__extra_probe__' => 'x' });
-        QueryResults.normalizeKeys(null);
-        QueryResults.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
-        QueryResults.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
-        QueryResults.deserialize(null);
-        QueryResults.deserialize(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() } });
-        ShuttleDiscoveredSubjects.normalizeKeys(null);
-        ShuttleDiscoveredSubjects.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
-        ShuttleDiscoveredSubjects.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
-        ShuttleJob.denormalizeKeys(new Map<String, Object>{ 'settings' => new Map<String, Object>() });
         Test.stopTest();
         System.assert(true, 'every wire static executed without error');
     }

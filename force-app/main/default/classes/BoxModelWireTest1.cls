@@ -155,11 +155,12 @@ private class BoxModelWireTest1 {
         FilesUnderRetention.normalizeKeys(null);
         FilesUnderRetention.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
         FilesUnderRetention.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
+        FileVersionLegalHold.normalizeKeys(null);
+        FileVersionLegalHold.normalizeKeys(new Map<String, Object>{ 'legal_hold_policy_assignments' => new List<Object>{ new Map<String, Object>() } });
+        FileVersionLegalHold.denormalizeKeys(new Map<String, Object>{ 'legal_hold_policy_assignments' => new List<Object>{ new Map<String, Object>() } });
         FileVersionLegalHolds.normalizeKeys(null);
-        FileVersionLegalHolds.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
-        FileVersionLegalHolds.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
-        FileVersionRetention.deserialize(null);
-        FileVersionRetention.deserialize(new Map<String, Object>{ 'winning_retention_policy' => new Map<String, Object>() });
+        FileVersionLegalHolds.normalizeKeys(new Map<String, Object>{ 'limit' => 'x', 'entries' => new List<Object>{ new Map<String, Object>() } });
+        FileVersionLegalHolds.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x', 'entries' => new List<Object>{ new Map<String, Object>() } });
         Test.stopTest();
         System.assert(true, 'every wire static executed without error');
     }

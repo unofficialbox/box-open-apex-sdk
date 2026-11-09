@@ -50,9 +50,14 @@ public with sharing class BoxLegalHoldPolicyAssignments {
         request.method = 'POST';
         request.baseUrl = 'api';
         request.path = '/' + 'legal_hold_policy_assignments';
-        request.body = body;
+        Object wireBody = JSON.deserializeUntyped(JSON.serialize(body, true));
+            if (wireBody instanceof Map<String, Object>) wireBody = CreateLegalHoldPolicyAssignmentRequest.denormalizeKeys((Map<String, Object>) wireBody);
+        request.body = wireBody;
+        request.suppressNulls = false;
         BoxResponse response = client.send(request);
-        return (LegalHoldPolicyAssignment) JSON.deserialize(response.body, LegalHoldPolicyAssignment.class);
+        Object parsed = JSON.deserializeUntyped(response.body);
+            if (parsed instanceof Map<String, Object>) parsed = LegalHoldPolicyAssignment.normalizeKeys((Map<String, Object>) parsed);
+        return (LegalHoldPolicyAssignment) JSON.deserialize(JSON.serialize(parsed), LegalHoldPolicyAssignment.class);
     }
 
     /**
@@ -67,7 +72,9 @@ public with sharing class BoxLegalHoldPolicyAssignments {
         request.baseUrl = 'api';
         request.path = '/' + 'legal_hold_policy_assignments' + '/' + legalHoldPolicyAssignmentId;
         BoxResponse response = client.send(request);
-        return (LegalHoldPolicyAssignment) JSON.deserialize(response.body, LegalHoldPolicyAssignment.class);
+        Object parsed = JSON.deserializeUntyped(response.body);
+            if (parsed instanceof Map<String, Object>) parsed = LegalHoldPolicyAssignment.normalizeKeys((Map<String, Object>) parsed);
+        return (LegalHoldPolicyAssignment) JSON.deserialize(JSON.serialize(parsed), LegalHoldPolicyAssignment.class);
     }
 
     /**

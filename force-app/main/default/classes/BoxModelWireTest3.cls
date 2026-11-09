@@ -7,6 +7,19 @@ private class BoxModelWireTest3 {
     @isTest
     static void exercisesModelWireHooks() {
         Test.startTest();
+        SignTemplate.denormalizeKeys(new Map<String, Object>{ 'parent_folder' => new Map<String, Object>() });
+        SignTemplate.deserialize(null);
+        SignTemplate.deserialize(new Map<String, Object>{ 'signers' => new List<Object>{ new Map<String, Object>() } });
+        SignTemplates.normalizeKeys(null);
+        SignTemplates.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
+        SignTemplates.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x', 'entries' => new List<Object>{ new Map<String, Object>() } });
+        SignTemplates.deserialize(null);
+        SignTemplates.deserialize(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() } });
+        SkillCardsMetadata.normalizeKeys(null);
+        SkillCardsMetadata.normalizeKeys(new Map<String, Object>{ '$canEdit' => 'x', '$id' => 'x', '$parent' => 'x', '$scope' => 'x', '$template' => 'x', '$type' => 'x', '$typeVersion' => 'x', '$version' => 'x' });
+        SkillCardsMetadata.denormalizeKeys(new Map<String, Object>{ 'canEdit' => 'x', 'id' => 'x', 'parent' => 'x', 'scope' => 'x', 'template' => 'x', 'type' => 'x', 'typeVersion' => 'x', 'version' => 'x' });
+        SkillCardsMetadata.deserialize(null);
+        SkillCardsMetadata.deserialize(new Map<String, Object>{ 'cards' => new List<Object>() });
         StoragePolicies.normalizeKeys(null);
         StoragePolicies.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
         StoragePolicies.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
@@ -159,16 +172,6 @@ private class BoxModelWireTest3 {
         UpdateGroupMembershipRequest.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'configurable_permissions' } });
         PutSkillInvocationIdMetadata.deserialize(null);
         PutSkillInvocationIdMetadata.deserialize(new Map<String, Object>{ 'cards' => new List<Object>() });
-        PutSkillInvocationIdUsage.normalizeKeys(null);
-        PutSkillInvocationIdUsage.normalizeKeys(new Map<String, Object>{ 'value' => 'x' });
-        PutSkillInvocationIdUsage.denormalizeKeys(new Map<String, Object>{ 'value_r' => 'x' });
-        UpdateSkillInvocationRequest.normalizeKeys(null);
-        UpdateSkillInvocationRequest.normalizeKeys(new Map<String, Object>{ 'usage' => new Map<String, Object>() });
-        UpdateSkillInvocationRequest.denormalizeKeys(new Map<String, Object>{ 'usage' => new Map<String, Object>() });
-        UpdateSkillInvocationRequest.deserialize(null);
-        UpdateSkillInvocationRequest.deserialize(new Map<String, Object>{ 'metadata' => new Map<String, Object>() });
-        CreateRetentionPolicyRequest.deserialize(null);
-        CreateRetentionPolicyRequest.deserialize(new Map<String, Object>{ 'retention_length' => 'x', 'max_extension_length' => 'x' });
         Test.stopTest();
         System.assert(true, 'every wire static executed without error');
     }

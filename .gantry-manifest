@@ -1885,6 +1885,8 @@ force-app/main/default/classes/LegalHoldPolicyAssignmentBase.cls
 force-app/main/default/classes/LegalHoldPolicyAssignmentBase.cls-meta.xml
 force-app/main/default/classes/LegalHoldPolicyAssignmentCounts.cls
 force-app/main/default/classes/LegalHoldPolicyAssignmentCounts.cls-meta.xml
+force-app/main/default/classes/LegalHoldPolicyAssignmentFilterField.cls
+force-app/main/default/classes/LegalHoldPolicyAssignmentFilterField.cls-meta.xml
 force-app/main/default/classes/LegalHoldPolicyAssignmentType.cls
 force-app/main/default/classes/LegalHoldPolicyAssignmentType.cls-meta.xml
 force-app/main/default/classes/LegalHoldPolicyAssignments.cls

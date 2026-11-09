@@ -7,6 +7,17 @@ private class BoxModelWireTest5 {
     @isTest
     static void exercisesModelWireHooks() {
         Test.startTest();
+        QueryResultEntry.deserialize(null);
+        QueryResultEntry.deserialize(new Map<String, Object>{ '__extra_probe__' => 'x' });
+        QueryResults.normalizeKeys(null);
+        QueryResults.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
+        QueryResults.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
+        QueryResults.deserialize(null);
+        QueryResults.deserialize(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() } });
+        ShuttleDiscoveredSubjects.normalizeKeys(null);
+        ShuttleDiscoveredSubjects.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
+        ShuttleDiscoveredSubjects.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
+        ShuttleJob.denormalizeKeys(new Map<String, Object>{ 'settings' => new Map<String, Object>() });
         ShuttleJobCreateRequest.denormalizeKeys(new Map<String, Object>{ 'account_mapping' => new Map<String, Object>(), 'settings' => new Map<String, Object>() });
         ShuttleJobs.normalizeKeys(null);
         ShuttleJobs.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
