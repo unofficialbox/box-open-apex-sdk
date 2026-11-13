@@ -181,7 +181,11 @@ private class BoxModelWireTest2 {
         SignRequest.deserialize(new Map<String, Object>{ 'signers' => new List<Object>{ new Map<String, Object>() } });
         SignRequestBase.denormalizeKeys(new Map<String, Object>{ 'prefill_tags' => new List<Object>{ new Map<String, Object>() } });
         SignRequestCreateRequest.denormalizeKeys(new Map<String, Object>{ 'prefill_tags' => new List<Object>{ new Map<String, Object>() }, 'source_files' => new List<Object>{ new Map<String, Object>() }, 'signers' => new List<Object>{ new Map<String, Object>() }, 'parent_folder' => new Map<String, Object>(), 'fieldsToNull' => new List<Object>{ 'redirect_url', 'declined_redirect_url', 'email_subject', 'email_message', 'days_valid', 'external_id', 'template_id', 'external_system_name', 'request_flow', 'source_files', 'signature_color' } });
-        SignRequestCreateSigner.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'email', 'embed_url_external_user_id', 'redirect_url', 'declined_redirect_url', 'login_required', 'verification_phone_number', 'password', 'signer_group_id', 'suppress_notifications', 'language' } });
+        SignRequestCreateRequest.deserialize(null);
+        SignRequestCreateRequest.deserialize(new Map<String, Object>{ 'signers' => new List<Object>{ new Map<String, Object>() } });
+        SignRequestCreateSigner.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'email', 'embed_url_external_user_id', 'redirect_url', 'declined_redirect_url', 'login_required', 'verification_phone_number', 'password', 'signer_group_id', 'suppress_notifications', 'language', 'verification_method' } });
+        SignRequestCreateSigner.deserialize(null);
+        SignRequestCreateSigner.deserialize(new Map<String, Object>{ 'verification_method' => 'x' });
         SignRequestPrefillTag.denormalizeKeys(new Map<String, Object>{ 'fieldsToNull' => new List<Object>{ 'document_tag_id', 'text_value', 'checkbox_value', 'date_value' } });
         SignRequests.normalizeKeys(null);
         SignRequests.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
@@ -189,7 +193,7 @@ private class BoxModelWireTest2 {
         SignRequests.deserialize(null);
         SignRequests.deserialize(new Map<String, Object>{ 'entries' => new List<Object>{ new Map<String, Object>() } });
         SignRequestSigner.deserialize(null);
-        SignRequestSigner.deserialize(new Map<String, Object>{ 'inputs' => new List<Object>{ new Map<String, Object>() } });
+        SignRequestSigner.deserialize(new Map<String, Object>{ 'verification_method' => 'x', 'inputs' => new List<Object>{ new Map<String, Object>() } });
         SignRequestSignerInput.deserialize(null);
         SignRequestSignerInput.deserialize(new Map<String, Object>{ 'validation' => 'x' });
         Test.stopTest();

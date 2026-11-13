@@ -39,6 +39,10 @@ private class BoxUnionsTest {
         System.assertNotEquals(null, SearchResultsResponse.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
         System.assertNotEquals(null, SearchResultWithSharedLinkItem.parse(new Map<String, Object>{ 'type' => 'file' }));
         System.assertNotEquals(null, SearchResultWithSharedLinkItem.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
+        System.assertNotEquals(null, SignRequestSignerVerificationMethod.parse(new Map<String, Object>{ 'type' => 'login' }));
+        System.assertNotEquals(null, SignRequestSignerVerificationMethod.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
+        System.assertNotEquals(null, TemplateSignerVerificationMethod.parse(new Map<String, Object>{ 'type' => 'login' }));
+        System.assertNotEquals(null, TemplateSignerVerificationMethod.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
         System.assertNotEquals(null, HubAccessGrantee.parse(new Map<String, Object>{ 'type' => 'user' }));
         System.assertNotEquals(null, HubAccessGrantee.parse(new Map<String, Object>{ 'type' => 'x_gantry_unknown' }));
         System.assertNotEquals(null, HubDocumentBlockEntry.parse(new Map<String, Object>{ 'type' => 'paragraph' }));

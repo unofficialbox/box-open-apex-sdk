@@ -11,5 +11,5 @@ public class BoxBuildInfo {
     public static final String ENGINE_VERSION = '0.1.0';
 
     /** Fingerprint of the exact input spec set. */
-    public static final String SPEC_FINGERPRINT = 'ba5d8bc7f176cc7c';
+    public static final String SPEC_FINGERPRINT = 'f8d24d8aa5e40422';
 }

@@ -27,7 +27,7 @@ private class BoxModelWireTest3 {
         StoragePolicyAssignments.normalizeKeys(new Map<String, Object>{ 'limit' => 'x' });
         StoragePolicyAssignments.denormalizeKeys(new Map<String, Object>{ 'limit_r' => 'x' });
         TemplateSigner.deserialize(null);
-        TemplateSigner.deserialize(new Map<String, Object>{ 'inputs' => new List<Object>{ new Map<String, Object>() } });
+        TemplateSigner.deserialize(new Map<String, Object>{ 'inputs' => new List<Object>{ new Map<String, Object>() }, 'verification_method' => 'x' });
         TemplateSignerInput.deserialize(null);
         TemplateSignerInput.deserialize(new Map<String, Object>{ 'validation' => 'x' });
         TimelineSkillCard.normalizeKeys(null);

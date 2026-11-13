@@ -5,7 +5,10 @@
  * to shape request bodies for the wire.
  * Explicit null (D-138): to clear a field on update, add its Apex
  * field name to `fieldsToNull` — the request sends JSON `null` for it;
- * fields you leave unset stay absent. */
+ * fields you leave unset stay absent.
+ * Some fields are `Object` (a union or free-form JSON), which native
+ * `JSON.deserialize` can't populate, so this class carries a static
+ * `deserialize(Object)` the managers call to read a response (D-140). */
 public class SignRequestCreateRequest {
     public Boolean is_document_preparation_needed; // wire: is_document_preparation_needed
     public String redirect_url; // wire: redirect_url
@@ -90,5 +93,28 @@ public class SignRequestCreateRequest {
             }
         }
         return raw;
+    }
+    /** Build `SignRequestCreateRequest` from the untyped JSON tree. Apex's typed
+     * `JSON.deserialize` can't populate an `Object` field (a union or
+     * free-form JSON) or an open extra bag, so those are detached, the
+     * typed shell is deserialized, then they are reattached from the
+     * raw tree (D-140). */
+    public static SignRequestCreateRequest deserialize(Object rawInput) {
+        if (rawInput == null) return null;
+        Map<String, Object> raw = ((Map<String, Object>) rawInput).clone();
+        Object d_signers = raw.remove('signers');
+        SignRequestCreateRequest result = (SignRequestCreateRequest) JSON.deserialize(JSON.serialize(raw), SignRequestCreateRequest.class);
+        if (d_signers == null) {
+            result.signers = null;
+        } else {
+            List<SignRequestCreateSigner> dLst0 = new List<SignRequestCreateSigner>();
+            for (Object dEl0 : (List<Object>) d_signers) {
+                SignRequestCreateSigner dEv0;
+        dEv0 = SignRequestCreateSigner.deserialize(dEl0);
+                dLst0.add(dEv0);
+            }
+            result.signers = dLst0;
+        }
+        return result;
     }
 }
